@@ -1,0 +1,2561 @@
+You are implementing a complete end-to-end **Knowledge Graph MVP / Proof of Concept** in Python.
+
+The purpose of this project is a case-study demonstration, not a production system. The final result must demonstrate the full pipeline:
+
+DOCUMENTS
+→ NLP preprocessing
+→ entity extraction
+→ POS/dependency analysis
+→ coreference resolution
+→ relation extraction
+→ triple generation
+→ knowledge graph construction
+→ interactive graph visualization
+→ simple natural-language query parsing
+→ graph traversal
+→ human-readable answers + supporting evidence
+
+The system must work entirely locally and must not depend on external LLM APIs, cloud services, or internet access at runtime.
+
+The implementation should prioritize:
+
+1. Reliability on the provided corpus.
+2. Explainability.
+3. Clean modular architecture.
+4. A visually impressive graph UI.
+5. Easy demonstration during a case study.
+6. No unnecessary over-engineering.
+
+Do not ask for architectural clarification. Make the implementation according to the specification below.
+
+---
+
+# 1. TECH STACK
+
+Use Python.
+
+Required libraries:
+
+* spaCy
+* fastcoref
+* PyTorch
+* NetworkX
+* PyVis
+* Streamlit
+* pandas
+
+Recommended spaCy English model:
+
+* `en_core_web_sm`
+
+Use spaCy for:
+
+* tokenization
+* sentence segmentation
+* POS tagging
+* dependency parsing
+* NER
+* noun chunks
+
+Use a spaCy `EntityRuler` or equivalent rule layer to supplement NER because some entities in the provided fictional corpus will not necessarily be recognized reliably by the generic NER model.
+
+Use:
+
+```python
+from fastcoref import FCoref
+```
+
+for coreference resolution.
+
+The coreference model should automatically select:
+
+```text
+cuda:0
+```
+
+when CUDA is available, otherwise:
+
+```text
+cpu
+```
+
+Do not hard-code GPU-only execution.
+
+Use logic equivalent to:
+
+```python
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+model = FCoref(device=device)
+```
+
+Make the device configurable through an environment variable if convenient:
+
+```text
+COREF_DEVICE
+```
+
+with automatic fallback to CPU.
+
+Do NOT introduce Neo4j, Redis, Elasticsearch, Kafka, Docker, LangChain, vector databases, or an LLM for this MVP.
+
+The graph will live in memory as a NetworkX graph and will also be serialized to JSON for persistence.
+
+---
+
+# 2. PROJECT OBJECTIVE
+
+The final application should allow a user to open a local web application and see something approximately like:
+
+```text
+         Dr. Mira Sen
+                |
+             founded
+                |
+                v
+       Aether Analytics
+          /      |      \
+     develops  works    partners
+       /         |         \
+      v          v           v
+ OrionEdge    Arun Mehta   Quantum Forge
+     |
+ deployed_at
+     |
+     v
+Helios Bank
+```
+
+plus:
+
+```text
+Dr. Mira Sen
+       |
+      leads
+       |
+       v
+Project Aurora
+       ^
+       |
+     leads
+       |
+   Nila Rao
+```
+
+The user must be able to type queries such as:
+
+```text
+Who founded Aether Analytics?
+```
+
+and receive:
+
+```text
+Dr. Mira Sen
+```
+
+with the system showing how the query was interpreted.
+
+Example:
+
+```text
+Query interpretation
+
+Entity: Aether Analytics
+Relation: founded
+Direction: incoming
+Intent: relation_lookup
+```
+
+Then show supporting evidence from the original document.
+
+The graph visualization should use interactive circular/bubble nodes.
+
+---
+
+# 3. FIXED DEMONSTRATION CORPUS
+
+Create the following documents locally.
+
+Directory:
+
+```text
+data/
+    docs/
+        doc_01_company.txt
+        doc_02_team.txt
+        doc_03_deployment.txt
+        doc_04_aurora.txt
+        doc_05_customer.txt
+```
+
+Use exactly the following document contents.
+
+---
+
+## doc_01_company.txt
+
+```text
+Aether Analytics was founded by Dr. Mira Sen in 2021. The company develops OrionEdge, a real-time fraud detection platform. Mira Sen leads Project Aurora. The project focuses on graph-based transaction analysis.
+```
+
+---
+
+## doc_02_team.txt
+
+```text
+Arun Mehta joined Aether Analytics as a senior machine learning engineer. He works on OrionEdge. The engineer collaborates with Nila Rao, the data scientist leading Project Aurora. She leads the entity resolution work for the project.
+```
+
+---
+
+## doc_03_deployment.txt
+
+```text
+Aether Analytics partnered with Quantum Forge to provide GPU infrastructure for OrionEdge. OrionEdge was deployed at Helios Bank in 2025. The bank uses the platform to detect suspicious transactions.
+```
+
+---
+
+## doc_04_aurora.txt
+
+```text
+Nila Rao improved the Entity Resolution Engine inside Project Aurora. She reported that the engine reduced duplicate alerts by 18 percent. Aether Analytics plans to integrate Aurora into OrionEdge.
+```
+
+---
+
+## doc_05_customer.txt
+
+```text
+Helios Bank renewed its contract with Aether Analytics after a successful pilot of OrionEdge. The company will extend the platform to additional branches. Arun Mehta said the extension will reuse Aurora's graph matching module.
+```
+
+Do not download external documents. These documents are intentionally constructed for deterministic demonstration of the NLP pipeline.
+
+---
+
+# 4. CANONICAL ENTITIES
+
+The system must recognize the following canonical entities.
+
+## PERSON
+
+```text
+Dr. Mira Sen
+Arun Mehta
+Nila Rao
+```
+
+## ORGANIZATION
+
+```text
+Aether Analytics
+Quantum Forge
+Helios Bank
+```
+
+## PRODUCT
+
+```text
+OrionEdge
+```
+
+## PROJECT
+
+```text
+Project Aurora
+Aurora
+```
+
+## COMPONENT
+
+```text
+Entity Resolution Engine
+Graph Matching Module
+```
+
+The system should maintain aliases.
+
+Examples:
+
+```text
+Aether Analytics
+    aliases:
+        Aether Analytics
+        the company
+
+OrionEdge
+    aliases:
+        OrionEdge
+        the platform
+
+Project Aurora
+    aliases:
+        Project Aurora
+        Aurora
+        the project
+
+Helios Bank
+    aliases:
+        Helios Bank
+        the bank
+
+Nila Rao
+    aliases:
+        Nila Rao
+        she
+
+Arun Mehta
+    aliases:
+        Arun Mehta
+        he
+        the engineer
+```
+
+Do not blindly add every pronoun as a graph node.
+
+Pronouns must resolve to their canonical entities whenever possible.
+
+---
+
+# 5. NLP PIPELINE
+
+Implement the following exact stages.
+
+---
+
+## Stage 1 — Document ingestion
+
+Load every `.txt` file under:
+
+```text
+data/docs/
+```
+
+and create an internal document object containing:
+
+```python
+{
+    "document_id": "...",
+    "filename": "...",
+    "text": "..."
+}
+```
+
+Do not concatenate the documents into one giant text before processing.
+
+Each document should be processed independently.
+
+---
+
+# 6. STAGE 2 — SPACY PROCESSING
+
+For every document:
+
+```python
+doc = nlp(text)
+```
+
+Extract and retain:
+
+* tokens
+* sentences
+* POS tags
+* dependency relations
+* NER entities
+* noun chunks
+
+For debugging and demonstration purposes, preserve:
+
+```text
+token.text
+token.pos_
+token.dep_
+token.head.text
+token.ent_type_
+token.start_char
+token.end_char
+```
+
+The project should have a structured representation for every extracted entity mention:
+
+```python
+EntityMention(
+    text,
+    start_char,
+    end_char,
+    label,
+    sentence_id,
+    document_id
+)
+```
+
+---
+
+# 7. ENTITY RECOGNITION STRATEGY
+
+Use a hybrid approach.
+
+Primary source:
+
+```text
+spaCy NER
+```
+
+Secondary correction/enrichment:
+
+```text
+spaCy EntityRuler
+```
+
+Create deterministic patterns for the known demonstration entities.
+
+This is intentional.
+
+The purpose of the case study is to demonstrate an NLP pipeline rather than gamble on whether a generic NER model recognizes every fictional company/product name.
+
+Entity normalization must map mentions to one canonical entity.
+
+For example:
+
+```text
+"OrionEdge"
+"the platform"
+```
+
+should eventually map to:
+
+```text
+ORIONEDGE
+```
+
+Do not make separate nodes for these mentions.
+
+---
+
+# 8. STAGE 3 — COREFERENCE RESOLUTION
+
+Run FastCoref over each document.
+
+Example:
+
+```python
+coref_model.predict(texts=[text])
+```
+
+Use:
+
+```python
+preds[0].get_clusters(as_strings=False)
+```
+
+and:
+
+```python
+preds[0].get_clusters()
+```
+
+to obtain clusters.
+
+Create a mapping:
+
+```text
+mention span → canonical entity
+```
+
+Use the first strong named mention in a cluster as the preferred canonical entity.
+
+For example, conceptually:
+
+```text
+"Aether Analytics"
+        ↓
+"the company"
+```
+
+should become:
+
+```text
+Aether Analytics
+```
+
+and:
+
+```text
+"Nila Rao"
+      ↓
+    "She"
+```
+
+should become:
+
+```text
+Nila Rao
+```
+
+Coreference must happen BEFORE final relation normalization.
+
+The system should retain both:
+
+```text
+original mention
+resolved entity
+```
+
+for explainability.
+
+Example:
+
+```python
+{
+    "mention": "the bank",
+    "resolved_to": "Helios Bank",
+    "source": "fastcoref"
+}
+```
+
+---
+
+# 9. COREference FALLBACK
+
+Do not allow the entire pipeline to fail if FastCoref cannot resolve a mention.
+
+Implement a lightweight deterministic fallback layer for obvious cases.
+
+At minimum support:
+
+```text
+he
+she
+it
+they
+the company
+the bank
+the platform
+the project
+the engineer
+the extension
+the engine
+```
+
+When possible, resolve these using:
+
+1. FastCoref
+2. known entity aliases
+3. nearest compatible antecedent
+4. otherwise leave unresolved
+
+An unresolved pronoun must never become a graph node such as:
+
+```text
+"he"
+"she"
+"it"
+```
+
+---
+
+# 10. STAGE 4 — RELATION EXTRACTION
+
+This MVP must use deterministic NLP relation extraction.
+
+Do NOT use an LLM.
+
+Use:
+
+* dependency parsing
+* POS tags
+* subject/object detection
+* noun chunks
+* prepositional phrase analysis
+* known relation patterns
+
+Create a fixed canonical relation vocabulary.
+
+Use these relations:
+
+```text
+founded
+develops
+leads
+focuses_on
+works_at
+works_on
+collaborates_with
+partners_with
+deployed_at
+uses
+improves
+integrated_into
+customer_of
+```
+
+Optional:
+
+```text
+contains
+reuses
+```
+
+only where extraction is reliable.
+
+---
+
+# 11. REQUIRED RELATION RULES
+
+Implement explicit extraction patterns for the following grammatical forms.
+
+### founded
+
+Example:
+
+```text
+Aether Analytics was founded by Dr. Mira Sen.
+```
+
+Create:
+
+```text
+Dr. Mira Sen
+   --founded-->
+Aether Analytics
+```
+
+Canonical relation:
+
+```text
+founded
+```
+
+---
+
+### develops
+
+Example:
+
+```text
+The company develops OrionEdge.
+```
+
+After coreference:
+
+```text
+Aether Analytics develops OrionEdge.
+```
+
+Triple:
+
+```text
+(Aether Analytics, develops, OrionEdge)
+```
+
+---
+
+### leads
+
+Example:
+
+```text
+Mira Sen leads Project Aurora.
+```
+
+Triple:
+
+```text
+(Dr. Mira Sen, leads, Project Aurora)
+```
+
+Example:
+
+```text
+Nila Rao ... leading Project Aurora.
+```
+
+Triple:
+
+```text
+(Nila Rao, leads, Project Aurora)
+```
+
+---
+
+### focuses_on
+
+Example:
+
+```text
+The project focuses on graph-based transaction analysis.
+```
+
+Create:
+
+```text
+(Project Aurora, focuses_on, graph-based transaction analysis)
+```
+
+Since the object may not be a canonical named entity, allow literal/attribute nodes.
+
+---
+
+### works_at
+
+Example:
+
+```text
+Arun Mehta joined Aether Analytics.
+```
+
+Normalize the semantic relation to:
+
+```text
+(Arun Mehta, works_at, Aether Analytics)
+```
+
+This is acceptable because the graph is representing the current employment relationship for the case study.
+
+---
+
+### works_on
+
+Example:
+
+```text
+He works on OrionEdge.
+```
+
+After resolution:
+
+```text
+(Arun Mehta, works_on, OrionEdge)
+```
+
+---
+
+### collaborates_with
+
+Example:
+
+```text
+The engineer collaborates with Nila Rao.
+```
+
+Resolve:
+
+```text
+the engineer → Arun Mehta
+```
+
+Triple:
+
+```text
+(Arun Mehta, collaborates_with, Nila Rao)
+```
+
+Treat this relation as bidirectional for query purposes, while keeping one canonical stored direction.
+
+---
+
+### partners_with
+
+Example:
+
+```text
+Aether Analytics partnered with Quantum Forge.
+```
+
+Triple:
+
+```text
+(Aether Analytics, partners_with, Quantum Forge)
+```
+
+For query purposes this relation is symmetric.
+
+---
+
+### deployed_at
+
+Example:
+
+```text
+OrionEdge was deployed at Helios Bank.
+```
+
+Triple:
+
+```text
+(OrionEdge, deployed_at, Helios Bank)
+```
+
+---
+
+### uses
+
+Example:
+
+```text
+The bank uses the platform.
+```
+
+Resolve:
+
+```text
+the bank → Helios Bank
+the platform → OrionEdge
+```
+
+Triple:
+
+```text
+(Helios Bank, uses, OrionEdge)
+```
+
+---
+
+### improves
+
+Example:
+
+```text
+Nila Rao improved the Entity Resolution Engine.
+```
+
+Triple:
+
+```text
+(Nila Rao, improves, Entity Resolution Engine)
+```
+
+---
+
+### integrated_into
+
+Example:
+
+```text
+Aether Analytics plans to integrate Aurora into OrionEdge.
+```
+
+The semantic graph relation should be:
+
+```text
+(Project Aurora, integrated_into, OrionEdge)
+```
+
+The company remains the source/evidence context.
+
+Do not incorrectly create:
+
+```text
+(Aether Analytics, integrates, Aurora)
+```
+
+as the main representation.
+
+---
+
+### customer_of
+
+From:
+
+```text
+Helios Bank renewed its contract with Aether Analytics.
+```
+
+create:
+
+```text
+(Helios Bank, customer_of, Aether Analytics)
+```
+
+This is a semantic inference from the provided sentence and should be marked as:
+
+```text
+inferred=True
+```
+
+or have lower rule confidence than a directly stated relation.
+
+Do NOT pretend inferred relations are literally stated if they are not.
+
+---
+
+# 12. TRIPLE DATA MODEL
+
+Every extracted triple must contain provenance.
+
+Use a structure equivalent to:
+
+```python
+{
+    "subject": "Arun Mehta",
+    "subject_id": "person:arun_mehta",
+
+    "relation": "works_on",
+
+    "object": "OrionEdge",
+    "object_id": "product:orionedge",
+
+    "document_id": "doc_02_team",
+    "sentence": "He works on OrionEdge.",
+
+    "original_subject": "He",
+    "original_object": "OrionEdge",
+
+    "coref_resolved": True,
+
+    "inferred": False,
+
+    "confidence": 0.90
+}
+```
+
+The confidence value is NOT a probability.
+
+It should be described in the UI as:
+
+```text
+Extraction confidence
+```
+
+and represent deterministic rule confidence.
+
+Suggested values:
+
+```text
+1.00 = direct named-entity relation
+0.90 = relation involving successfully resolved coreference
+0.80 = deterministic semantic inference
+```
+
+These values are heuristic labels, not statistical probabilities.
+
+---
+
+# 13. GRAPH CONSTRUCTION
+
+Use:
+
+```python
+networkx.MultiDiGraph()
+```
+
+Create one node per canonical entity.
+
+Each node should contain:
+
+```python
+{
+    "label": "...",
+    "type": "...",
+    "aliases": [...],
+    "mention_count": ...,
+    "documents": [...]
+}
+```
+
+Each edge should contain:
+
+```python
+{
+    "relation": "...",
+    "confidence": ...,
+    "document_id": "...",
+    "sentence": "...",
+    "inferred": ...
+}
+```
+
+Use separate edges when multiple relations exist between the same entities.
+
+Do not collapse provenance.
+
+---
+
+# 14. GRAPH SERIALIZATION
+
+Persist the graph locally.
+
+Create:
+
+```text
+artifacts/
+    graph.json
+    triples.csv
+    entities.json
+    pipeline_report.json
+```
+
+The application should be able to rebuild the graph from documents.
+
+It should also be possible to load the already-built graph.
+
+The JSON should remain human-readable.
+
+---
+
+# 15. INTERACTIVE GRAPH UI
+
+Build a Streamlit application:
+
+```text
+app.py
+```
+
+Start with:
+
+```bash
+streamlit run app.py
+```
+
+Use PyVis for visualization.
+
+The graph should visually use bubble/circle-style nodes.
+
+Color nodes by entity type.
+
+Suggested visual scheme:
+
+```text
+PERSON        → one color
+ORGANIZATION  → another
+PRODUCT       → another
+PROJECT       → another
+COMPONENT     → another
+LITERAL       → neutral
+```
+
+Use arrows for directed relations.
+
+Display the relation label on every edge.
+
+Use interactive hover information.
+
+Hovering over a node should show:
+
+```text
+Entity
+Type
+Aliases
+Mention count
+Documents
+```
+
+Hovering over an edge should show:
+
+```text
+Relation
+Source document
+Original sentence
+Confidence
+```
+
+The graph should support:
+
+* zoom
+* pan
+* drag nodes
+* physics layout
+* node selection
+
+Use a force-directed layout so that the graph appears like an actual knowledge network.
+
+---
+
+# 16. UI LAYOUT
+
+The Streamlit UI should be divided into clear sections.
+
+Top:
+
+```text
+KNOWLEDGE GRAPH EXPLORER
+NLP + Coreference + Relation Extraction MVP
+```
+
+Then KPI cards:
+
+```text
+Documents
+Entities
+Relations
+Graph Edges
+```
+
+Main layout:
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                    Knowledge Graph                          │
+│                                                             │
+│                     interactive graph                       │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+Below it:
+
+```text
+┌──────────────────────┬──────────────────────────────────────┐
+│ Query Engine         │ Query Interpretation                  │
+│                      │                                      │
+│ [ user query ]       │ Entity: Aether Analytics             │
+│                      │ Relation: develops                   │
+│ [ Execute ]          │ Direction: outgoing                  │
+│                      │ Intent: relation_lookup              │
+└──────────────────────┴──────────────────────────────────────┘
+```
+
+Then:
+
+```text
+Query Results
+```
+
+Then:
+
+```text
+Supporting Evidence
+```
+
+Then:
+
+```text
+Extracted Triples
+```
+
+---
+
+# 17. QUERY ENGINE
+
+Do NOT implement unrestricted natural-language question answering.
+
+Implement a small deterministic query parser.
+
+The parser should convert natural-language queries into a structured representation.
+
+Example:
+
+```text
+Who founded Aether Analytics?
+```
+
+becomes:
+
+```python
+{
+    "intent": "relation_lookup",
+    "entity": "Aether Analytics",
+    "relation": "founded",
+    "direction": "incoming"
+}
+```
+
+Example:
+
+```text
+What does Aether Analytics develop?
+```
+
+becomes:
+
+```python
+{
+    "intent": "relation_lookup",
+    "entity": "Aether Analytics",
+    "relation": "develops",
+    "direction": "outgoing"
+}
+```
+
+---
+
+# 18. SUPPORTED QUERY TEMPLATES
+
+Implement at least the following.
+
+### Query 1
+
+```text
+Who founded Aether Analytics?
+```
+
+Expected:
+
+```text
+Dr. Mira Sen
+```
+
+---
+
+### Query 2
+
+```text
+What does Aether Analytics develop?
+```
+
+Expected:
+
+```text
+OrionEdge
+```
+
+---
+
+### Query 3
+
+```text
+Who works at Aether Analytics?
+```
+
+Expected:
+
+```text
+Arun Mehta
+```
+
+---
+
+### Query 4
+
+```text
+Who works on OrionEdge?
+```
+
+Expected:
+
+```text
+Arun Mehta
+```
+
+---
+
+### Query 5
+
+```text
+Who leads Project Aurora?
+```
+
+Expected:
+
+```text
+Dr. Mira Sen
+Nila Rao
+```
+
+---
+
+### Query 6
+
+```text
+Who collaborates with Arun Mehta?
+```
+
+Expected:
+
+```text
+Nila Rao
+```
+
+---
+
+### Query 7
+
+```text
+Who partnered with Aether Analytics?
+```
+
+Expected:
+
+```text
+Quantum Forge
+```
+
+---
+
+### Query 8
+
+```text
+Where is OrionEdge deployed?
+```
+
+Expected:
+
+```text
+Helios Bank
+```
+
+---
+
+### Query 9
+
+```text
+Who uses OrionEdge?
+```
+
+Expected:
+
+```text
+Helios Bank
+```
+
+---
+
+### Query 10
+
+```text
+Who improved the Entity Resolution Engine?
+```
+
+Expected:
+
+```text
+Nila Rao
+```
+
+---
+
+### Query 11
+
+```text
+What is integrated into OrionEdge?
+```
+
+Expected:
+
+```text
+Project Aurora
+```
+
+---
+
+### Query 12
+
+```text
+Who is the customer of Aether Analytics?
+```
+
+Expected:
+
+```text
+Helios Bank
+```
+
+---
+
+# 19. RELATION SYNONYM MAP
+
+The query parser should normalize natural language to canonical relations.
+
+Example:
+
+```python
+RELATION_SYNONYMS = {
+    "founded": ["founded", "founder", "started", "created"],
+    "develops": ["develops", "developed", "builds", "built", "makes"],
+    "works_at": ["works at", "works for", "joined", "employee of"],
+    "works_on": ["works on", "develops", "contributes to"],
+    "leads": ["leads", "leader of", "headed by", "heads"],
+    "collaborates_with": [
+        "collaborates with",
+        "works with",
+        "collaborate with"
+    ],
+    "partners_with": [
+        "partnered with",
+        "partners with",
+        "works with"
+    ],
+    "deployed_at": [
+        "deployed at",
+        "deployed in",
+        "runs at"
+    ],
+    "uses": [
+        "uses",
+        "uses the",
+        "utilizes"
+    ],
+    "improves": [
+        "improved",
+        "improves",
+        "enhanced"
+    ],
+    "integrated_into": [
+        "integrated into",
+        "integrated in"
+    ],
+    "customer_of": [
+        "customer of",
+        "client of"
+    ]
+}
+```
+
+The parser should first detect known entities, then identify the relation phrase.
+
+Do not use semantic embeddings for this MVP.
+
+---
+
+# 20. ENTITY MATCHING IN QUERIES
+
+A query may contain:
+
+```text
+Aether Analytics
+```
+
+or:
+
+```text
+the company
+```
+
+or:
+
+```text
+OrionEdge
+```
+
+The parser should match against canonical names and aliases.
+
+Prefer exact canonical-name matches.
+
+Then exact aliases.
+
+Then normalized lowercase matches.
+
+Do not introduce fuzzy matching unless needed.
+
+---
+
+# 21. GRAPH QUERY ENGINE
+
+Once the query is parsed, execute it directly on the NetworkX graph.
+
+For example:
+
+```python
+Who founded Aether Analytics?
+```
+
+means:
+
+```text
+find incoming `founded` edges to Aether Analytics
+```
+
+For:
+
+```text
+What does Aether Analytics develop?
+```
+
+means:
+
+```text
+find outgoing `develops` edges from Aether Analytics
+```
+
+For symmetric relations:
+
+```text
+collaborates_with
+partners_with
+```
+
+query both directions.
+
+Return:
+
+```python
+{
+    "answers": [...],
+    "matched_triples": [...],
+    "evidence": [...]
+}
+```
+
+---
+
+# 22. OPTIONAL CONNECTION QUERY
+
+Implement one additional query type that makes the demo substantially more impressive:
+
+```text
+How is Arun Mehta connected to OrionEdge?
+```
+
+The engine should search for a path of length <= 2 or 3.
+
+Example:
+
+```text
+Arun Mehta
+   |
+ works_on
+   |
+OrionEdge
+```
+
+Display:
+
+```text
+Arun Mehta
+   └── works_on ──> OrionEdge
+```
+
+Another possible query:
+
+```text
+How is Nila Rao connected to Aether Analytics?
+```
+
+Possible result:
+
+```text
+Nila Rao
+   └── leads ──> Project Aurora
+                         ↑
+                      led by
+                         |
+                    Dr. Mira Sen
+                         |
+                      founded
+                         |
+                 Aether Analytics
+```
+
+Do not create complicated multi-hop reasoning.
+
+A simple BFS path search is enough.
+
+---
+
+# 23. QUERY RESULT PRESENTATION
+
+Make the result visually pleasing.
+
+Example:
+
+```text
+QUERY
+Who works on OrionEdge?
+
+INTERPRETATION
+
+Entity
+Arun Mehta / OrionEdge
+
+Relation
+works_on
+
+Direction
+incoming
+
+Intent
+relation_lookup
+```
+
+Result:
+
+```text
+1 result found
+
+ARUN MEHTA
+works_on
+ORIONEDGE
+```
+
+Then evidence:
+
+```text
+Source: doc_02_team.txt
+
+"He works on OrionEdge."
+
+Resolved:
+"He" → Arun Mehta
+```
+
+This is important because it demonstrates the value of coreference resolution rather than merely showing a graph.
+
+---
+
+# 24. PIPELINE EXPLORER / DEBUG MODE
+
+Add a Streamlit checkbox:
+
+```text
+Show NLP Pipeline Details
+```
+
+When enabled, show sections for:
+
+### Document
+
+Original text.
+
+### Sentences
+
+Sentence segmentation.
+
+### Entities
+
+A table:
+
+```text
+Mention | Canonical Entity | Type | Source
+```
+
+### Coreference
+
+A table:
+
+```text
+Mention | Resolved Entity | Coreference Source
+```
+
+### Relations
+
+A table:
+
+```text
+Subject | Relation | Object | Confidence | Evidence
+```
+
+### Triples
+
+Display:
+
+```text
+(subject, relation, object)
+```
+
+This allows the case-study presenter to explain exactly how the graph was built.
+
+---
+
+# 25. GRAPH FILTERING
+
+The UI must provide basic graph filters.
+
+At minimum:
+
+```text
+Entity type
+```
+
+and:
+
+```text
+Relation type
+```
+
+Examples:
+
+```text
+Show only PERSON + ORGANIZATION
+```
+
+or:
+
+```text
+Show only works_at relations
+```
+
+The graph should update accordingly.
+
+Also provide:
+
+```text
+Show full graph
+```
+
+button.
+
+---
+
+# 26. NODE SEARCH
+
+Add a search field:
+
+```text
+Search entity
+```
+
+When the user enters:
+
+```text
+Nila Rao
+```
+
+the application should focus/highlight that node and preferably show its 1-hop neighborhood.
+
+Display:
+
+```text
+Nila Rao
+
+Type: PERSON
+
+Connections:
+- leads → Project Aurora
+- collaborates_with → Arun Mehta
+- improves → Entity Resolution Engine
+```
+
+---
+
+# 27. GRAPH STATISTICS
+
+Show simple metrics:
+
+```text
+Number of documents
+Number of canonical entities
+Number of extracted mentions
+Number of triples
+Number of graph nodes
+Number of graph edges
+Number of relation types
+```
+
+Do not calculate meaningless advanced graph metrics unless they are trivial.
+
+Optional:
+
+```text
+average degree
+connected components
+```
+
+---
+
+# 28. PIPELINE ARCHITECTURE
+
+Organize the project into clean modules.
+
+Required approximate structure:
+
+```text
+knowledge_graph_mvp/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+│
+├── data/
+│   └── docs/
+│       ├── doc_01_company.txt
+│       ├── doc_02_team.txt
+│       ├── doc_03_deployment.txt
+│       ├── doc_04_aurora.txt
+│       └── doc_05_customer.txt
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── models.py
+│   ├── document_loader.py
+│   ├── nlp_processor.py
+│   ├── coreference.py
+│   ├── entity_resolver.py
+│   ├── relation_extractor.py
+│   ├── triple_builder.py
+│   ├── graph_builder.py
+│   ├── query_parser.py
+│   ├── query_engine.py
+│   ├── visualization.py
+│   └── pipeline.py
+│
+├── artifacts/
+│   ├── graph.json
+│   ├── triples.csv
+│   ├── entities.json
+│   └── pipeline_report.json
+│
+└── tests/
+    ├── test_entities.py
+    ├── test_coreference.py
+    ├── test_relations.py
+    ├── test_graph.py
+    └── test_queries.py
+```
+
+Keep modules small and understandable.
+
+---
+
+# 29. DATA MODELS
+
+Use dataclasses wherever practical.
+
+At minimum create:
+
+```python
+Document
+EntityMention
+CanonicalEntity
+Relation
+Triple
+Query
+QueryResult
+```
+
+Example:
+
+```python
+@dataclass
+class Triple:
+    subject: str
+    relation: str
+    object: str
+    document_id: str
+    sentence: str
+    confidence: float
+    coref_resolved: bool
+    inferred: bool
+```
+
+Use typed structures rather than passing arbitrary dictionaries everywhere.
+
+---
+
+# 30. PIPELINE CLASS
+
+Create a central pipeline object.
+
+Example:
+
+```python
+pipeline = KnowledgeGraphPipeline()
+result = pipeline.run()
+```
+
+It should execute:
+
+```text
+load_documents
+        ↓
+spaCy_processing
+        ↓
+coreference_resolution
+        ↓
+entity_resolution
+        ↓
+relation_extraction
+        ↓
+triple_generation
+        ↓
+graph_construction
+        ↓
+artifact_serialization
+```
+
+The Streamlit application should call this pipeline rather than duplicating logic.
+
+---
+
+# 31. CACHING
+
+Do not repeatedly load the spaCy model and FastCoref model every time Streamlit reruns.
+
+Use appropriate Streamlit caching mechanisms for expensive model loading.
+
+For example, cache:
+
+```text
+spaCy model
+FastCoref model
+processed graph
+```
+
+The application should feel responsive.
+
+---
+
+# 32. REBUILD BUTTON
+
+Provide a UI button:
+
+```text
+Rebuild Knowledge Graph
+```
+
+When pressed:
+
+1. Reload all documents.
+2. Run NLP.
+3. Run coreference.
+4. Extract entities.
+5. Extract relations.
+6. Build graph.
+7. Save artifacts.
+8. Refresh UI.
+
+Show progress/status messages such as:
+
+```text
+Loading documents...
+Running spaCy...
+Resolving coreferences...
+Extracting relations...
+Building graph...
+Saving artifacts...
+Done.
+```
+
+---
+
+# 33. DEMO MODE
+
+The application should launch with a useful default state.
+
+After startup:
+
+* automatically load the provided corpus
+* automatically build/load the graph
+* display the complete graph
+* show graph statistics
+
+The query box should include a few example questions.
+
+For example:
+
+```text
+Example queries:
+
+Who founded Aether Analytics?
+What does Aether Analytics develop?
+Who works on OrionEdge?
+Who leads Project Aurora?
+Where is OrionEdge deployed?
+Who uses OrionEdge?
+```
+
+Allow clicking/selecting an example query to populate the query box if practical.
+
+---
+
+# 34. EXPECTED KNOWLEDGE GRAPH CONTENT
+
+The finished graph should contain at least these semantic triples.
+
+```text
+(Dr. Mira Sen, founded, Aether Analytics)
+
+(Aether Analytics, develops, OrionEdge)
+
+(Dr. Mira Sen, leads, Project Aurora)
+
+(Project Aurora, focuses_on, graph-based transaction analysis)
+
+(Arun Mehta, works_at, Aether Analytics)
+
+(Arun Mehta, works_on, OrionEdge)
+
+(Arun Mehta, collaborates_with, Nila Rao)
+
+(Nila Rao, leads, Project Aurora)
+
+(Aether Analytics, partners_with, Quantum Forge)
+
+(OrionEdge, deployed_at, Helios Bank)
+
+(Helios Bank, uses, OrionEdge)
+
+(Nila Rao, improves, Entity Resolution Engine)
+
+(Project Aurora, integrated_into, OrionEdge)
+
+(Helios Bank, customer_of, Aether Analytics)
+```
+
+Additional triples may be generated from reliable rules, but the above are the core expected semantic facts.
+
+---
+
+# 35. TESTING REQUIREMENTS
+
+Write automated tests.
+
+The tests must verify:
+
+### Entity recognition
+
+The expected canonical entities are discovered.
+
+### Coreference
+
+Verify at least:
+
+```text
+the company → Aether Analytics
+he → Arun Mehta
+the engineer → Arun Mehta
+she → Nila Rao
+the project → Project Aurora
+the bank → Helios Bank
+the platform → OrionEdge
+```
+
+Exact internal FastCoref behavior can vary, so tests may validate the final normalized resolution rather than raw model clusters.
+
+### Relations
+
+Verify the core expected triples.
+
+### Graph
+
+Verify all expected canonical entities exist.
+
+Verify expected edges exist.
+
+### Query engine
+
+Verify every required query returns the expected entities.
+
+Do not merely check that the application runs.
+
+---
+
+# 36. ERROR HANDLING
+
+Handle gracefully:
+
+* missing spaCy model
+* missing FastCoref
+* CUDA unavailable
+* malformed document
+* empty document
+* unresolved coreference
+* query with unknown entity
+* unsupported query
+
+Examples:
+
+```text
+No matching entity found for "XYZ".
+```
+
+or:
+
+```text
+I understood the entity but could not identify a supported relation in this query.
+```
+
+Never crash the whole application because one relation failed to extract.
+
+---
+
+# 37. NO HIDDEN MAGIC
+
+Avoid opaque shortcuts.
+
+Do not do something like:
+
+```python
+if query == "Who founded Aether Analytics?":
+    return "Dr. Mira Sen"
+```
+
+The query engine must actually:
+
+```text
+parse query
+→ identify entity
+→ identify relation
+→ determine direction
+→ query graph
+→ return result
+```
+
+Similarly, do not hard-code the graph as a set of final triples.
+
+The graph must genuinely be produced from the provided documents.
+
+The known entity dictionary and deterministic relation patterns are allowed because this is an MVP.
+
+---
+
+# 38. EXPLAINABILITY
+
+Every answer must be traceable back to:
+
+```text
+Document
+→ Sentence
+→ Mention
+→ Coreference
+→ Relation rule
+→ Triple
+→ Graph edge
+→ Query answer
+```
+
+This is one of the most important parts of the case study.
+
+The UI should make this easy to demonstrate.
+
+For example:
+
+```text
+Query:
+Who uses OrionEdge?
+
+Answer:
+Helios Bank
+
+Why?
+"The bank uses the platform..."
+
+Coreference:
+the bank → Helios Bank
+the platform → OrionEdge
+
+Extracted triple:
+(Helios Bank, uses, OrionEdge)
+
+Source:
+doc_03_deployment.txt
+```
+
+---
+
+# 39. README
+
+Create a detailed `README.md`.
+
+Include:
+
+## Project overview
+
+Explain the purpose.
+
+## Architecture
+
+Show:
+
+```text
+Documents
+   ↓
+spaCy
+   ↓
+NER + POS + Dependency Parsing
+   ↓
+FastCoref
+   ↓
+Entity Resolution
+   ↓
+Rule-Based Relation Extraction
+   ↓
+Triples
+   ↓
+NetworkX Knowledge Graph
+   ↓
+PyVis Visualization
+   ↓
+Query Parser
+   ↓
+Graph Query Engine
+```
+
+## Installation
+
+Include exact commands.
+
+The README should explain how to install:
+
+* Python dependencies
+* spaCy English model
+
+## Run
+
+```bash
+streamlit run app.py
+```
+
+## Demo queries
+
+List the required sample queries.
+
+## Design decisions
+
+Explain why:
+
+* FastCoref is used.
+* spaCy is used.
+* NetworkX is used.
+* relation extraction is rule-based.
+* no LLM is used.
+
+---
+
+# 40. requirements.txt
+
+Produce a requirements file containing the actual working dependencies.
+
+Do not blindly pin arbitrary versions.
+
+Use versions compatible with the Python environment.
+
+After implementation, verify installation using a clean environment if practical.
+
+---
+
+# 41. PERFORMANCE
+
+This is only a tiny corpus.
+
+Do not optimize prematurely.
+
+However:
+
+* cache expensive models
+* do not repeatedly invoke FastCoref for the same document
+* do not repeatedly run NLP when querying
+* serialize processed graph data
+* keep the UI responsive
+
+A rebuild should be a separate operation from a query.
+
+Query execution itself should be essentially instantaneous for this graph.
+
+---
+
+# 42. IMPORTANT ARCHITECTURAL RULE
+
+Separate:
+
+```text
+NLP pipeline
+```
+
+from:
+
+```text
+graph/query/UI
+```
+
+The pipeline must not depend on Streamlit.
+
+It should be possible to run:
+
+```bash
+python -m src.pipeline
+```
+
+and generate:
+
+```text
+artifacts/
+```
+
+without starting the UI.
+
+This makes the project easier to test and present as an actual architecture rather than a single giant Streamlit script.
+
+---
+
+# 43. VISUAL QUALITY
+
+The result should look like a polished technical demo.
+
+Use:
+
+* clear title
+* KPI cards
+* interactive bubble graph
+* type-based node styling
+* relation labels
+* sidebar controls
+* query interpretation
+* answer cards
+* evidence cards
+* triple table
+
+Avoid clutter.
+
+The default graph should fit on screen.
+
+Use sensible graph physics settings.
+
+Make the central/high-degree entities visually prominent.
+
+---
+
+# 44. CASE-STUDY NARRATIVE
+
+The UI should make it easy to explain the project in this sequence:
+
+### Step 1
+
+Documents contain unstructured information.
+
+### Step 2
+
+spaCy identifies linguistic structure:
+
+```text
+entities
+POS
+dependencies
+sentences
+```
+
+### Step 3
+
+FastCoref resolves:
+
+```text
+he
+she
+the company
+the bank
+the platform
+```
+
+to real entities.
+
+### Step 4
+
+Dependency-based rules detect relations.
+
+### Step 5
+
+Relations are converted into triples:
+
+```text
+Subject
+Predicate
+Object
+```
+
+### Step 6
+
+Triples become a graph.
+
+### Step 7
+
+A query is converted into a graph traversal.
+
+### Step 8
+
+The answer is returned with evidence.
+
+This is the intended demonstration story.
+
+---
+
+# 45. SAMPLE DEMO FLOW
+
+Make sure this exact demonstration works.
+
+Start application.
+
+Graph appears.
+
+User asks:
+
+```text
+Who works on OrionEdge?
+```
+
+UI should show:
+
+```text
+Entity: OrionEdge
+Relation: works_on
+Direction: incoming
+Intent: relation_lookup
+```
+
+Answer:
+
+```text
+Arun Mehta
+```
+
+Evidence:
+
+```text
+"He works on OrionEdge."
+```
+
+Coreference:
+
+```text
+He → Arun Mehta
+```
+
+Triple:
+
+```text
+(Arun Mehta, works_on, OrionEdge)
+```
+
+Then user asks:
+
+```text
+How is Arun Mehta connected to Aether Analytics?
+```
+
+The graph should display the relevant relation:
+
+```text
+Arun Mehta
+     |
+  works_at
+     |
+     v
+Aether Analytics
+```
+
+Then:
+
+```text
+Who uses OrionEdge?
+```
+
+Answer:
+
+```text
+Helios Bank
+```
+
+Evidence:
+
+```text
+"The bank uses the platform..."
+```
+
+Coreference:
+
+```text
+the bank → Helios Bank
+the platform → OrionEdge
+```
+
+Triple:
+
+```text
+(Helios Bank, uses, OrionEdge)
+```
+
+This demonstrates why coreference resolution is useful in the graph pipeline.
+
+---
+
+# 46. FINAL ACCEPTANCE CRITERIA
+
+Do not consider the implementation complete until all of these are true.
+
+### Functional
+
+* All five documents exist.
+* Documents are automatically loaded.
+* spaCy processes every document.
+* FastCoref runs.
+* Entity normalization works.
+* Coreference is incorporated into relation extraction.
+* Relations are extracted.
+* Triples are generated.
+* NetworkX graph is created.
+* Graph is serialized.
+* PyVis graph is visible.
+* Query parser works.
+* Query engine traverses the actual graph.
+* Evidence is returned.
+
+### Query
+
+All required queries return the correct expected entities.
+
+### UI
+
+The UI shows:
+
+* graph
+* graph statistics
+* query interface
+* query interpretation
+* answers
+* evidence
+* extracted triples
+* optional NLP debug details
+
+### Reliability
+
+The application must still run on CPU if CUDA is unavailable.
+
+### Code quality
+
+No giant monolithic file.
+
+No hard-coded answers.
+
+No external API.
+
+No unnecessary framework.
+
+No fake graph data.
+
+No undocumented magic behavior.
+
+---
+
+# 47. REQUIRED DELIVERABLES
+
+Produce all of the following:
+
+```text
+knowledge_graph_mvp/
+    app.py
+    requirements.txt
+    README.md
+
+    data/
+        docs/
+            doc_01_company.txt
+            doc_02_team.txt
+            doc_03_deployment.txt
+            doc_04_aurora.txt
+            doc_05_customer.txt
+
+    src/
+        ...
+
+    artifacts/
+        graph.json
+        triples.csv
+        entities.json
+        pipeline_report.json
+
+    tests/
+        ...
+```
+
+Also run the tests and verify the Streamlit application starts.
+
+At the end of implementation, provide a concise implementation report containing:
+
+```text
+1. Files created
+2. Dependencies installed
+3. Number of documents processed
+4. Number of canonical entities
+5. Number of triples
+6. Number of graph nodes
+7. Number of graph edges
+8. Which required queries were tested
+9. Test result
+10. How to start the application
+```
+
+Do not stop after writing the code.
+
+Actually execute the pipeline, inspect the generated graph/triples, run the tests, and fix failures.
+
+The final implementation should be a working local MVP, not merely a code skeleton.

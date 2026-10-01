@@ -1,0 +1,39 @@
+[tool.pytest.ini_options]
+# `testpaths` also stops pytest from walking scratch/ and artifacts/.
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-ra --strict-markers --strict-config"
+markers = [
+    "slow: exercises spaCy/FastCoref model inference (minutes on CPU)",
+    "integration: runs more than one pipeline stage",
+    "acceptance: maps directly to a Master prompt acceptance criterion",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
+log_cli_level = "WARNING"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "ui", "scripts", "tests"]
+extend-exclude = [".venv", "artifacts", "scratch"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "RET", "ARG"]
+ignore = [
+    "E501",    # line length handled by the formatter
+    "B008",    # Streamlit/argparse-style calls in defaults
+    "SIM108",  # ternary rewrite is not always clearer
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ARG001", "ARG002"]
+"app.py" = ["E402"]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src", "ui"]

@@ -1,0 +1,32 @@
+# Runtime dependencies for the Knowledge Graph MVP.
+#
+# Version floors only (not hard pins). The exact, proven set that this project
+# was developed and tested against is recorded in requirements-lock.txt, which is
+# generated from the working virtual environment. Regenerate it with:
+#
+#     .venv\Scripts\python.exe -m pip freeze > requirements-lock.txt
+#
+# Lower bounds were chosen to match the versions actually verified in this
+# environment (Python 3.14.3). Do not raise these floors without re-running the
+# full test suite -- see docs/07_RUNBOOK.md.
+
+# --- Core NLP ---
+spacy>=3.8.0,<4.0.0           # tokenisation, POS, dependency parse, NER, noun chunks
+fastcoref>=2.1.6,<3.0.0      # neural coreference resolution (requires en_core_web_sm)
+torch>=2.0.0                 # inference backend for FastCoref (CPU build is sufficient)
+transformers>=4.40.0         # FastCoref checkpoint loader
+
+# --- spaCy English pipeline ---
+# NOT installable from PyPI. Installed separately, see docs/07_RUNBOOK.md:
+#   .venv\Scripts\python.exe -m pip install \
+#     https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+
+# --- Graph ---
+networkx>=3.0                # in-memory MultiDiGraph + traversal (BFS paths)
+
+# --- Visualisation / UI ---
+pyvis>=0.3.2                 # vis.js network graph rendering
+streamlit>=1.57.0            # local web application
+
+# --- Tabular output ---
+pandas>=2.0                  # triple table export + UI tables

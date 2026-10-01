@@ -1,0 +1,19 @@
+# Normalise line endings for text files in the repository.
+* text=auto
+
+*.py    text diff=python
+*.md    text
+*.txt   text eol=lf
+*.csv   text eol=lf
+*.json  text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+
+# Binary assets
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary

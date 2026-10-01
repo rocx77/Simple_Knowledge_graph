@@ -1,0 +1,6 @@
+# Development-only dependencies (installed on top of requirements.txt).
+#
+#     .venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-dev.txt
+
+pytest>=8.0        # test runner
+ruff>=0.6          # lint + format
