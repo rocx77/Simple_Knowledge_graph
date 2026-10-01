@@ -2,8 +2,8 @@
   "directed": true,
   "multigraph": true,
   "graph": {
-    "node_count": 11,
-    "edge_count": 16
+    "node_count": 45,
+    "edge_count": 61
   },
   "nodes": [
     {
@@ -12,17 +12,19 @@
       "aliases": [
         "Aether Analytics"
       ],
-      "mention_count": 7,
+      "mention_count": 11,
       "documents": [
         "doc_01_company",
         "doc_02_team",
         "doc_03_deployment",
         "doc_04_aurora",
-        "doc_05_customer"
+        "doc_05_customer",
+        "doc_07_ledgerline",
+        "doc_16_bridge"
       ],
       "in_degree": 3,
-      "out_degree": 2,
-      "degree": 5,
+      "out_degree": 5,
+      "degree": 8,
       "id": "organization:aether_analytics"
     },
     {
@@ -31,18 +33,54 @@
       "aliases": [
         "OrionEdge"
       ],
-      "mention_count": 9,
+      "mention_count": 11,
       "documents": [
         "doc_01_company",
         "doc_02_team",
         "doc_03_deployment",
         "doc_04_aurora",
-        "doc_05_customer"
+        "doc_05_customer",
+        "doc_07_ledgerline",
+        "doc_16_bridge"
       ],
-      "in_degree": 4,
-      "out_degree": 1,
-      "degree": 5,
+      "in_degree": 5,
+      "out_degree": 2,
+      "degree": 7,
       "id": "product:orionedge"
+    },
+    {
+      "label": "GraphMatch",
+      "type": "PRODUCT",
+      "aliases": [
+        "GraphMatch"
+      ],
+      "mention_count": 7,
+      "documents": [
+        "doc_06_graphmatch",
+        "doc_07_ledgerline",
+        "doc_09_working_group",
+        "doc_16_bridge"
+      ],
+      "in_degree": 3,
+      "out_degree": 3,
+      "degree": 6,
+      "id": "product:graphmatch"
+    },
+    {
+      "label": "LedgerLine",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "LedgerLine"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_07_ledgerline",
+        "doc_08_auditlens"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "organization:ledgerline"
     },
     {
       "label": "Quantum Forge",
@@ -60,20 +98,270 @@
       "id": "organization:quantum_forge"
     },
     {
+      "label": "ChatGPT",
+      "type": "PRODUCT",
+      "aliases": [
+        "ChatGPT"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_10_openai",
+        "doc_16_bridge"
+      ],
+      "in_degree": 3,
+      "out_degree": 1,
+      "degree": 4,
+      "id": "product:chatgpt"
+    },
+    {
+      "label": "CERN",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "CERN"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_13_cern"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "organization:cern"
+    },
+    {
+      "label": "Large Hadron Collider",
+      "type": "PRODUCT",
+      "aliases": [
+        "Large Hadron Collider",
+        "LHC"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_13_cern"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "product:large_hadron_collider"
+    },
+    {
+      "label": "Fermilab",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Fermilab"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_13_cern"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "organization:fermilab"
+    },
+    {
+      "label": "DeepMind",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "DeepMind"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_11_deepmind"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "organization:deepmind"
+    },
+    {
+      "label": "AlphaFold",
+      "type": "PRODUCT",
+      "aliases": [
+        "AlphaFold"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_11_deepmind"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "product:alphafold"
+    },
+    {
+      "label": "Google",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Google"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_11_deepmind"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:google"
+    },
+    {
       "label": "Helios Bank",
       "type": "ORGANIZATION",
       "aliases": [
         "Helios Bank"
       ],
-      "mention_count": 4,
+      "mention_count": 8,
       "documents": [
         "doc_03_deployment",
-        "doc_05_customer"
+        "doc_05_customer",
+        "doc_06_graphmatch",
+        "doc_07_ledgerline",
+        "doc_08_auditlens",
+        "doc_16_bridge"
+      ],
+      "in_degree": 2,
+      "out_degree": 3,
+      "degree": 5,
+      "id": "organization:helios_bank"
+    },
+    {
+      "label": "Firefox",
+      "type": "PRODUCT",
+      "aliases": [
+        "Firefox"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_15_mozilla",
+        "doc_16_bridge"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "product:firefox"
+    },
+    {
+      "label": "Linux Foundation",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Linux Foundation"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_12_linux"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "organization:linux_foundation"
+    },
+    {
+      "label": "Linux",
+      "type": "PROJECT",
+      "aliases": [
+        "Linux"
+      ],
+      "mention_count": 5,
+      "documents": [
+        "doc_12_linux",
+        "doc_16_bridge"
+      ],
+      "in_degree": 4,
+      "out_degree": 1,
+      "degree": 5,
+      "id": "project:linux"
+    },
+    {
+      "label": "Microsoft",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Microsoft"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_10_openai"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:microsoft"
+    },
+    {
+      "label": "Mozilla",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Mozilla"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_12_linux",
+        "doc_15_mozilla"
       ],
       "in_degree": 1,
       "out_degree": 2,
       "degree": 3,
-      "id": "organization:helios_bank"
+      "id": "organization:mozilla"
+    },
+    {
+      "label": "Netscape",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Netscape"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_15_mozilla"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "organization:netscape"
+    },
+    {
+      "label": "OpenAI",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "OpenAI"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_10_openai"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "organization:openai"
+    },
+    {
+      "label": "Python Software Foundation",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Python Software Foundation"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_14_python"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:python_software_foundation"
+    },
+    {
+      "label": "Python",
+      "type": "PRODUCT",
+      "aliases": [
+        "Python"
+      ],
+      "mention_count": 5,
+      "documents": [
+        "doc_14_python",
+        "doc_16_bridge"
+      ],
+      "in_degree": 4,
+      "out_degree": 1,
+      "degree": 5,
+      "id": "product:python"
     },
     {
       "label": "Arun Mehta",
@@ -97,15 +385,124 @@
       "aliases": [
         "Nila Rao"
       ],
-      "mention_count": 4,
+      "mention_count": 6,
       "documents": [
         "doc_02_team",
-        "doc_04_aurora"
+        "doc_04_aurora",
+        "doc_06_graphmatch",
+        "doc_09_working_group"
+      ],
+      "in_degree": 2,
+      "out_degree": 3,
+      "degree": 5,
+      "id": "person:nila_rao"
+    },
+    {
+      "label": "Demis Hassabis",
+      "type": "PERSON",
+      "aliases": [
+        "Demis Hassabis"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_11_deepmind"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:demis_hassabis"
+    },
+    {
+      "label": "Dmitri Volkov",
+      "type": "PERSON",
+      "aliases": [
+        "Dmitri Volkov"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_08_auditlens"
+      ],
+      "in_degree": 0,
+      "out_degree": 3,
+      "degree": 3,
+      "id": "person:dmitri_volkov"
+    },
+    {
+      "label": "Priya Nair",
+      "type": "PERSON",
+      "aliases": [
+        "Priya Nair"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_06_graphmatch",
+        "doc_08_auditlens",
+        "doc_09_working_group"
       ],
       "in_degree": 1,
+      "out_degree": 3,
+      "degree": 4,
+      "id": "person:priya_nair"
+    },
+    {
+      "label": "AuditLens",
+      "type": "PRODUCT",
+      "aliases": [
+        "AuditLens"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_08_auditlens"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "product:auditlens"
+    },
+    {
+      "label": "Guido van Rossum",
+      "type": "PERSON",
+      "aliases": [
+        "Guido van Rossum"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_14_python"
+      ],
+      "in_degree": 0,
       "out_degree": 2,
-      "degree": 3,
-      "id": "person:nila_rao"
+      "degree": 2,
+      "id": "person:guido_van_rossum"
+    },
+    {
+      "label": "Linus Torvalds",
+      "type": "PERSON",
+      "aliases": [
+        "Linus Torvalds"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_12_linux"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:linus_torvalds"
+    },
+    {
+      "label": "Marc Andreessen",
+      "type": "PERSON",
+      "aliases": [
+        "Marc Andreessen"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_15_mozilla"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:marc_andreessen"
     },
     {
       "label": "Dr. Mira Sen",
@@ -143,6 +540,21 @@
       "id": "project:project_aurora"
     },
     {
+      "label": "Resolution Working Group",
+      "type": "PROJECT",
+      "aliases": [
+        "Resolution Working Group"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_09_working_group"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "project:resolution_working_group"
+    },
+    {
       "label": "Entity Resolution Engine",
       "type": "COMPONENT",
       "aliases": [
@@ -157,6 +569,98 @@
       "out_degree": 0,
       "degree": 2,
       "id": "component:entity_resolution_engine"
+    },
+    {
+      "label": "Sam Altman",
+      "type": "PERSON",
+      "aliases": [
+        "Sam Altman"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_10_openai"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:sam_altman"
+    },
+    {
+      "label": "protein structure prediction",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:protein_structure_prediction"
+    },
+    {
+      "label": "conversational AI assistants",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:conversational_ai_assistants"
+    },
+    {
+      "label": "web browsing",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:web_browsing"
+    },
+    {
+      "label": "ledger anomaly detection",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:ledger_anomaly_detection"
+    },
+    {
+      "label": "particle physics experiments",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:particle_physics_experiments"
+    },
+    {
+      "label": "general purpose programming",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:general_purpose_programming"
+    },
+    {
+      "label": "open source kernels",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:open_source_kernels"
     },
     {
       "label": "Graph Matching Module",
@@ -206,6 +710,44 @@
       "key": "triple:organization:aether_analytics--develops->product:orionedge@doc_01_company"
     },
     {
+      "relation": "improves",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_07_ledgerline",
+      "sentence_id": 2,
+      "sentence": "Aether Analytics improves GraphMatch.",
+      "inferred": false,
+      "rule_id": "R_IMPROVES",
+      "original_subject": "Aether Analytics",
+      "original_object": "GraphMatch",
+      "canonical_subject": "Aether Analytics",
+      "canonical_object": "GraphMatch",
+      "triple_id": "triple:organization:aether_analytics--improves->product:graphmatch@doc_07_ledgerline",
+      "duplicate_count": 1,
+      "source": "organization:aether_analytics",
+      "target": "product:graphmatch",
+      "key": "triple:organization:aether_analytics--improves->product:graphmatch@doc_07_ledgerline"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_07_ledgerline",
+      "sentence_id": 1,
+      "sentence": "Aether Analytics partnered with LedgerLine to supply audit tooling.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "Aether Analytics",
+      "original_object": "LedgerLine",
+      "canonical_subject": "Aether Analytics",
+      "canonical_object": "LedgerLine",
+      "triple_id": "triple:organization:aether_analytics--partners_with->organization:ledgerline@doc_07_ledgerline",
+      "duplicate_count": 1,
+      "source": "organization:aether_analytics",
+      "target": "organization:ledgerline",
+      "key": "triple:organization:aether_analytics--partners_with->organization:ledgerline@doc_07_ledgerline"
+    },
+    {
       "relation": "partners_with",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -225,6 +767,25 @@
       "key": "triple:organization:aether_analytics--partners_with->organization:quantum_forge@doc_03_deployment"
     },
     {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_16_bridge",
+      "sentence_id": 0,
+      "sentence": "Aether Analytics uses ChatGPT for customer support drafting.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "Aether Analytics",
+      "original_object": "ChatGPT",
+      "canonical_subject": "Aether Analytics",
+      "canonical_object": "ChatGPT",
+      "triple_id": "triple:organization:aether_analytics--uses->product:chatgpt@doc_16_bridge",
+      "duplicate_count": 1,
+      "source": "organization:aether_analytics",
+      "target": "product:chatgpt",
+      "key": "triple:organization:aether_analytics--uses->product:chatgpt@doc_16_bridge"
+    },
+    {
       "relation": "deployed_at",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -242,6 +803,253 @@
       "source": "product:orionedge",
       "target": "organization:helios_bank",
       "key": "triple:product:orionedge--deployed_at->organization:helios_bank@doc_03_deployment"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_16_bridge",
+      "sentence_id": 2,
+      "sentence": "OrionEdge uses Linux.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "OrionEdge",
+      "original_object": "Linux",
+      "canonical_subject": "OrionEdge",
+      "canonical_object": "Linux",
+      "triple_id": "triple:product:orionedge--uses->project:linux@doc_16_bridge",
+      "duplicate_count": 1,
+      "source": "product:orionedge",
+      "target": "project:linux",
+      "key": "triple:product:orionedge--uses->project:linux@doc_16_bridge"
+    },
+    {
+      "relation": "deployed_at",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_07_ledgerline",
+      "sentence_id": 0,
+      "sentence": "GraphMatch was deployed at Helios Bank by LedgerLine.",
+      "inferred": false,
+      "rule_id": "R_DEPLOYED_AT",
+      "original_subject": "GraphMatch",
+      "original_object": "Helios Bank",
+      "canonical_subject": "GraphMatch",
+      "canonical_object": "Helios Bank",
+      "triple_id": "triple:product:graphmatch--deployed_at->organization:helios_bank@doc_07_ledgerline",
+      "duplicate_count": 1,
+      "source": "product:graphmatch",
+      "target": "organization:helios_bank",
+      "key": "triple:product:graphmatch--deployed_at->organization:helios_bank@doc_07_ledgerline"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_06_graphmatch",
+      "sentence_id": 3,
+      "sentence": "GraphMatch focuses on ledger anomaly detection.\n",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "GraphMatch",
+      "original_object": "ledger anomaly detection",
+      "canonical_subject": "GraphMatch",
+      "canonical_object": "ledger anomaly detection",
+      "triple_id": "triple:product:graphmatch--focuses_on->literal:ledger_anomaly_detection@doc_06_graphmatch",
+      "duplicate_count": 1,
+      "source": "product:graphmatch",
+      "target": "literal:ledger_anomaly_detection",
+      "key": "triple:product:graphmatch--focuses_on->literal:ledger_anomaly_detection@doc_06_graphmatch"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_16_bridge",
+      "sentence_id": 3,
+      "sentence": "GraphMatch uses Python.\n",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "GraphMatch",
+      "original_object": "Python",
+      "canonical_subject": "GraphMatch",
+      "canonical_object": "Python",
+      "triple_id": "triple:product:graphmatch--uses->product:python@doc_16_bridge",
+      "duplicate_count": 1,
+      "source": "product:graphmatch",
+      "target": "product:python",
+      "key": "triple:product:graphmatch--uses->product:python@doc_16_bridge"
+    },
+    {
+      "relation": "integrated_into",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_07_ledgerline",
+      "sentence_id": 3,
+      "sentence": "Aether Analytics plans to integrate LedgerLine into OrionEdge.\n",
+      "inferred": false,
+      "rule_id": "R_INTEGRATED_INTO",
+      "original_subject": "LedgerLine",
+      "original_object": "OrionEdge",
+      "canonical_subject": "LedgerLine",
+      "canonical_object": "OrionEdge",
+      "triple_id": "triple:organization:ledgerline--integrated_into->product:orionedge@doc_07_ledgerline",
+      "duplicate_count": 1,
+      "source": "organization:ledgerline",
+      "target": "product:orionedge",
+      "key": "triple:organization:ledgerline--integrated_into->product:orionedge@doc_07_ledgerline"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_10_openai",
+      "sentence_id": 3,
+      "sentence": "ChatGPT focuses on conversational AI assistants.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "ChatGPT",
+      "original_object": "conversational AI assistants",
+      "canonical_subject": "ChatGPT",
+      "canonical_object": "conversational AI assistants",
+      "triple_id": "triple:product:chatgpt--focuses_on->literal:conversational_ai_assistants@doc_10_openai",
+      "duplicate_count": 1,
+      "source": "product:chatgpt",
+      "target": "literal:conversational_ai_assistants",
+      "key": "triple:product:chatgpt--focuses_on->literal:conversational_ai_assistants@doc_10_openai"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_13_cern",
+      "sentence_id": 0,
+      "sentence": "CERN develops the Large Hadron Collider.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "CERN",
+      "original_object": "Large Hadron Collider",
+      "canonical_subject": "CERN",
+      "canonical_object": "Large Hadron Collider",
+      "triple_id": "triple:organization:cern--develops->product:large_hadron_collider@doc_13_cern",
+      "duplicate_count": 1,
+      "source": "organization:cern",
+      "target": "product:large_hadron_collider",
+      "key": "triple:organization:cern--develops->product:large_hadron_collider@doc_13_cern"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_13_cern",
+      "sentence_id": 2,
+      "sentence": "CERN partnered with Fermilab to study neutrinos.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "CERN",
+      "original_object": "Fermilab",
+      "canonical_subject": "CERN",
+      "canonical_object": "Fermilab",
+      "triple_id": "triple:organization:cern--partners_with->organization:fermilab@doc_13_cern",
+      "duplicate_count": 1,
+      "source": "organization:cern",
+      "target": "organization:fermilab",
+      "key": "triple:organization:cern--partners_with->organization:fermilab@doc_13_cern"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_13_cern",
+      "sentence_id": 1,
+      "sentence": "The Large Hadron Collider focuses on particle physics experiments.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Large Hadron Collider",
+      "original_object": "particle physics experiments",
+      "canonical_subject": "Large Hadron Collider",
+      "canonical_object": "particle physics experiments",
+      "triple_id": "triple:product:large_hadron_collider--focuses_on->literal:particle_physics_experiments@doc_13_cern",
+      "duplicate_count": 1,
+      "source": "product:large_hadron_collider",
+      "target": "literal:particle_physics_experiments",
+      "key": "triple:product:large_hadron_collider--focuses_on->literal:particle_physics_experiments@doc_13_cern"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_13_cern",
+      "sentence_id": 3,
+      "sentence": "Fermilab works on the Large Hadron Collider.\n",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Fermilab",
+      "original_object": "Large Hadron Collider",
+      "canonical_subject": "Fermilab",
+      "canonical_object": "Large Hadron Collider",
+      "triple_id": "triple:organization:fermilab--works_on->product:large_hadron_collider@doc_13_cern",
+      "duplicate_count": 1,
+      "source": "organization:fermilab",
+      "target": "product:large_hadron_collider",
+      "key": "triple:organization:fermilab--works_on->product:large_hadron_collider@doc_13_cern"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_11_deepmind",
+      "sentence_id": 2,
+      "sentence": "DeepMind developed AlphaFold.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "DeepMind",
+      "original_object": "AlphaFold",
+      "canonical_subject": "DeepMind",
+      "canonical_object": "AlphaFold",
+      "triple_id": "triple:organization:deepmind--develops->product:alphafold@doc_11_deepmind",
+      "duplicate_count": 1,
+      "source": "organization:deepmind",
+      "target": "product:alphafold",
+      "key": "triple:organization:deepmind--develops->product:alphafold@doc_11_deepmind"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_11_deepmind",
+      "sentence_id": 3,
+      "sentence": "AlphaFold focuses on protein structure prediction.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "AlphaFold",
+      "original_object": "protein structure prediction",
+      "canonical_subject": "AlphaFold",
+      "canonical_object": "protein structure prediction",
+      "triple_id": "triple:product:alphafold--focuses_on->literal:protein_structure_prediction@doc_11_deepmind",
+      "duplicate_count": 1,
+      "source": "product:alphafold",
+      "target": "literal:protein_structure_prediction",
+      "key": "triple:product:alphafold--focuses_on->literal:protein_structure_prediction@doc_11_deepmind"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_11_deepmind",
+      "sentence_id": 4,
+      "sentence": "Google uses AlphaFold.\r\n",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "Google",
+      "original_object": "AlphaFold",
+      "canonical_subject": "Google",
+      "canonical_object": "AlphaFold",
+      "triple_id": "triple:organization:google--uses->product:alphafold@doc_11_deepmind",
+      "duplicate_count": 1,
+      "source": "organization:google",
+      "target": "product:alphafold",
+      "key": "triple:organization:google--uses->product:alphafold@doc_11_deepmind"
     },
     {
       "relation": "customer_of",
@@ -264,6 +1072,25 @@
     },
     {
       "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_16_bridge",
+      "sentence_id": 1,
+      "sentence": "Helios Bank uses Firefox.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "Helios Bank",
+      "original_object": "Firefox",
+      "canonical_subject": "Helios Bank",
+      "canonical_object": "Firefox",
+      "triple_id": "triple:organization:helios_bank--uses->product:firefox@doc_16_bridge",
+      "duplicate_count": 1,
+      "source": "organization:helios_bank",
+      "target": "product:firefox",
+      "key": "triple:organization:helios_bank--uses->product:firefox@doc_16_bridge"
+    },
+    {
+      "relation": "uses",
       "confidence": 0.9,
       "coref_resolved": true,
       "document_id": "doc_03_deployment",
@@ -280,6 +1107,196 @@
       "source": "organization:helios_bank",
       "target": "product:orionedge",
       "key": "triple:organization:helios_bank--uses->product:orionedge@doc_03_deployment"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_15_mozilla",
+      "sentence_id": 1,
+      "sentence": "Firefox focuses on web browsing.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Firefox",
+      "original_object": "web browsing",
+      "canonical_subject": "Firefox",
+      "canonical_object": "web browsing",
+      "triple_id": "triple:product:firefox--focuses_on->literal:web_browsing@doc_15_mozilla",
+      "duplicate_count": 1,
+      "source": "product:firefox",
+      "target": "literal:web_browsing",
+      "key": "triple:product:firefox--focuses_on->literal:web_browsing@doc_15_mozilla"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_12_linux",
+      "sentence_id": 0,
+      "sentence": "The Linux Foundation develops Linux.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Linux Foundation",
+      "original_object": "Linux",
+      "canonical_subject": "Linux Foundation",
+      "canonical_object": "Linux",
+      "triple_id": "triple:organization:linux_foundation--develops->project:linux@doc_12_linux",
+      "duplicate_count": 1,
+      "source": "organization:linux_foundation",
+      "target": "project:linux",
+      "key": "triple:organization:linux_foundation--develops->project:linux@doc_12_linux"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_12_linux",
+      "sentence_id": 3,
+      "sentence": "Linux focuses on open source kernels.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Linux",
+      "original_object": "open source kernels",
+      "canonical_subject": "Linux",
+      "canonical_object": "open source kernels",
+      "triple_id": "triple:project:linux--focuses_on->literal:open_source_kernels@doc_12_linux",
+      "duplicate_count": 1,
+      "source": "project:linux",
+      "target": "literal:open_source_kernels",
+      "key": "triple:project:linux--focuses_on->literal:open_source_kernels@doc_12_linux"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_10_openai",
+      "sentence_id": 4,
+      "sentence": "Microsoft uses ChatGPT.\n",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "Microsoft",
+      "original_object": "ChatGPT",
+      "canonical_subject": "Microsoft",
+      "canonical_object": "ChatGPT",
+      "triple_id": "triple:organization:microsoft--uses->product:chatgpt@doc_10_openai",
+      "duplicate_count": 1,
+      "source": "organization:microsoft",
+      "target": "product:chatgpt",
+      "key": "triple:organization:microsoft--uses->product:chatgpt@doc_10_openai"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_15_mozilla",
+      "sentence_id": 0,
+      "sentence": "Mozilla develops Firefox.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Mozilla",
+      "original_object": "Firefox",
+      "canonical_subject": "Mozilla",
+      "canonical_object": "Firefox",
+      "triple_id": "triple:organization:mozilla--develops->product:firefox@doc_15_mozilla",
+      "duplicate_count": 1,
+      "source": "organization:mozilla",
+      "target": "product:firefox",
+      "key": "triple:organization:mozilla--develops->product:firefox@doc_15_mozilla"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_12_linux",
+      "sentence_id": 4,
+      "sentence": "Mozilla uses Linux.\n",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "Mozilla",
+      "original_object": "Linux",
+      "canonical_subject": "Mozilla",
+      "canonical_object": "Linux",
+      "triple_id": "triple:organization:mozilla--uses->project:linux@doc_12_linux",
+      "duplicate_count": 1,
+      "source": "organization:mozilla",
+      "target": "project:linux",
+      "key": "triple:organization:mozilla--uses->project:linux@doc_12_linux"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_15_mozilla",
+      "sentence_id": 4,
+      "sentence": "Netscape partnered with Mozilla.\n",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "Netscape",
+      "original_object": "Mozilla",
+      "canonical_subject": "Netscape",
+      "canonical_object": "Mozilla",
+      "triple_id": "triple:organization:netscape--partners_with->organization:mozilla@doc_15_mozilla",
+      "duplicate_count": 1,
+      "source": "organization:netscape",
+      "target": "organization:mozilla",
+      "key": "triple:organization:netscape--partners_with->organization:mozilla@doc_15_mozilla"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_10_openai",
+      "sentence_id": 2,
+      "sentence": "OpenAI develops ChatGPT.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "OpenAI",
+      "original_object": "ChatGPT",
+      "canonical_subject": "OpenAI",
+      "canonical_object": "ChatGPT",
+      "triple_id": "triple:organization:openai--develops->product:chatgpt@doc_10_openai",
+      "duplicate_count": 1,
+      "source": "organization:openai",
+      "target": "product:chatgpt",
+      "key": "triple:organization:openai--develops->product:chatgpt@doc_10_openai"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_14_python",
+      "sentence_id": 1,
+      "sentence": "The Python Software Foundation develops Python.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Python Software Foundation",
+      "original_object": "Python",
+      "canonical_subject": "Python Software Foundation",
+      "canonical_object": "Python",
+      "triple_id": "triple:organization:python_software_foundation--develops->product:python@doc_14_python",
+      "duplicate_count": 1,
+      "source": "organization:python_software_foundation",
+      "target": "product:python",
+      "key": "triple:organization:python_software_foundation--develops->product:python@doc_14_python"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_14_python",
+      "sentence_id": 3,
+      "sentence": "Python focuses on general purpose programming.\n",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Python",
+      "original_object": "general purpose programming",
+      "canonical_subject": "Python",
+      "canonical_object": "general purpose programming",
+      "triple_id": "triple:product:python--focuses_on->literal:general_purpose_programming@doc_14_python",
+      "duplicate_count": 1,
+      "source": "product:python",
+      "target": "literal:general_purpose_programming",
+      "key": "triple:product:python--focuses_on->literal:general_purpose_programming@doc_14_python"
     },
     {
       "relation": "collaborates_with",
@@ -339,6 +1356,25 @@
       "key": "triple:person:arun_mehta--works_on->product:orionedge@doc_02_team"
     },
     {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_09_working_group",
+      "sentence_id": 0,
+      "sentence": "The Resolution Working Group was founded by Nila Rao.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Nila Rao",
+      "original_object": "Resolution Working Group",
+      "canonical_subject": "Nila Rao",
+      "canonical_object": "Resolution Working Group",
+      "triple_id": "triple:person:nila_rao--founded->project:resolution_working_group@doc_09_working_group",
+      "duplicate_count": 1,
+      "source": "person:nila_rao",
+      "target": "project:resolution_working_group",
+      "key": "triple:person:nila_rao--founded->project:resolution_working_group@doc_09_working_group"
+    },
+    {
       "relation": "improves",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -375,6 +1411,272 @@
       "source": "person:nila_rao",
       "target": "project:project_aurora",
       "key": "triple:person:nila_rao--leads->project:project_aurora@doc_02_team"
+    },
+    {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_11_deepmind",
+      "sentence_id": 0,
+      "sentence": "DeepMind was founded by Demis Hassabis.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Demis Hassabis",
+      "original_object": "DeepMind",
+      "canonical_subject": "Demis Hassabis",
+      "canonical_object": "DeepMind",
+      "triple_id": "triple:person:demis_hassabis--founded->organization:deepmind@doc_11_deepmind",
+      "duplicate_count": 1,
+      "source": "person:demis_hassabis",
+      "target": "organization:deepmind",
+      "key": "triple:person:demis_hassabis--founded->organization:deepmind@doc_11_deepmind"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_11_deepmind",
+      "sentence_id": 1,
+      "sentence": "Demis Hassabis leads DeepMind.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Demis Hassabis",
+      "original_object": "DeepMind",
+      "canonical_subject": "Demis Hassabis",
+      "canonical_object": "DeepMind",
+      "triple_id": "triple:person:demis_hassabis--leads->organization:deepmind@doc_11_deepmind",
+      "duplicate_count": 1,
+      "source": "person:demis_hassabis",
+      "target": "organization:deepmind",
+      "key": "triple:person:demis_hassabis--leads->organization:deepmind@doc_11_deepmind"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_08_auditlens",
+      "sentence_id": 2,
+      "sentence": "He collaborates with Priya Nair.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "He",
+      "original_object": "Priya Nair",
+      "canonical_subject": "Dmitri Volkov",
+      "canonical_object": "Priya Nair",
+      "triple_id": "triple:person:dmitri_volkov--collaborates_with->person:priya_nair@doc_08_auditlens",
+      "duplicate_count": 1,
+      "source": "person:dmitri_volkov",
+      "target": "person:priya_nair",
+      "key": "triple:person:dmitri_volkov--collaborates_with->person:priya_nair@doc_08_auditlens"
+    },
+    {
+      "relation": "works_at",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_08_auditlens",
+      "sentence_id": 0,
+      "sentence": "Dmitri Volkov joined LedgerLine as a platform engineer.",
+      "inferred": false,
+      "rule_id": "R_JOINED_EMPLOYMENT",
+      "original_subject": "Dmitri Volkov",
+      "original_object": "LedgerLine",
+      "canonical_subject": "Dmitri Volkov",
+      "canonical_object": "LedgerLine",
+      "triple_id": "triple:person:dmitri_volkov--works_at->organization:ledgerline@doc_08_auditlens",
+      "duplicate_count": 1,
+      "source": "person:dmitri_volkov",
+      "target": "organization:ledgerline",
+      "key": "triple:person:dmitri_volkov--works_at->organization:ledgerline@doc_08_auditlens"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_08_auditlens",
+      "sentence_id": 1,
+      "sentence": "He works on AuditLens.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "He",
+      "original_object": "AuditLens",
+      "canonical_subject": "Dmitri Volkov",
+      "canonical_object": "AuditLens",
+      "triple_id": "triple:person:dmitri_volkov--works_on->product:auditlens@doc_08_auditlens",
+      "duplicate_count": 1,
+      "source": "person:dmitri_volkov",
+      "target": "product:auditlens",
+      "key": "triple:person:dmitri_volkov--works_on->product:auditlens@doc_08_auditlens"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_06_graphmatch",
+      "sentence_id": 2,
+      "sentence": "She collaborates with Nila Rao.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "She",
+      "original_object": "Nila Rao",
+      "canonical_subject": "Priya Nair",
+      "canonical_object": "Nila Rao",
+      "triple_id": "triple:person:priya_nair--collaborates_with->person:nila_rao@doc_06_graphmatch",
+      "duplicate_count": 1,
+      "source": "person:priya_nair",
+      "target": "person:nila_rao",
+      "key": "triple:person:priya_nair--collaborates_with->person:nila_rao@doc_06_graphmatch"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_06_graphmatch",
+      "sentence_id": 1,
+      "sentence": "Priya Nair leads GraphMatch.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Priya Nair",
+      "original_object": "GraphMatch",
+      "canonical_subject": "Priya Nair",
+      "canonical_object": "GraphMatch",
+      "triple_id": "triple:person:priya_nair--leads->product:graphmatch@doc_06_graphmatch",
+      "duplicate_count": 1,
+      "source": "person:priya_nair",
+      "target": "product:graphmatch",
+      "key": "triple:person:priya_nair--leads->product:graphmatch@doc_06_graphmatch"
+    },
+    {
+      "relation": "leads",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_09_working_group",
+      "sentence_id": 2,
+      "sentence": "Priya Nair leads the working group.\n",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Priya Nair",
+      "original_object": "the working group",
+      "canonical_subject": "Priya Nair",
+      "canonical_object": "Resolution Working Group",
+      "triple_id": "triple:person:priya_nair--leads->project:resolution_working_group@doc_09_working_group",
+      "duplicate_count": 1,
+      "source": "person:priya_nair",
+      "target": "project:resolution_working_group",
+      "key": "triple:person:priya_nair--leads->project:resolution_working_group@doc_09_working_group"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_14_python",
+      "sentence_id": 0,
+      "sentence": "Guido van Rossum developed Python.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Guido van Rossum",
+      "original_object": "Python",
+      "canonical_subject": "Guido van Rossum",
+      "canonical_object": "Python",
+      "triple_id": "triple:person:guido_van_rossum--develops->product:python@doc_14_python",
+      "duplicate_count": 1,
+      "source": "person:guido_van_rossum",
+      "target": "product:python",
+      "key": "triple:person:guido_van_rossum--develops->product:python@doc_14_python"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_14_python",
+      "sentence_id": 2,
+      "sentence": "Guido van Rossum works on Python.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Guido van Rossum",
+      "original_object": "Python",
+      "canonical_subject": "Guido van Rossum",
+      "canonical_object": "Python",
+      "triple_id": "triple:person:guido_van_rossum--works_on->product:python@doc_14_python",
+      "duplicate_count": 1,
+      "source": "person:guido_van_rossum",
+      "target": "product:python",
+      "key": "triple:person:guido_van_rossum--works_on->product:python@doc_14_python"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_12_linux",
+      "sentence_id": 1,
+      "sentence": "Linus Torvalds leads the Linux Foundation.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Linus Torvalds",
+      "original_object": "Linux Foundation",
+      "canonical_subject": "Linus Torvalds",
+      "canonical_object": "Linux Foundation",
+      "triple_id": "triple:person:linus_torvalds--leads->organization:linux_foundation@doc_12_linux",
+      "duplicate_count": 1,
+      "source": "person:linus_torvalds",
+      "target": "organization:linux_foundation",
+      "key": "triple:person:linus_torvalds--leads->organization:linux_foundation@doc_12_linux"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_12_linux",
+      "sentence_id": 2,
+      "sentence": "Linus Torvalds works on Linux.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Linus Torvalds",
+      "original_object": "Linux",
+      "canonical_subject": "Linus Torvalds",
+      "canonical_object": "Linux",
+      "triple_id": "triple:person:linus_torvalds--works_on->project:linux@doc_12_linux",
+      "duplicate_count": 1,
+      "source": "person:linus_torvalds",
+      "target": "project:linux",
+      "key": "triple:person:linus_torvalds--works_on->project:linux@doc_12_linux"
+    },
+    {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_15_mozilla",
+      "sentence_id": 2,
+      "sentence": "Netscape was founded by Marc Andreessen.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Marc Andreessen",
+      "original_object": "Netscape",
+      "canonical_subject": "Marc Andreessen",
+      "canonical_object": "Netscape",
+      "triple_id": "triple:person:marc_andreessen--founded->organization:netscape@doc_15_mozilla",
+      "duplicate_count": 1,
+      "source": "person:marc_andreessen",
+      "target": "organization:netscape",
+      "key": "triple:person:marc_andreessen--founded->organization:netscape@doc_15_mozilla"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_15_mozilla",
+      "sentence_id": 3,
+      "sentence": "Marc Andreessen leads Netscape.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Marc Andreessen",
+      "original_object": "Netscape",
+      "canonical_subject": "Marc Andreessen",
+      "canonical_object": "Netscape",
+      "triple_id": "triple:person:marc_andreessen--leads->organization:netscape@doc_15_mozilla",
+      "duplicate_count": 1,
+      "source": "person:marc_andreessen",
+      "target": "organization:netscape",
+      "key": "triple:person:marc_andreessen--leads->organization:netscape@doc_15_mozilla"
     },
     {
       "relation": "founded",
@@ -489,6 +1791,63 @@
       "source": "project:project_aurora",
       "target": "product:orionedge",
       "key": "triple:project:project_aurora--integrated_into->product:orionedge@doc_04_aurora"
+    },
+    {
+      "relation": "uses",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_09_working_group",
+      "sentence_id": 1,
+      "sentence": "The working group uses GraphMatch.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "The working group",
+      "original_object": "GraphMatch",
+      "canonical_subject": "Resolution Working Group",
+      "canonical_object": "GraphMatch",
+      "triple_id": "triple:project:resolution_working_group--uses->product:graphmatch@doc_09_working_group",
+      "duplicate_count": 1,
+      "source": "project:resolution_working_group",
+      "target": "product:graphmatch",
+      "key": "triple:project:resolution_working_group--uses->product:graphmatch@doc_09_working_group"
+    },
+    {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_10_openai",
+      "sentence_id": 0,
+      "sentence": "OpenAI was founded by Sam Altman.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Sam Altman",
+      "original_object": "OpenAI",
+      "canonical_subject": "Sam Altman",
+      "canonical_object": "OpenAI",
+      "triple_id": "triple:person:sam_altman--founded->organization:openai@doc_10_openai",
+      "duplicate_count": 1,
+      "source": "person:sam_altman",
+      "target": "organization:openai",
+      "key": "triple:person:sam_altman--founded->organization:openai@doc_10_openai"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_10_openai",
+      "sentence_id": 1,
+      "sentence": "Sam Altman leads OpenAI.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Sam Altman",
+      "original_object": "OpenAI",
+      "canonical_subject": "Sam Altman",
+      "canonical_object": "OpenAI",
+      "triple_id": "triple:person:sam_altman--leads->organization:openai@doc_10_openai",
+      "duplicate_count": 1,
+      "source": "person:sam_altman",
+      "target": "organization:openai",
+      "key": "triple:person:sam_altman--leads->organization:openai@doc_10_openai"
     }
   ]
 }

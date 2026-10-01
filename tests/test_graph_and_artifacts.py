@@ -33,8 +33,8 @@ def graph(result):
 
 class TestGraphConstruction:
     def test_node_and_edge_counts(self, graph):
-        assert graph.number_of_nodes() == 11
-        assert graph.number_of_edges() == 16
+        assert graph.number_of_nodes() == 45
+        assert graph.number_of_edges() == 61
 
     def test_is_a_multidigraph(self, graph):
         """Two relations between one pair must stay separate edges."""
@@ -84,9 +84,10 @@ class TestGraphConstruction:
     def test_literal_node_comes_only_from_a_relation(self, graph):
         """The one literal is reachable only through `focuses_on`."""
         literals = [n for n, d in graph.nodes(data=True) if d["type"] == "LITERAL"]
-        assert len(literals) == 1
-        assert graph.in_degree(literals[0]) == 1
-        assert {d["relation"] for *_, d in graph.in_edges(literals[0], data=True)} == {
+        assert len(literals) == 8
+        for literal in literals:
+            assert graph.in_degree(literal) == 1
+            assert {d["relation"] for *_, d in graph.in_edges(literal, data=True)} == {
             "focuses_on"
         }
 
@@ -106,8 +107,8 @@ class TestArtifacts:
     def test_graph_json_round_trips(self, result):
         reloaded = load_graph(result.artifacts.graph)
         assert isinstance(reloaded, nx.MultiDiGraph)
-        assert reloaded.number_of_nodes() == 11
-        assert reloaded.number_of_edges() == 16
+        assert reloaded.number_of_nodes() == 45
+        assert reloaded.number_of_edges() == 61
         assert {d["label"] for _, d in reloaded.nodes(data=True)} == {
             d["label"] for _, d in result.graph.nodes(data=True)
         }
@@ -124,8 +125,8 @@ class TestArtifacts:
         assert payload["directed"] is True
         assert payload["multigraph"] is True
         assert "nodes" in payload and "links" in payload, "vis.js reads 'links'"
-        assert payload["graph"]["node_count"] == 11
-        assert payload["graph"]["edge_count"] == 16
+        assert payload["graph"]["node_count"] == 45
+        assert payload["graph"]["edge_count"] == 61
 
     def test_json_files_are_indent_two(self, result):
         for path in (result.artifacts.graph, result.artifacts.entities, result.artifacts.report):
@@ -135,7 +136,7 @@ class TestArtifacts:
     def test_triples_csv(self, result, tmp_path):
         with result.artifacts.triples.open(encoding="utf-8") as handle:
             rows = list(csv.DictReader(handle))
-        assert len(rows) == 16
+        assert len(rows) == 61
         assert tuple(rows[0]) == TRIPLE_CSV_COLUMNS
         assert {r["confidence"] for r in rows} <= {"1.00", "0.90", "0.80"}
         assert {r["confidence"] for r in rows} == {"1.00", "0.90", "0.80"}
@@ -159,19 +160,19 @@ class TestArtifacts:
     def test_entities_json_records_unresolved_mentions(self, result):
         payload = json.loads(result.artifacts.entities.read_text(encoding="utf-8"))
         unresolved = payload["unresolved_mentions"]
-        assert len(unresolved) == 1
+        assert len(unresolved) == 2
         assert unresolved[0]["text"] == "GPU"
 
     def test_pipeline_report_contents(self, result):
         payload = json.loads(result.artifacts.report.read_text(encoding="utf-8"))
-        assert payload["counts"]["nodes"] == 11
-        assert payload["counts"]["triples"] == 16
-        assert payload["counts"]["documents"] == 5
-        assert payload["counts"]["mentions"] == 42
-        assert payload["counts"]["unresolved_mentions"] == 1
-        assert payload["relation_histogram"]["leads"] == 2
+        assert payload["counts"]["nodes"] == 45
+        assert payload["counts"]["triples"] == 61
+        assert payload["counts"]["documents"] == 16
+        assert payload["counts"]["mentions"] == 133
+        assert payload["counts"]["unresolved_mentions"] == 2
+        assert payload["relation_histogram"]["leads"] == 8
         assert payload["relation_histogram"]["contains"] == 2
-        assert sum(payload["relation_histogram"].values()) == 16
+        assert sum(payload["relation_histogram"].values()) == 61
         assert len(payload["coref_conflicts"]) == 1
         assert payload["versions"]["spacy"]
         assert payload["device"] in {"cpu", "cuda"}
@@ -181,7 +182,7 @@ class TestArtifacts:
     def test_report_explains_the_skipped_candidate(self, result):
         payload = json.loads(result.artifacts.report.read_text(encoding="utf-8"))
         skipped = payload["skipped_candidates"]
-        assert len(skipped) == 1
+        assert len(skipped) == 3
         assert skipped[0]["rule_id"] == "R_LEADS"
         assert "entity resolution work" in skipped[0]["reason"]
 
@@ -192,12 +193,12 @@ class TestBuilderInIsolation:
         triples = extraction_result.triples
         graph_a = GraphBuilder(registry).build(triples)
         graph_b = GraphBuilder(registry).build(triples)
-        assert graph_a.number_of_nodes() == graph_b.number_of_nodes() == 11
-        assert graph_a.number_of_edges() == graph_b.number_of_edges() == 16
+        assert graph_a.number_of_nodes() == graph_b.number_of_nodes() == 45
+        assert graph_a.number_of_edges() == graph_b.number_of_edges() == 61
 
     def test_write_triples_csv_returns_row_count(self, extraction_result, tmp_path):
         path = tmp_path / "t.csv"
-        assert write_triples_csv(path, extraction_result.triples) == 16
+        assert write_triples_csv(path, extraction_result.triples) == 61
 
 
 class TestNoStreamlitInSrc:

@@ -1,0 +1,1 @@
+Guido van Rossum developed Python. The Python Software Foundation develops Python. Guido van Rossum works on Python. Python focuses on general purpose programming.

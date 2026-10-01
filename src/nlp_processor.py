@@ -43,7 +43,7 @@ logger = get_logger(__name__)
 #: This is the mechanism that lets "The company develops OrionEdge" become
 #: "(Aether Analytics, develops, OrionEdge)".
 COMMON_NOUN_HEADS = frozenset(
-    {"company", "bank", "platform", "project", "engineer", "extension", "engine", "team"}
+    {"company", "bank", "platform", "project", "engineer", "extension", "engine", "team", "group"}
 )
 
 #: Pronoun lemmas treated as anaphoric candidates for coreference.

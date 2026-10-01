@@ -41,6 +41,12 @@ EXAMPLE_QUERIES = [
     "Where is OrionEdge deployed?",
     "Who uses OrionEdge?",
     "How is Nila Rao connected to Aether Analytics?",
+    "Who leads GraphMatch?",
+    "Where is GraphMatch deployed?",
+    "Who founded the Resolution Working Group?",
+    "Who works on AuditLens?",
+    "What is integrated into OrionEdge?",
+    "How is Dmitri Volkov connected to Helios Bank?",
 ]
 
 
@@ -264,11 +270,12 @@ if not artifacts_present(config.artifacts_dir):
 
 kb = load_knowledge_base(config.artifacts_dir, st.session_state.get("rebuild_token", 0))
 
-st.markdown("<div class='kg-title'>Knowledge graph explorer</div>", unsafe_allow_html=True)
-st.markdown(
-    "<div class='kg-subtitle'>NLP + coreference + relation extraction MVP</div>",
-    unsafe_allow_html=True,
-)
+# ``st.title`` renders a real ``<h1>``. The previous version hand-rolled this as a styled
+# ``<div>``, which looked identical but left the document with no top-level heading: the
+# accessibility tree offered only "Controls" (an ``h2``) as a landmark for a screen-reader
+# user, and ``h1`` -> ``h2`` became "Controls" -> "Controls" instead of a page title.
+st.title("Knowledge graph explorer")
+st.html("<div class='kg-subtitle'>NLP + coreference + relation extraction MVP</div>")
 
 kpi_row(kb)
 
@@ -401,4 +408,4 @@ if show_details:
 
 with st.sidebar:
     st.divider()
-    st.caption("Graph derived from five documents. No LLM, no external API, no network.")
+    st.caption("Graph derived from sixteen documents. No LLM, no external API, no network.")

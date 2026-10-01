@@ -5,7 +5,11 @@
 # values cannot express per-entity-type colours.
 [theme]
 base = "light"
-primaryColor = "#4C8DF6"
+# Streamlit's default primary (#FF4B4B / #4C8DF6 depending on version) paints the
+# multiselect chips and the primary button. Chosen so WHITE text on that fill clears
+# WCAG AA 4.5:1 -- measured 5.47:1 on #FFFFFF and 5.04:1 on the secondary background.
+# The previous #4C8DF6 gave only 3.26:1, which fails AA for the 14px chip labels.
+primaryColor = "#2A66C9"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#F4F6F8"
 textColor = "#1B2733"

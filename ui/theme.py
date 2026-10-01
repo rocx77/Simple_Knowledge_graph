@@ -23,8 +23,7 @@ INFERRED_RELATION_COLOR = "#A0A0A0"
 
 PAGE_CSS = """
 <style>
-  .kg-title        { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; }
-  .kg-subtitle     { font-size: 0.95rem; opacity: 0.7; margin-top: -0.6rem; }
+  .kg-subtitle    { font-size: 0.95rem; opacity: 0.7; margin-top: -0.6rem; }
 
   .kg-kpi          { border-radius: 12px; padding: 0.9rem 1.1rem; height: 100%;
                      border: 1px solid rgba(128,128,128,0.25); }

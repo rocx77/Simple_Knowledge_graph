@@ -42,10 +42,12 @@
       "description": "Data scientist leading Project Aurora; author of the Entity Resolution Engine work.",
       "canonical": true,
       "has_edges": true,
-      "mention_count": 4,
+      "mention_count": 6,
       "documents": [
         "doc_02_team",
-        "doc_04_aurora"
+        "doc_04_aurora",
+        "doc_06_graphmatch",
+        "doc_09_working_group"
       ]
     },
     {
@@ -58,13 +60,15 @@
       "description": "Real-time fraud detection company founded in 2021.",
       "canonical": true,
       "has_edges": true,
-      "mention_count": 7,
+      "mention_count": 11,
       "documents": [
         "doc_01_company",
         "doc_02_team",
         "doc_03_deployment",
         "doc_04_aurora",
-        "doc_05_customer"
+        "doc_05_customer",
+        "doc_07_ledgerline",
+        "doc_16_bridge"
       ]
     },
     {
@@ -92,10 +96,14 @@
       "description": "Customer of Aether Analytics; hosts the OrionEdge deployment.",
       "canonical": true,
       "has_edges": true,
-      "mention_count": 4,
+      "mention_count": 8,
       "documents": [
         "doc_03_deployment",
-        "doc_05_customer"
+        "doc_05_customer",
+        "doc_06_graphmatch",
+        "doc_07_ledgerline",
+        "doc_08_auditlens",
+        "doc_16_bridge"
       ]
     },
     {
@@ -108,13 +116,15 @@
       "description": "Real-time fraud detection platform developed by Aether Analytics.",
       "canonical": true,
       "has_edges": true,
-      "mention_count": 9,
+      "mention_count": 11,
       "documents": [
         "doc_01_company",
         "doc_02_team",
         "doc_03_deployment",
         "doc_04_aurora",
-        "doc_05_customer"
+        "doc_05_customer",
+        "doc_07_ledgerline",
+        "doc_16_bridge"
       ]
     },
     {
@@ -134,6 +144,102 @@
         "doc_02_team",
         "doc_04_aurora",
         "doc_05_customer"
+      ]
+    },
+    {
+      "id": "organization:ledgerline",
+      "label": "LedgerLine",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "LedgerLine"
+      ],
+      "description": "Audit tooling vendor that supplies GraphMatch.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_07_ledgerline",
+        "doc_08_auditlens"
+      ]
+    },
+    {
+      "id": "product:graphmatch",
+      "label": "GraphMatch",
+      "type": "PRODUCT",
+      "aliases": [
+        "GraphMatch"
+      ],
+      "description": "Fraud-detection tool deployed at Helios Bank.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 7,
+      "documents": [
+        "doc_06_graphmatch",
+        "doc_07_ledgerline",
+        "doc_09_working_group",
+        "doc_16_bridge"
+      ]
+    },
+    {
+      "id": "product:auditlens",
+      "label": "AuditLens",
+      "type": "PRODUCT",
+      "aliases": [
+        "AuditLens"
+      ],
+      "description": "Audit tool Dmitri Volkov works on at LedgerLine.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_08_auditlens"
+      ]
+    },
+    {
+      "id": "project:resolution_working_group",
+      "label": "Resolution Working Group",
+      "type": "PROJECT",
+      "aliases": [
+        "Resolution Working Group"
+      ],
+      "description": "Working group founded by Nila Rao using GraphMatch and AuditLens.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_09_working_group"
+      ]
+    },
+    {
+      "id": "person:priya_nair",
+      "label": "Priya Nair",
+      "type": "PERSON",
+      "aliases": [
+        "Priya Nair"
+      ],
+      "description": "Leads GraphMatch and collaborates with Nila Rao.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_06_graphmatch",
+        "doc_08_auditlens",
+        "doc_09_working_group"
+      ]
+    },
+    {
+      "id": "person:dmitri_volkov",
+      "label": "Dmitri Volkov",
+      "type": "PERSON",
+      "aliases": [
+        "Dmitri Volkov"
+      ],
+      "description": "Platform engineer at LedgerLine working on AuditLens.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_08_auditlens"
       ]
     },
     {
@@ -168,11 +274,409 @@
       ]
     },
     {
+      "id": "organization:openai",
+      "label": "OpenAI",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "OpenAI"
+      ],
+      "description": "AI research lab behind ChatGPT.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_10_openai"
+      ]
+    },
+    {
+      "id": "person:sam_altman",
+      "label": "Sam Altman",
+      "type": "PERSON",
+      "aliases": [
+        "Sam Altman"
+      ],
+      "description": "Co-founder and chief executive of OpenAI.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_10_openai"
+      ]
+    },
+    {
+      "id": "product:chatgpt",
+      "label": "ChatGPT",
+      "type": "PRODUCT",
+      "aliases": [
+        "ChatGPT"
+      ],
+      "description": "Conversational AI assistant product.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_10_openai",
+        "doc_16_bridge"
+      ]
+    },
+    {
+      "id": "organization:microsoft",
+      "label": "Microsoft",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Microsoft"
+      ],
+      "description": "OpenAI backer and ChatGPT user.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_10_openai"
+      ]
+    },
+    {
+      "id": "organization:deepmind",
+      "label": "DeepMind",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "DeepMind"
+      ],
+      "description": "AI research lab behind AlphaFold.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_11_deepmind"
+      ]
+    },
+    {
+      "id": "person:demis_hassabis",
+      "label": "Demis Hassabis",
+      "type": "PERSON",
+      "aliases": [
+        "Demis Hassabis"
+      ],
+      "description": "Co-founder and chief executive of DeepMind.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_11_deepmind"
+      ]
+    },
+    {
+      "id": "product:alphafold",
+      "label": "AlphaFold",
+      "type": "PRODUCT",
+      "aliases": [
+        "AlphaFold"
+      ],
+      "description": "Protein structure prediction system.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_11_deepmind"
+      ]
+    },
+    {
+      "id": "organization:google",
+      "label": "Google",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Google"
+      ],
+      "description": "Parent company of DeepMind and AlphaFold user.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_11_deepmind"
+      ]
+    },
+    {
+      "id": "organization:linux_foundation",
+      "label": "Linux Foundation",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Linux Foundation"
+      ],
+      "description": "Non-profit supporting the Linux kernel project.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_12_linux"
+      ]
+    },
+    {
+      "id": "project:linux",
+      "label": "Linux",
+      "type": "PROJECT",
+      "aliases": [
+        "Linux"
+      ],
+      "description": "Open source operating system kernel.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 5,
+      "documents": [
+        "doc_12_linux",
+        "doc_16_bridge"
+      ]
+    },
+    {
+      "id": "person:linus_torvalds",
+      "label": "Linus Torvalds",
+      "type": "PERSON",
+      "aliases": [
+        "Linus Torvalds"
+      ],
+      "description": "Creator of Linux, lead at the Linux Foundation.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_12_linux"
+      ]
+    },
+    {
+      "id": "organization:cern",
+      "label": "CERN",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "CERN"
+      ],
+      "description": "European particle physics laboratory.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_13_cern"
+      ]
+    },
+    {
+      "id": "product:large_hadron_collider",
+      "label": "Large Hadron Collider",
+      "type": "PRODUCT",
+      "aliases": [
+        "Large Hadron Collider",
+        "LHC"
+      ],
+      "description": "Particle accelerator operated by CERN.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_13_cern"
+      ]
+    },
+    {
+      "id": "organization:fermilab",
+      "label": "Fermilab",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Fermilab"
+      ],
+      "description": "US particle physics laboratory partnered with CERN.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_13_cern"
+      ]
+    },
+    {
+      "id": "person:guido_van_rossum",
+      "label": "Guido van Rossum",
+      "type": "PERSON",
+      "aliases": [
+        "Guido van Rossum"
+      ],
+      "description": "Creator of the Python programming language.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_14_python"
+      ]
+    },
+    {
+      "id": "product:python",
+      "label": "Python",
+      "type": "PRODUCT",
+      "aliases": [
+        "Python"
+      ],
+      "description": "General purpose programming language.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 5,
+      "documents": [
+        "doc_14_python",
+        "doc_16_bridge"
+      ]
+    },
+    {
+      "id": "organization:python_software_foundation",
+      "label": "Python Software Foundation",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Python Software Foundation"
+      ],
+      "description": "Non-profit behind the Python language.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_14_python"
+      ]
+    },
+    {
+      "id": "organization:mozilla",
+      "label": "Mozilla",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Mozilla"
+      ],
+      "description": "Open source organisation behind Firefox.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_12_linux",
+        "doc_15_mozilla"
+      ]
+    },
+    {
+      "id": "product:firefox",
+      "label": "Firefox",
+      "type": "PRODUCT",
+      "aliases": [
+        "Firefox"
+      ],
+      "description": "Web browser developed by Mozilla.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_15_mozilla",
+        "doc_16_bridge"
+      ]
+    },
+    {
+      "id": "organization:netscape",
+      "label": "Netscape",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Netscape"
+      ],
+      "description": "Early web software company.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_15_mozilla"
+      ]
+    },
+    {
+      "id": "person:marc_andreessen",
+      "label": "Marc Andreessen",
+      "type": "PERSON",
+      "aliases": [
+        "Marc Andreessen"
+      ],
+      "description": "Co-founder of Netscape.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_15_mozilla"
+      ]
+    },
+    {
       "id": "literal:graph_based_transaction_analysis",
       "label": "graph-based transaction analysis",
       "type": "LITERAL",
       "aliases": [],
       "description": "Focus area of Project Aurora.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:ledger_anomaly_detection",
+      "label": "ledger anomaly detection",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of GraphMatch.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:conversational_ai_assistants",
+      "label": "conversational AI assistants",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of ChatGPT.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:protein_structure_prediction",
+      "label": "protein structure prediction",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of AlphaFold.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:open_source_kernels",
+      "label": "open source kernels",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Linux.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:particle_physics_experiments",
+      "label": "particle physics experiments",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the Large Hadron Collider.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:general_purpose_programming",
+      "label": "general purpose programming",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Python.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:web_browsing",
+      "label": "web browsing",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Firefox.",
       "canonical": false,
       "has_edges": true,
       "mention_count": 0,
@@ -183,11 +687,32 @@
     "aether analytics": [
       "organization:aether_analytics"
     ],
+    "alphafold": [
+      "product:alphafold"
+    ],
     "arun mehta": [
       "person:arun_mehta"
     ],
+    "auditlens": [
+      "product:auditlens"
+    ],
     "aurora": [
       "project:project_aurora"
+    ],
+    "cern": [
+      "organization:cern"
+    ],
+    "chatgpt": [
+      "product:chatgpt"
+    ],
+    "deepmind": [
+      "organization:deepmind"
+    ],
+    "demis hassabis": [
+      "person:demis_hassabis"
+    ],
+    "dmitri volkov": [
+      "person:dmitri_volkov"
     ],
     "dr. mira sen": [
       "person:mira_sen"
@@ -195,26 +720,89 @@
     "entity resolution engine": [
       "component:entity_resolution_engine"
     ],
+    "fermilab": [
+      "organization:fermilab"
+    ],
+    "firefox": [
+      "product:firefox"
+    ],
+    "google": [
+      "organization:google"
+    ],
     "graph matching module": [
       "component:graph_matching_module"
+    ],
+    "graphmatch": [
+      "product:graphmatch"
+    ],
+    "guido van rossum": [
+      "person:guido_van_rossum"
     ],
     "helios bank": [
       "organization:helios_bank"
     ],
+    "large hadron collider": [
+      "product:large_hadron_collider"
+    ],
+    "ledgerline": [
+      "organization:ledgerline"
+    ],
+    "lhc": [
+      "product:large_hadron_collider"
+    ],
+    "linus torvalds": [
+      "person:linus_torvalds"
+    ],
+    "linux": [
+      "project:linux"
+    ],
+    "linux foundation": [
+      "organization:linux_foundation"
+    ],
+    "marc andreessen": [
+      "person:marc_andreessen"
+    ],
+    "microsoft": [
+      "organization:microsoft"
+    ],
     "mira sen": [
       "person:mira_sen"
+    ],
+    "mozilla": [
+      "organization:mozilla"
+    ],
+    "netscape": [
+      "organization:netscape"
     ],
     "nila rao": [
       "person:nila_rao"
     ],
+    "openai": [
+      "organization:openai"
+    ],
     "orionedge": [
       "product:orionedge"
+    ],
+    "priya nair": [
+      "person:priya_nair"
     ],
     "project aurora": [
       "project:project_aurora"
     ],
+    "python": [
+      "product:python"
+    ],
+    "python software foundation": [
+      "organization:python_software_foundation"
+    ],
     "quantum forge": [
       "organization:quantum_forge"
+    ],
+    "resolution working group": [
+      "project:resolution_working_group"
+    ],
+    "sam altman": [
+      "person:sam_altman"
     ],
     "the entity resolution engine": [
       "component:entity_resolution_engine"
@@ -345,6 +933,158 @@
         "resolved_to": "organization:aether_analytics",
         "resolved_label": "Aether Analytics",
         "conflict": true
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 1,
+        "text": "Aether Analytics",
+        "start_char": 54,
+        "end_char": 70,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 2,
+        "text": "Aether Analytics",
+        "start_char": 122,
+        "end_char": 138,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 3,
+        "text": "Aether Analytics",
+        "start_char": 160,
+        "end_char": 176,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 0,
+        "text": "Aether Analytics",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      }
+    ],
+    "organization:cern": [
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 0,
+        "text": "CERN",
+        "start_char": 0,
+        "end_char": 4,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:cern",
+        "resolved_label": "CERN",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 2,
+        "text": "CERN",
+        "start_char": 108,
+        "end_char": 112,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:cern",
+        "resolved_label": "CERN",
+        "conflict": false
+      }
+    ],
+    "organization:deepmind": [
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 0,
+        "text": "DeepMind",
+        "start_char": 0,
+        "end_char": 8,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:deepmind",
+        "resolved_label": "DeepMind",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 1,
+        "text": "DeepMind",
+        "start_char": 61,
+        "end_char": 69,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:deepmind",
+        "resolved_label": "DeepMind",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 2,
+        "text": "DeepMind",
+        "start_char": 71,
+        "end_char": 79,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:deepmind",
+        "resolved_label": "DeepMind",
+        "conflict": false
+      }
+    ],
+    "organization:fermilab": [
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 2,
+        "text": "Fermilab",
+        "start_char": 128,
+        "end_char": 136,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:fermilab",
+        "resolved_label": "Fermilab",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 3,
+        "text": "Fermilab",
+        "start_char": 157,
+        "end_char": 165,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:fermilab",
+        "resolved_label": "Fermilab",
+        "conflict": false
+      }
+    ],
+    "organization:google": [
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 4,
+        "text": "Google",
+        "start_char": 152,
+        "end_char": 158,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:google",
+        "resolved_label": "Google",
+        "conflict": false
       }
     ],
     "organization:helios_bank": [
@@ -394,6 +1134,272 @@
         "mention_source": "pronoun",
         "resolved_to": "organization:helios_bank",
         "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 0,
+        "text": "Helios Bank",
+        "start_char": 0,
+        "end_char": 11,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 0,
+        "text": "Helios Bank",
+        "start_char": 27,
+        "end_char": 38,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 3,
+        "text": "Helios Bank",
+        "start_char": 167,
+        "end_char": 178,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 1,
+        "text": "Helios Bank",
+        "start_char": 61,
+        "end_char": 72,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      }
+    ],
+    "organization:ledgerline": [
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 0,
+        "text": "LedgerLine",
+        "start_char": 42,
+        "end_char": 52,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:ledgerline",
+        "resolved_label": "LedgerLine",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 1,
+        "text": "LedgerLine",
+        "start_char": 86,
+        "end_char": 96,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:ledgerline",
+        "resolved_label": "LedgerLine",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 3,
+        "text": "LedgerLine",
+        "start_char": 196,
+        "end_char": 206,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:ledgerline",
+        "resolved_label": "LedgerLine",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 0,
+        "text": "LedgerLine",
+        "start_char": 21,
+        "end_char": 31,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:ledgerline",
+        "resolved_label": "LedgerLine",
+        "conflict": false
+      }
+    ],
+    "organization:linux_foundation": [
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 0,
+        "text": "Linux Foundation",
+        "start_char": 4,
+        "end_char": 20,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:linux_foundation",
+        "resolved_label": "Linux Foundation",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 1,
+        "text": "Linux Foundation",
+        "start_char": 62,
+        "end_char": 78,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:linux_foundation",
+        "resolved_label": "Linux Foundation",
+        "conflict": false
+      }
+    ],
+    "organization:microsoft": [
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 4,
+        "text": "Microsoft",
+        "start_char": 133,
+        "end_char": 142,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:microsoft",
+        "resolved_label": "Microsoft",
+        "conflict": false
+      }
+    ],
+    "organization:mozilla": [
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 4,
+        "text": "Mozilla",
+        "start_char": 149,
+        "end_char": 156,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:mozilla",
+        "resolved_label": "Mozilla",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 0,
+        "text": "Mozilla",
+        "start_char": 0,
+        "end_char": 7,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:mozilla",
+        "resolved_label": "Mozilla",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 4,
+        "text": "Mozilla",
+        "start_char": 156,
+        "end_char": 163,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:mozilla",
+        "resolved_label": "Mozilla",
+        "conflict": false
+      }
+    ],
+    "organization:netscape": [
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 2,
+        "text": "Netscape",
+        "start_char": 59,
+        "end_char": 67,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:netscape",
+        "resolved_label": "Netscape",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 3,
+        "text": "Netscape",
+        "start_char": 122,
+        "end_char": 130,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:netscape",
+        "resolved_label": "Netscape",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 4,
+        "text": "Netscape",
+        "start_char": 132,
+        "end_char": 140,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:netscape",
+        "resolved_label": "Netscape",
+        "conflict": false
+      }
+    ],
+    "organization:openai": [
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 0,
+        "text": "OpenAI",
+        "start_char": 0,
+        "end_char": 6,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:openai",
+        "resolved_label": "OpenAI",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 1,
+        "text": "OpenAI",
+        "start_char": 51,
+        "end_char": 57,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:openai",
+        "resolved_label": "OpenAI",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 2,
+        "text": "OpenAI",
+        "start_char": 59,
+        "end_char": 65,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:openai",
+        "resolved_label": "OpenAI",
+        "conflict": false
+      }
+    ],
+    "organization:python_software_foundation": [
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 1,
+        "text": "Python Software Foundation",
+        "start_char": 39,
+        "end_char": 65,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:python_software_foundation",
+        "resolved_label": "Python Software Foundation",
         "conflict": false
       }
     ],
@@ -458,6 +1464,160 @@
         "mention_source": "entity_ruler",
         "resolved_to": "person:arun_mehta",
         "resolved_label": "Arun Mehta",
+        "conflict": false
+      }
+    ],
+    "person:demis_hassabis": [
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 0,
+        "text": "Demis Hassabis",
+        "start_char": 24,
+        "end_char": 38,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:demis_hassabis",
+        "resolved_label": "Demis Hassabis",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 1,
+        "text": "Demis Hassabis",
+        "start_char": 40,
+        "end_char": 54,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:demis_hassabis",
+        "resolved_label": "Demis Hassabis",
+        "conflict": false
+      }
+    ],
+    "person:dmitri_volkov": [
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 0,
+        "text": "Dmitri Volkov",
+        "start_char": 0,
+        "end_char": 13,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:dmitri_volkov",
+        "resolved_label": "Dmitri Volkov",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 1,
+        "text": "He",
+        "start_char": 56,
+        "end_char": 58,
+        "source": "fastcoref",
+        "mention_source": "pronoun",
+        "resolved_to": "person:dmitri_volkov",
+        "resolved_label": "Dmitri Volkov",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 2,
+        "text": "He",
+        "start_char": 79,
+        "end_char": 81,
+        "source": "fastcoref",
+        "mention_source": "pronoun",
+        "resolved_to": "person:dmitri_volkov",
+        "resolved_label": "Dmitri Volkov",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 3,
+        "text": "Dmitri Volkov",
+        "start_char": 112,
+        "end_char": 125,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:dmitri_volkov",
+        "resolved_label": "Dmitri Volkov",
+        "conflict": false
+      }
+    ],
+    "person:guido_van_rossum": [
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 0,
+        "text": "Guido van Rossum",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:guido_van_rossum",
+        "resolved_label": "Guido van Rossum",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 2,
+        "text": "Guido van Rossum",
+        "start_char": 83,
+        "end_char": 99,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:guido_van_rossum",
+        "resolved_label": "Guido van Rossum",
+        "conflict": false
+      }
+    ],
+    "person:linus_torvalds": [
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 1,
+        "text": "Linus Torvalds",
+        "start_char": 37,
+        "end_char": 51,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:linus_torvalds",
+        "resolved_label": "Linus Torvalds",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 2,
+        "text": "Linus Torvalds",
+        "start_char": 80,
+        "end_char": 94,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:linus_torvalds",
+        "resolved_label": "Linus Torvalds",
+        "conflict": false
+      }
+    ],
+    "person:marc_andreessen": [
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 2,
+        "text": "Marc Andreessen",
+        "start_char": 83,
+        "end_char": 98,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:marc_andreessen",
+        "resolved_label": "Marc Andreessen",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 3,
+        "text": "Marc Andreessen",
+        "start_char": 100,
+        "end_char": 115,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:marc_andreessen",
+        "resolved_label": "Marc Andreessen",
         "conflict": false
       }
     ],
@@ -534,6 +1694,382 @@
         "mention_source": "pronoun",
         "resolved_to": "person:nila_rao",
         "resolved_label": "Nila Rao",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 2,
+        "text": "Nila Rao",
+        "start_char": 120,
+        "end_char": 128,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:nila_rao",
+        "resolved_label": "Nila Rao",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_09_working_group",
+        "sentence_index": 0,
+        "text": "Nila Rao",
+        "start_char": 44,
+        "end_char": 52,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:nila_rao",
+        "resolved_label": "Nila Rao",
+        "conflict": false
+      }
+    ],
+    "person:priya_nair": [
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 1,
+        "text": "Priya Nair",
+        "start_char": 69,
+        "end_char": 79,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:priya_nair",
+        "resolved_label": "Priya Nair",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 2,
+        "text": "She",
+        "start_char": 98,
+        "end_char": 101,
+        "source": "fastcoref",
+        "mention_source": "pronoun",
+        "resolved_to": "person:priya_nair",
+        "resolved_label": "Priya Nair",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 2,
+        "text": "Priya Nair",
+        "start_char": 100,
+        "end_char": 110,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:priya_nair",
+        "resolved_label": "Priya Nair",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_09_working_group",
+        "sentence_index": 2,
+        "text": "Priya Nair",
+        "start_char": 89,
+        "end_char": 99,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:priya_nair",
+        "resolved_label": "Priya Nair",
+        "conflict": false
+      }
+    ],
+    "person:sam_altman": [
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 0,
+        "text": "Sam Altman",
+        "start_char": 22,
+        "end_char": 32,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:sam_altman",
+        "resolved_label": "Sam Altman",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 1,
+        "text": "Sam Altman",
+        "start_char": 34,
+        "end_char": 44,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:sam_altman",
+        "resolved_label": "Sam Altman",
+        "conflict": false
+      }
+    ],
+    "product:alphafold": [
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 2,
+        "text": "AlphaFold",
+        "start_char": 90,
+        "end_char": 99,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:alphafold",
+        "resolved_label": "AlphaFold",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 3,
+        "text": "AlphaFold",
+        "start_char": 101,
+        "end_char": 110,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:alphafold",
+        "resolved_label": "AlphaFold",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_11_deepmind",
+        "sentence_index": 4,
+        "text": "AlphaFold",
+        "start_char": 164,
+        "end_char": 173,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:alphafold",
+        "resolved_label": "AlphaFold",
+        "conflict": false
+      }
+    ],
+    "product:auditlens": [
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 1,
+        "text": "AuditLens",
+        "start_char": 68,
+        "end_char": 77,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:auditlens",
+        "resolved_label": "AuditLens",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_08_auditlens",
+        "sentence_index": 3,
+        "text": "AuditLens",
+        "start_char": 154,
+        "end_char": 163,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:auditlens",
+        "resolved_label": "AuditLens",
+        "conflict": false
+      }
+    ],
+    "product:chatgpt": [
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 2,
+        "text": "ChatGPT",
+        "start_char": 75,
+        "end_char": 82,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:chatgpt",
+        "resolved_label": "ChatGPT",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 3,
+        "text": "ChatGPT",
+        "start_char": 84,
+        "end_char": 91,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:chatgpt",
+        "resolved_label": "ChatGPT",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_10_openai",
+        "sentence_index": 4,
+        "text": "ChatGPT",
+        "start_char": 148,
+        "end_char": 155,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:chatgpt",
+        "resolved_label": "ChatGPT",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 0,
+        "text": "ChatGPT",
+        "start_char": 22,
+        "end_char": 29,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:chatgpt",
+        "resolved_label": "ChatGPT",
+        "conflict": false
+      }
+    ],
+    "product:firefox": [
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 0,
+        "text": "Firefox",
+        "start_char": 17,
+        "end_char": 24,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:firefox",
+        "resolved_label": "Firefox",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_15_mozilla",
+        "sentence_index": 1,
+        "text": "Firefox",
+        "start_char": 26,
+        "end_char": 33,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:firefox",
+        "resolved_label": "Firefox",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 1,
+        "text": "Firefox",
+        "start_char": 78,
+        "end_char": 85,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:firefox",
+        "resolved_label": "Firefox",
+        "conflict": false
+      }
+    ],
+    "product:graphmatch": [
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 0,
+        "text": "GraphMatch",
+        "start_char": 57,
+        "end_char": 67,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 1,
+        "text": "GraphMatch",
+        "start_char": 86,
+        "end_char": 96,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_06_graphmatch",
+        "sentence_index": 3,
+        "text": "GraphMatch",
+        "start_char": 130,
+        "end_char": 140,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 0,
+        "text": "GraphMatch",
+        "start_char": 0,
+        "end_char": 10,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 2,
+        "text": "GraphMatch",
+        "start_char": 148,
+        "end_char": 158,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_09_working_group",
+        "sentence_index": 1,
+        "text": "GraphMatch",
+        "start_char": 77,
+        "end_char": 87,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 3,
+        "text": "GraphMatch",
+        "start_char": 109,
+        "end_char": 119,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:graphmatch",
+        "resolved_label": "GraphMatch",
+        "conflict": false
+      }
+    ],
+    "product:large_hadron_collider": [
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 0,
+        "text": "Large Hadron Collider",
+        "start_char": 18,
+        "end_char": 39,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:large_hadron_collider",
+        "resolved_label": "Large Hadron Collider",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 1,
+        "text": "Large Hadron Collider",
+        "start_char": 45,
+        "end_char": 66,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:large_hadron_collider",
+        "resolved_label": "Large Hadron Collider",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_13_cern",
+        "sentence_index": 3,
+        "text": "Large Hadron Collider",
+        "start_char": 179,
+        "end_char": 200,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:large_hadron_collider",
+        "resolved_label": "Large Hadron Collider",
         "conflict": false
       }
     ],
@@ -645,6 +2181,154 @@
         "resolved_to": "product:orionedge",
         "resolved_label": "OrionEdge",
         "conflict": false
+      },
+      {
+        "document_id": "doc_07_ledgerline",
+        "sentence_index": 3,
+        "text": "OrionEdge",
+        "start_char": 212,
+        "end_char": 221,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 2,
+        "text": "OrionEdge",
+        "start_char": 87,
+        "end_char": 96,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      }
+    ],
+    "product:python": [
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 0,
+        "text": "Python",
+        "start_char": 27,
+        "end_char": 33,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:python",
+        "resolved_label": "Python",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 1,
+        "text": "Python",
+        "start_char": 75,
+        "end_char": 81,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:python",
+        "resolved_label": "Python",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 2,
+        "text": "Python",
+        "start_char": 109,
+        "end_char": 115,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:python",
+        "resolved_label": "Python",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_14_python",
+        "sentence_index": 3,
+        "text": "Python",
+        "start_char": 117,
+        "end_char": 123,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:python",
+        "resolved_label": "Python",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 3,
+        "text": "Python",
+        "start_char": 125,
+        "end_char": 131,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:python",
+        "resolved_label": "Python",
+        "conflict": false
+      }
+    ],
+    "project:linux": [
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 0,
+        "text": "Linux",
+        "start_char": 30,
+        "end_char": 35,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:linux",
+        "resolved_label": "Linux",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 2,
+        "text": "Linux",
+        "start_char": 104,
+        "end_char": 109,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:linux",
+        "resolved_label": "Linux",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 3,
+        "text": "Linux",
+        "start_char": 111,
+        "end_char": 116,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:linux",
+        "resolved_label": "Linux",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_12_linux",
+        "sentence_index": 4,
+        "text": "Linux",
+        "start_char": 162,
+        "end_char": 167,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:linux",
+        "resolved_label": "Linux",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_16_bridge",
+        "sentence_index": 2,
+        "text": "Linux",
+        "start_char": 102,
+        "end_char": 107,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:linux",
+        "resolved_label": "Linux",
+        "conflict": false
       }
     ],
     "project:project_aurora": [
@@ -732,6 +2416,44 @@
         "resolved_label": "Project Aurora",
         "conflict": false
       }
+    ],
+    "project:resolution_working_group": [
+      {
+        "document_id": "doc_09_working_group",
+        "sentence_index": 0,
+        "text": "Resolution Working Group",
+        "start_char": 4,
+        "end_char": 28,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:resolution_working_group",
+        "resolved_label": "Resolution Working Group",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_09_working_group",
+        "sentence_index": 1,
+        "text": "The working group",
+        "start_char": 54,
+        "end_char": 71,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "project:resolution_working_group",
+        "resolved_label": "Resolution Working Group",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_09_working_group",
+        "sentence_index": 2,
+        "text": "the working group",
+        "start_char": 106,
+        "end_char": 123,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "project:resolution_working_group",
+        "resolved_label": "Resolution Working Group",
+        "conflict": false
+      }
     ]
   },
   "unresolved_mentions": [
@@ -741,6 +2463,18 @@
       "text": "GPU",
       "start_char": 57,
       "end_char": 60,
+      "source": "unresolved",
+      "mention_source": "spacy_ner",
+      "resolved_to": null,
+      "resolved_label": null,
+      "conflict": false
+    },
+    {
+      "document_id": "doc_10_openai",
+      "sentence_index": 3,
+      "text": "AI",
+      "start_char": 118,
+      "end_char": 120,
       "source": "unresolved",
       "mention_source": "spacy_ner",
       "resolved_to": null,

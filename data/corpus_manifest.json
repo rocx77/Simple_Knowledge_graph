@@ -28,5 +28,71 @@
     "bytes": 227,
     "characters": 227,
     "sentences_estimate": 2
+  },
+  "doc_06_graphmatch.txt": {
+    "sha256": "1b5e599545528e0b65af56daa9db0f6224e1edec083801f262f86ba048d45130",
+    "bytes": 178,
+    "characters": 178,
+    "sentences_estimate": 3
+  },
+  "doc_07_ledgerline.txt": {
+    "sha256": "66fa3bc59f6055fb530c191172bb83aabbc8f42c9d2c8cbd306d9cd88233e26c",
+    "bytes": 223,
+    "characters": 223,
+    "sentences_estimate": 3
+  },
+  "doc_08_auditlens.txt": {
+    "sha256": "3c779922481f486502cf931ed6967fa9ccc94eb6b15a85691f7e53c3368b6a23",
+    "bytes": 180,
+    "characters": 180,
+    "sentences_estimate": 3
+  },
+  "doc_09_working_group.txt": {
+    "sha256": "619dd8e2f68b90a8db05fea9f15ca9dc5322399282b41dd1ba9bf7abacfa9ecb",
+    "bytes": 125,
+    "characters": 125,
+    "sentences_estimate": 2
+  },
+  "doc_10_openai.txt": {
+    "sha256": "ddebb72c8a5a0e81a52be379a76d6ed5bead762baca996a7241db7321bed2a1a",
+    "bytes": 157,
+    "characters": 157,
+    "sentences_estimate": 4
+  },
+  "doc_11_deepmind.txt": {
+    "sha256": "ddbb3bd29e076fe3f81dc5f9d3d148d1b4cf24c031fe3df476cb5aef0723af56",
+    "bytes": 176,
+    "characters": 176,
+    "sentences_estimate": 4
+  },
+  "doc_12_linux.txt": {
+    "sha256": "aaa436c5cb1a9fa04c4f61eb9c85243604b7a3b03419badde4b85ef6d0053293",
+    "bytes": 169,
+    "characters": 169,
+    "sentences_estimate": 4
+  },
+  "doc_13_cern.txt": {
+    "sha256": "6a8de5df29cc901030f51947c6e439e823080dba118e3b1bef7bd5328afba6cd",
+    "bytes": 202,
+    "characters": 202,
+    "sentences_estimate": 3
+  },
+  "doc_14_python.txt": {
+    "sha256": "1098a3fa0935ab8be0774aa6e016566ad2ba407c6890b4150e5ea760dc8568ad",
+    "bytes": 164,
+    "characters": 164,
+    "sentences_estimate": 3
+  },
+  "doc_15_mozilla.txt": {
+    "sha256": "b46acb2d1f910e0159a9cc9a9545804cbd07592a30a24c5bbe996775581712e9",
+    "bytes": 165,
+    "characters": 165,
+    "sentences_estimate": 4
+  },
+  "doc_16_bridge.txt": {
+    "sha256": "cecbff1919310ef588315a6f149f53b2641bfad40ee8df4f74dbb1b3a2e5ab36",
+    "bytes": 133,
+    "characters": 133,
+    "sentences_estimate": 3
   }
 }

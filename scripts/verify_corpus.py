@@ -1,6 +1,6 @@
 """Corpus integrity checker.
 
-The five demonstration documents are fixed by the master specification. If their
+The demonstration documents are fixed by the master specification. If their
 text ever drifts, every downstream expectation (triples, queries, tests) becomes
 untrustworthy, so this script makes that drift loud and immediate.
 
@@ -29,6 +29,17 @@ EXPECTED_FILES = [
     "doc_03_deployment.txt",
     "doc_04_aurora.txt",
     "doc_05_customer.txt",
+    "doc_06_graphmatch.txt",
+    "doc_07_ledgerline.txt",
+    "doc_08_auditlens.txt",
+    "doc_09_working_group.txt",
+    "doc_10_openai.txt",
+    "doc_11_deepmind.txt",
+    "doc_12_linux.txt",
+    "doc_13_cern.txt",
+    "doc_14_python.txt",
+    "doc_15_mozilla.txt",
+    "doc_16_bridge.txt",
 ]
 
 

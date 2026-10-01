@@ -15,7 +15,8 @@
 version: 1
 description: >-
   Canonical entities for the Aether Analytics / OrionEdge / Project Aurora
-  demonstration corpus (specification section 4).
+  demonstration corpus (specification section 4, extended with the GraphMatch /
+  LedgerLine documents for the larger demo corpus).
 
 entities:
   # ---------------------------------------------------------------- PERSON
@@ -82,6 +83,52 @@ entities:
     anaphors: ["the project"]
     description: Graph-based transaction analysis project.
 
+  # ------------------------------------------------------------- ORGANIZATION
+  - id: organization:ledgerline
+    label: LedgerLine
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the vendor"]
+    description: Audit tooling vendor that supplies GraphMatch.
+
+  # --------------------------------------------------------------- PRODUCT
+  - id: product:graphmatch
+    label: GraphMatch
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the tool"]
+    description: Fraud-detection tool deployed at Helios Bank.
+
+  - id: product:auditlens
+    label: AuditLens
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Audit tool Dmitri Volkov works on at LedgerLine.
+
+  # --------------------------------------------------------------- PROJECT
+  - id: project:resolution_working_group
+    label: Resolution Working Group
+    type: PROJECT
+    aliases: []
+    anaphors: ["the working group", "the group"]
+    description: Working group founded by Nila Rao using GraphMatch and AuditLens.
+
+  # ---------------------------------------------------------------- PERSON
+  - id: person:priya_nair
+    label: Priya Nair
+    type: PERSON
+    aliases: []
+    anaphors: [she, her, hers, "the GraphMatch lead"]
+    description: Leads GraphMatch and collaborates with Nila Rao.
+
+  - id: person:dmitri_volkov
+    label: Dmitri Volkov
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the platform engineer"]
+    description: Platform engineer at LedgerLine working on AuditLens.
+
   # ------------------------------------------------------------- COMPONENT
   - id: component:entity_resolution_engine
     label: Entity Resolution Engine
@@ -97,9 +144,186 @@ entities:
     anaphors: ["the module"]
     description: Graph matching module belonging to Project Aurora.
 
+  # ------------------------------------------------------------- REAL-WORLD
+  # News- and reference-inspired demonstration documents (doc_10..doc_16).
+  - id: organization:openai
+    label: OpenAI
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the AI lab"]
+    description: AI research lab behind ChatGPT.
+
+  - id: person:sam_altman
+    label: Sam Altman
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the OpenAI chief executive"]
+    description: Co-founder and chief executive of OpenAI.
+
+  - id: product:chatgpt
+    label: ChatGPT
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the chatbot"]
+    description: Conversational AI assistant product.
+
+  - id: organization:microsoft
+    label: Microsoft
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: OpenAI backer and ChatGPT user.
+
+  - id: organization:deepmind
+    label: DeepMind
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the lab"]
+    description: AI research lab behind AlphaFold.
+
+  - id: person:demis_hassabis
+    label: Demis Hassabis
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the DeepMind chief executive"]
+    description: Co-founder and chief executive of DeepMind.
+
+  - id: product:alphafold
+    label: AlphaFold
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the protein predictor"]
+    description: Protein structure prediction system.
+
+  - id: organization:google
+    label: Google
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Parent company of DeepMind and AlphaFold user.
+
+  - id: organization:linux_foundation
+    label: Linux Foundation
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the foundation"]
+    description: Non-profit supporting the Linux kernel project.
+
+  - id: project:linux
+    label: Linux
+    type: PROJECT
+    aliases: []
+    anaphors: ["the kernel"]
+    description: Open source operating system kernel.
+
+  - id: person:linus_torvalds
+    label: Linus Torvalds
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the Linux creator"]
+    description: Creator of Linux, lead at the Linux Foundation.
+
+  - id: organization:cern
+    label: CERN
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the collider laboratory"]
+    description: European particle physics laboratory.
+
+  - id: product:large_hadron_collider
+    label: Large Hadron Collider
+    type: PRODUCT
+    aliases: [LHC]
+    anaphors: ["the collider"]
+    description: Particle accelerator operated by CERN.
+
+  - id: organization:fermilab
+    label: Fermilab
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: US particle physics laboratory partnered with CERN.
+
+  - id: person:guido_van_rossum
+    label: Guido van Rossum
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the Python creator"]
+    description: Creator of the Python programming language.
+
+  - id: product:python
+    label: Python
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the language"]
+    description: General purpose programming language.
+
+  - id: organization:python_software_foundation
+    label: Python Software Foundation
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the PSF"]
+    description: Non-profit behind the Python language.
+
+  - id: organization:mozilla
+    label: Mozilla
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the browser company"]
+    description: Open source organisation behind Firefox.
+
+  - id: product:firefox
+    label: Firefox
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the browser"]
+    description: Web browser developed by Mozilla.
+
+  - id: organization:netscape
+    label: Netscape
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Early web software company.
+
+  - id: person:marc_andreessen
+    label: Marc Andreessen
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the Netscape founder"]
+    description: Co-founder of Netscape.
+
 # Literal objects that the specification requires as graph nodes but which are
 # noun phrases rather than named entities (section 11, focuses_on).
 literals:
   - id: literal:graph_based_transaction_analysis
     label: graph-based transaction analysis
     description: Focus area of Project Aurora.
+
+  - id: literal:ledger_anomaly_detection
+    label: ledger anomaly detection
+    description: Focus area of GraphMatch.
+
+  - id: literal:conversational_ai_assistants
+    label: conversational AI assistants
+    description: Focus area of ChatGPT.
+
+  - id: literal:protein_structure_prediction
+    label: protein structure prediction
+    description: Focus area of AlphaFold.
+
+  - id: literal:open_source_kernels
+    label: open source kernels
+    description: Focus area of Linux.
+
+  - id: literal:particle_physics_experiments
+    label: particle physics experiments
+    description: Focus area of the Large Hadron Collider.
+
+  - id: literal:general_purpose_programming
+    label: general purpose programming
+    description: Focus area of Python.
+
+  - id: literal:web_browsing
+    label: web browsing
+    description: Focus area of Firefox.

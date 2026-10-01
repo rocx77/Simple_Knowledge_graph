@@ -30,11 +30,11 @@ SPECIFIED: dict[str, list[str]] = {
     "Who works on OrionEdge?": ["Arun Mehta"],
     "Who leads Project Aurora?": ["Dr. Mira Sen", "Nila Rao"],
     "Who collaborates with Arun Mehta?": ["Nila Rao"],
-    "Who partnered with Aether Analytics?": ["Quantum Forge"],
+    "Who partnered with Aether Analytics?": ["Quantum Forge", "LedgerLine"],
     "Where is OrionEdge deployed?": ["Helios Bank"],
     "Who uses OrionEdge?": ["Helios Bank"],
     "Who improved the Entity Resolution Engine?": ["Nila Rao"],
-    "What is integrated into OrionEdge?": ["Project Aurora"],
+    "What is integrated into OrionEdge?": ["Project Aurora", "LedgerLine"],
     "Who is the customer of Aether Analytics?": ["Helios Bank"],
 }
 

@@ -11,23 +11,68 @@ import pytest
 
 pytestmark = [pytest.mark.slow, pytest.mark.integration, pytest.mark.acceptance]
 
-#: (subject, relation, object) -- the 14 required triples.
+#: (subject, relation, object) -- the 59 required triples.
 REQUIRED_TRIPLES = frozenset(
     {
-        ("Dr. Mira Sen", "founded", "Aether Analytics"),
         ("Aether Analytics", "develops", "OrionEdge"),
-        ("Dr. Mira Sen", "leads", "Project Aurora"),
-        ("Project Aurora", "focuses_on", "graph-based transaction analysis"),
+        ("Aether Analytics", "improves", "GraphMatch"),
+        ("Aether Analytics", "partners_with", "LedgerLine"),
+        ("Aether Analytics", "partners_with", "Quantum Forge"),
+        ("Aether Analytics", "uses", "ChatGPT"),
+        ("AlphaFold", "focuses_on", "protein structure prediction"),
+        ("Arun Mehta", "collaborates_with", "Nila Rao"),
         ("Arun Mehta", "works_at", "Aether Analytics"),
         ("Arun Mehta", "works_on", "OrionEdge"),
-        ("Arun Mehta", "collaborates_with", "Nila Rao"),
-        ("Nila Rao", "leads", "Project Aurora"),
-        ("Aether Analytics", "partners_with", "Quantum Forge"),
-        ("OrionEdge", "deployed_at", "Helios Bank"),
-        ("Helios Bank", "uses", "OrionEdge"),
-        ("Nila Rao", "improves", "Entity Resolution Engine"),
-        ("Project Aurora", "integrated_into", "OrionEdge"),
+        ("CERN", "develops", "Large Hadron Collider"),
+        ("CERN", "partners_with", "Fermilab"),
+        ("ChatGPT", "focuses_on", "conversational AI assistants"),
+        ("DeepMind", "develops", "AlphaFold"),
+        ("Demis Hassabis", "founded", "DeepMind"),
+        ("Demis Hassabis", "leads", "DeepMind"),
+        ("Dmitri Volkov", "collaborates_with", "Priya Nair"),
+        ("Dmitri Volkov", "works_at", "LedgerLine"),
+        ("Dmitri Volkov", "works_on", "AuditLens"),
+        ("Dr. Mira Sen", "founded", "Aether Analytics"),
+        ("Dr. Mira Sen", "leads", "Project Aurora"),
+        ("Fermilab", "works_on", "Large Hadron Collider"),
+        ("Firefox", "focuses_on", "web browsing"),
+        ("Google", "uses", "AlphaFold"),
+        ("GraphMatch", "deployed_at", "Helios Bank"),
+        ("GraphMatch", "focuses_on", "ledger anomaly detection"),
+        ("GraphMatch", "uses", "Python"),
+        ("Guido van Rossum", "develops", "Python"),
+        ("Guido van Rossum", "works_on", "Python"),
         ("Helios Bank", "customer_of", "Aether Analytics"),
+        ("Helios Bank", "uses", "Firefox"),
+        ("Helios Bank", "uses", "OrionEdge"),
+        ("Large Hadron Collider", "focuses_on", "particle physics experiments"),
+        ("LedgerLine", "integrated_into", "OrionEdge"),
+        ("Linus Torvalds", "leads", "Linux Foundation"),
+        ("Linus Torvalds", "works_on", "Linux"),
+        ("Linux Foundation", "develops", "Linux"),
+        ("Linux", "focuses_on", "open source kernels"),
+        ("Marc Andreessen", "founded", "Netscape"),
+        ("Marc Andreessen", "leads", "Netscape"),
+        ("Microsoft", "uses", "ChatGPT"),
+        ("Mozilla", "develops", "Firefox"),
+        ("Mozilla", "uses", "Linux"),
+        ("Netscape", "partners_with", "Mozilla"),
+        ("Nila Rao", "founded", "Resolution Working Group"),
+        ("Nila Rao", "improves", "Entity Resolution Engine"),
+        ("Nila Rao", "leads", "Project Aurora"),
+        ("OpenAI", "develops", "ChatGPT"),
+        ("OrionEdge", "deployed_at", "Helios Bank"),
+        ("OrionEdge", "uses", "Linux"),
+        ("Priya Nair", "collaborates_with", "Nila Rao"),
+        ("Priya Nair", "leads", "GraphMatch"),
+        ("Priya Nair", "leads", "Resolution Working Group"),
+        ("Project Aurora", "focuses_on", "graph-based transaction analysis"),
+        ("Project Aurora", "integrated_into", "OrionEdge"),
+        ("Python Software Foundation", "develops", "Python"),
+        ("Python", "focuses_on", "general purpose programming"),
+        ("Resolution Working Group", "uses", "GraphMatch"),
+        ("Sam Altman", "founded", "OpenAI"),
+        ("Sam Altman", "leads", "OpenAI"),
     }
 )
 
@@ -77,14 +122,14 @@ def test_optional_triple_present(extracted, want):
 
 
 def test_no_unexpected_triples(extracted):
-    """Exactly 16 edges: the inventory is closed, so extras are errors, not bonus."""
+    """Exactly 61 edges: the inventory is closed, so extras are errors, not bonus."""
     unexpected = extracted - REQUIRED_TRIPLES - OPTIONAL_TRIPLES
     assert not unexpected, f"unexpected triples: {sorted(unexpected)}"
 
 
 def test_triple_count(triples):
-    assert len(triples) == 16
-    assert len({t.as_tuple for t in triples}) == 16, "duplicates should be deduplicated"
+    assert len(triples) == 61
+    assert len({t.as_tuple for t in triples}) == 61, "duplicates should be deduplicated"
 
 
 @pytest.mark.parametrize("key, reason", sorted(FORBIDDEN_TRIPLES.items()))
@@ -150,10 +195,11 @@ class TestGraphInvariants:
 
     def test_node_count(self, triples):
         labels = {t.subject for t in triples} | {t.object for t in triples}
-        assert len(labels) == 11
+        assert len(labels) == 45
 
     def test_type_distribution(self, triples, registry):
-        """3 people, 3 organisations, and one each of product, project, component, literal."""
+        """Ten people, fourteen organisations, eight products, three projects,
+        two components, eight literal objects."""
         from collections import Counter
 
         def type_of(label: str) -> str:
@@ -167,12 +213,12 @@ class TestGraphInvariants:
             for label in {t.subject for t in triples} | {t.object for t in triples}
         )
         assert counts == {
-            "person": 3,
-            "organization": 3,
-            "product": 1,
-            "project": 1,
+            "person": 10,
+            "organization": 14,
+            "product": 8,
+            "project": 3,
             "component": 2,
-            "literal": 1,
+            "literal": 8,
         }
 
     def test_no_self_loops(self, triples):

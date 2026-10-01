@@ -1,0 +1,1 @@
+DeepMind was founded by Demis Hassabis. Demis Hassabis leads DeepMind. DeepMind developed AlphaFold. AlphaFold focuses on protein structure prediction. Google uses AlphaFold.

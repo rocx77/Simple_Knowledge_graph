@@ -168,14 +168,14 @@ class TestFilters:
 
     def test_entity_type_filter(self, graph):
         sub = filter_graph(graph, ["PERSON"], [])
-        assert sub.number_of_nodes() == 3
+        assert sub.number_of_nodes() == 10
         assert all(
             d["type"] == "PERSON" for _, d in sub.nodes(data=True)
         ), "only PERSON nodes should survive"
 
     def test_relation_filter(self, graph):
         sub = filter_graph(graph, [], ["works_at"])
-        assert sub.number_of_edges() == 1
+        assert sub.number_of_edges() == 2
         assert all(d["relation"] == "works_at" for _, _, d in sub.edges(data=True))
 
     def test_filters_are_conjunctive(self, graph):
@@ -273,19 +273,19 @@ class TestApp:
     def test_kpi_cards(self, at):
         values = {m.label: m.value for m in at.metric}
         assert values == {
-            "Documents": "5",
-            "Entities": "10",
-            "Relations": "16",
-            "Graph edges": "16",
+            "Documents": "16",
+            "Entities": "37",
+            "Relations": "61",
+            "Graph edges": "61",
         }
 
     def test_graph_is_rendered_by_default(self, at):
         captions = " ".join(c.value for c in at.caption)
-        assert "11 nodes" in captions and "16 edges" in captions
+        assert "45 nodes" in captions and "61 edges" in captions
 
     def test_triple_table_lists_every_triple(self, at):
         tables = [df.value for df in at.dataframe]
-        assert any(len(t) == 16 for t in tables)
+        assert any(len(t) == 61 for t in tables)
 
     def test_query_shows_interpretation_and_answer(self, at):
         run = AppTest.from_file(APP, default_timeout=180).run()
@@ -322,7 +322,7 @@ class TestApp:
         run = AppTest.from_file(APP, default_timeout=180).run()
         run.multiselect[0].set_value(["PERSON"]).run()
         assert not run.exception
-        assert any("3 nodes" in c.value for c in run.caption)
+        assert any("10 nodes" in c.value for c in run.caption)
 
     def test_search_shows_connections(self, at):
         run = AppTest.from_file(APP, default_timeout=180).run()

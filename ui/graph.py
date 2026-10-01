@@ -311,7 +311,8 @@ def build_html(
             # A non-focus node inside a focused 1-hop neighbourhood is dimmed rather than
             # removed, so the search result keeps its surrounding context visible.
             opacity=0.25 if focused and node_id not in focused else 1.0,
-            font={"size": 15 if is_focus else 12, "color": "#FFFFFF", "strokeWidth": 3},
+            font={"size": 15 if is_focus else 12, "color": "#1A2733", "strokeWidth": 3,
+                  "strokeColor": "#FFFFFF"},
         )
 
     seen: set[tuple[str, str, str]] = set()
@@ -334,7 +335,8 @@ def build_html(
             },
             dashes=inferred,
             width=2,
-            font={"size": 10, "align": "middle", "strokeWidth": 3, "vadjust": 8},
+            font={"size": 10, "align": "middle", "strokeWidth": 3, "strokeColor": "#FFFFFF",
+                  "color": "#33404D", "vadjust": 8},
         )
 
     network.heading = title
@@ -344,22 +346,32 @@ def build_html(
     network.set_options(
         json.dumps(
             {
+                # NOTE: ``physics`` is a TOP-LEVEL vis-network option. Nesting it under
+                # ``layout`` is silently discarded -- vis.js logs "Unknown option detected:
+                # physics ... Perhaps it was misplaced?" and falls back to its default
+                # barnesHut solver, which drops every value below including the solver
+                # choice. The layout still looks plausible, so nothing fails visibly.
+                "physics": {
+                    "enabled": True,
+                    "solver": "forceAtlas2Based",
+                    "forceAtlas2Based": {
+                        "gravitationalConstant": -58,
+                        "centralGravity": 0.012,
+                        "springLength": 165,
+                        "springConstant": 0.05,
+                        "damping": 0.6,
+                        "avoidOverlap": 0.75,
+                    },
+                    "stabilization": {"iterations": 220, "fit": True},
+                    "minVelocity": 0.6,
+                    "maxVelocity": 40.0,
+                },
                 "layout": {
                     "improvedLayout": True,
-                    "physics": {
-                        "solver": "forceAtlas2Based",
-                        "forceAtlas2Based": {
-                            "gravitationalConstant": -58,
-                            "centralGravity": 0.012,
-                            "springLength": 165,
-                            "springConstant": 0.05,
-                            "damping": 0.6,
-                            "avoidOverlap": 0.75,
-                        },
-                        "stabilization": {"iterations": 220, "fit": True},
-                        "minVelocity": 0.6,
-                        "maxVelocity": 40.0,
-                    },
+                    # Fixed seed so the layout is reproducible across reloads. Without it
+                    # vis.js seeds from Math.random(), so two page loads of an unchanged
+                    # graph differ -- which makes screenshots and visual review useless.
+                    "randomSeed": 42,
                 },
                 "interaction": {
                     "hover": True,
@@ -373,7 +385,7 @@ def build_html(
                 "nodes": {"borderWidth": 2, "borderWidthSelected": 4},
                 "edges": {
                     "smooth": {"enabled": True, "type": "dynamic", "roundness": 0.4},
-                    "font": {"size": 10, "align": "middle"},
+                    "font": {"size": 10, "align": "middle", "color": "#33404D"},
                 },
             }
         )

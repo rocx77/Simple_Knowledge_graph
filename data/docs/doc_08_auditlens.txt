@@ -1,0 +1,1 @@
+Dmitri Volkov joined LedgerLine as a platform engineer. He works on AuditLens. He collaborates with Priya Nair. Dmitri Volkov said the rollout will reuse AuditLens at Helios Bank.
