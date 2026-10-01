@@ -1,0 +1,7 @@
+This fixture exercises the malformed-document handling path.
+
+It contains a control character below (U+0007 BEL), a lone replacement char (U+FFFD),
+and mojibake that is not valid UTF-8 word material: cafÃ© Ã¼ber.
+
+Aether Analytics develops OrionEdge. The pipeline must salvage this sentence,
+log a warning, and keep going.

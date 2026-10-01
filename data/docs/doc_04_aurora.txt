@@ -1,0 +1,1 @@
+Nila Rao improved the Entity Resolution Engine inside Project Aurora. She reported that the engine reduced duplicate alerts by 18 percent. Aether Analytics plans to integrate Aurora into OrionEdge.

@@ -1,0 +1,32 @@
+{
+  "doc_01_company.txt": {
+    "sha256": "466562ccc0ec4f37f0c9f4396f112df0bede65fb536e4f3f62ce27a8ede3dd84",
+    "bytes": 211,
+    "characters": 211,
+    "sentences_estimate": 4
+  },
+  "doc_02_team.txt": {
+    "sha256": "5cf3d2550ee6c6099194780cbd7af64d4114f5810410f65401866bd0986959bd",
+    "bytes": 234,
+    "characters": 234,
+    "sentences_estimate": 3
+  },
+  "doc_03_deployment.txt": {
+    "sha256": "c582a32c1cd9ee243e578145adbf3f51cfb9d49045a90c6942fb83c0d62e4a8c",
+    "bytes": 199,
+    "characters": 199,
+    "sentences_estimate": 2
+  },
+  "doc_04_aurora.txt": {
+    "sha256": "2329a35b74831284eaf32022dff7bf3932fff6adb975a6037c528d01c86f1cc4",
+    "bytes": 197,
+    "characters": 197,
+    "sentences_estimate": 2
+  },
+  "doc_05_customer.txt": {
+    "sha256": "94b5974481f0871a3c5f1ee02b595dd384bb1f1a3a763182d2797af9550bd3f5",
+    "bytes": 227,
+    "characters": 227,
+    "sentences_estimate": 2
+  }
+}
