@@ -130,7 +130,9 @@ class TokenView:
             text=token.text,
             pos=token.pos_,
             dep=token.dep_,
-            head_text=token.head.text if token.head is not token else "<ROOT>",
+            # The ROOT token is its own head. spaCy builds a fresh wrapper on every
+            # `.head` access, so this compares indices, not object identity.
+            head_text=token.head.text if token.head.i != token.i else "<ROOT>",
             head_index=token.head.i,
             lemma=token.lemma_,
             ent_type=token.ent_type_,

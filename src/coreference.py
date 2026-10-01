@@ -455,6 +455,9 @@ class CoreferenceResolver:
             coref_cluster=cluster or (),
             conflict=conflict,
             conflict_detail=conflict_detail or detail,
+            # Recorded here because `_build` is the single construction point for every
+            # resolution layer; a triple's `coref_resolved` flag is derived from it later.
+            mention_source=mention.source,
         )
 
     def _entity_from_cluster(self, cluster: Iterable[str]) -> str | None:

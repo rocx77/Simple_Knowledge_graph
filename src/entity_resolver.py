@@ -223,15 +223,20 @@ class EntityRegistry:
     def literal(self, entity_id: str) -> LiteralNode | None:
         return self._literal_by_id.get(entity_id)
 
+    def record(self, entity_id: str) -> CanonicalEntity | LiteralNode | None:
+        """Either kind of node, canonical entity or literal."""
+        return self._by_id.get(entity_id) or self._literal_by_id.get(entity_id)
+
     def label_of(self, entity_id: str) -> str:
-        entity = self._by_id.get(entity_id)
-        if entity is not None:
-            return entity.label
-        literal = self._literal_by_id.get(entity_id)
-        return literal.label if literal is not None else entity_id
+        record = self.record(entity_id)
+        return record.label if record is not None else entity_id
 
     def type_of(self, entity_id: str) -> EntityType | None:
-        return self._by_id[entity_id].type if entity_id in self._by_id else None
+        """Entity type of a canonical id, including LITERAL nodes."""
+        entity = self._by_id.get(entity_id)
+        if entity is not None:
+            return entity.type
+        return EntityType.LITERAL if entity_id in self._literal_by_id else None
 
     def anaphor_target(self, surface: str) -> str | None:
         """Resolve an *unambiguous* definite description to an entity id.
@@ -259,6 +264,22 @@ class EntityRegistry:
 
     def is_literal(self, entity_id: str) -> bool:
         return entity_id in self._literal_by_id
+
+    def resolve_literal(self, text: str) -> str | None:
+        """Resolve a noun phrase to a declared literal node.
+
+        Literals have no canonical spelling of their own beyond the declared label, so
+        the comparison is exact after whitespace normalisation. There is deliberately no
+        fuzzy matching here: an unmatched literal must produce no triple rather than a
+        near-miss.
+        """
+        candidate = normalise_surface(text)
+        if not candidate:
+            return None
+        for literal in self._literals:
+            if normalise_surface(literal.label) == candidate:
+                return literal.entity_id
+        return None
 
     # -- lookup -------------------------------------------------------------
 

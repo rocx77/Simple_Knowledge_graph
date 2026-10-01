@@ -176,10 +176,28 @@ class MentionResolution:
     coref_cluster: tuple[str, ...] = ()
     conflict: bool = False
     conflict_detail: str = ""
+    #: How the mention itself was discovered (specification section 7). Retained because
+    #: ``coref_resolved`` on a triple is derived from it: a definite description or a
+    #: pronoun counts as coreference even when the declared description table resolved it
+    #: without consulting FastCoref.
+    mention_source: MentionSource = MentionSource.COREF
 
     @property
     def is_resolved(self) -> bool:
         return self.entity_id is not None
+
+    @property
+    def is_anaphoric(self) -> bool:
+        """True when the mention referred to an entity rather than naming one.
+
+        ``RULER`` and ``SPACY_NER`` name the entity outright; everything else -- definite
+        descriptions, pronouns -- is a reference that had to be resolved.
+        """
+        return self.mention_source in (
+            MentionSource.COMMON_NOUN,
+            MentionSource.PRONOUN,
+            MentionSource.COREF,
+        )
 
 
 @dataclass(frozen=True, slots=True)
