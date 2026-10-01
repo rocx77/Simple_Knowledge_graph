@@ -1,0 +1,78 @@
+{
+  "device": "cpu",
+  "environment": {
+    "spacy_model": "en_core_web_sm",
+    "coref_model": "biu-nlp/f-coref",
+    "coref_device": "cpu",
+    "docs_dir": "C:\\CODE\\NLP_knowledge_graph_Case_Study\\data\\docs",
+    "artifacts_dir": "C:\\CODE\\NLP_knowledge_graph_Case_Study\\artifacts",
+    "enable_optional_relations": "true",
+    "max_path_length": "3",
+    "python": "3.14.3"
+  },
+  "versions": {
+    "spacy": "3.8.16",
+    "fastcoref": "2.1.6",
+    "networkx": "3.7",
+    "pyvis": "0.3.2",
+    "transformers": "4.57.6",
+    "torch": "2.14.1"
+  },
+  "stages": [],
+  "counts": {
+    "documents": 5,
+    "mentions": 42,
+    "resolved_mentions": 41,
+    "unresolved_mentions": 1,
+    "relation_candidates": 16,
+    "triples": 16,
+    "nodes": 11,
+    "edges": 16,
+    "skipped_candidates": 1,
+    "rejected_unresolved_endpoint": 0,
+    "rejected_self_loop": 0,
+    "rejected_literal_endpoint": 0
+  },
+  "relation_histogram": {
+    "collaborates_with": 1,
+    "contains": 2,
+    "customer_of": 1,
+    "deployed_at": 1,
+    "develops": 1,
+    "focuses_on": 1,
+    "founded": 1,
+    "improves": 1,
+    "integrated_into": 1,
+    "leads": 2,
+    "partners_with": 1,
+    "uses": 1,
+    "works_at": 1,
+    "works_on": 1
+  },
+  "warnings": [],
+  "unresolved_mentions": [
+    {
+      "document_id": "doc_03_deployment",
+      "sentence_index": 0,
+      "text": "GPU",
+      "detail": "'GPU' is not in the canonical registry; left unresolved (charter invariant I3)"
+    }
+  ],
+  "coref_conflicts": [
+    {
+      "document_id": "doc_05_customer",
+      "text": "The company",
+      "resolved_to": "Aether Analytics",
+      "detail": "fastcoref -> Helios Bank; description table -> Aether Analytics"
+    }
+  ],
+  "skipped_candidates": [
+    {
+      "rule_id": "R_LEADS",
+      "relation": "leads",
+      "document_id": "doc_02_team",
+      "sentence_index": 3,
+      "reason": "object of 'leads' is not a canonical entity ('the entity resolution work' is not a canonical entity)"
+    }
+  ]
+}

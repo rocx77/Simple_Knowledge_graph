@@ -1,0 +1,462 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "node_count": 11,
+    "edge_count": 16
+  },
+  "nodes": [
+    {
+      "label": "Aether Analytics",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Aether Analytics"
+      ],
+      "mention_count": 7,
+      "documents": [
+        "doc_01_company",
+        "doc_02_team",
+        "doc_03_deployment",
+        "doc_04_aurora",
+        "doc_05_customer"
+      ],
+      "in_degree": 3,
+      "out_degree": 2,
+      "degree": 5,
+      "id": "organization:aether_analytics"
+    },
+    {
+      "label": "OrionEdge",
+      "type": "PRODUCT",
+      "aliases": [
+        "OrionEdge"
+      ],
+      "mention_count": 9,
+      "documents": [
+        "doc_01_company",
+        "doc_02_team",
+        "doc_03_deployment",
+        "doc_04_aurora",
+        "doc_05_customer"
+      ],
+      "in_degree": 4,
+      "out_degree": 1,
+      "degree": 5,
+      "id": "product:orionedge"
+    },
+    {
+      "label": "Quantum Forge",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Quantum Forge"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_03_deployment"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:quantum_forge"
+    },
+    {
+      "label": "Helios Bank",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Helios Bank"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_03_deployment",
+        "doc_05_customer"
+      ],
+      "in_degree": 1,
+      "out_degree": 2,
+      "degree": 3,
+      "id": "organization:helios_bank"
+    },
+    {
+      "label": "Arun Mehta",
+      "type": "PERSON",
+      "aliases": [
+        "Arun Mehta"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_02_team",
+        "doc_05_customer"
+      ],
+      "in_degree": 0,
+      "out_degree": 3,
+      "degree": 3,
+      "id": "person:arun_mehta"
+    },
+    {
+      "label": "Nila Rao",
+      "type": "PERSON",
+      "aliases": [
+        "Nila Rao"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_02_team",
+        "doc_04_aurora"
+      ],
+      "in_degree": 1,
+      "out_degree": 2,
+      "degree": 3,
+      "id": "person:nila_rao"
+    },
+    {
+      "label": "Dr. Mira Sen",
+      "type": "PERSON",
+      "aliases": [
+        "Dr. Mira Sen",
+        "Mira Sen"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_01_company"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:mira_sen"
+    },
+    {
+      "label": "Project Aurora",
+      "type": "PROJECT",
+      "aliases": [
+        "Project Aurora",
+        "Aurora"
+      ],
+      "mention_count": 7,
+      "documents": [
+        "doc_01_company",
+        "doc_02_team",
+        "doc_04_aurora",
+        "doc_05_customer"
+      ],
+      "in_degree": 2,
+      "out_degree": 4,
+      "degree": 6,
+      "id": "project:project_aurora"
+    },
+    {
+      "label": "Entity Resolution Engine",
+      "type": "COMPONENT",
+      "aliases": [
+        "Entity Resolution Engine",
+        "the Entity Resolution Engine"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_04_aurora"
+      ],
+      "in_degree": 2,
+      "out_degree": 0,
+      "degree": 2,
+      "id": "component:entity_resolution_engine"
+    },
+    {
+      "label": "Graph Matching Module",
+      "type": "COMPONENT",
+      "aliases": [
+        "Graph Matching Module"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_05_customer"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "component:graph_matching_module"
+    },
+    {
+      "label": "graph-based transaction analysis",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:graph_based_transaction_analysis"
+    }
+  ],
+  "links": [
+    {
+      "relation": "develops",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_01_company",
+      "sentence_id": 1,
+      "sentence": "The company develops OrionEdge, a real-time fraud detection platform.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "The company",
+      "original_object": "OrionEdge",
+      "triple_id": "triple:organization:aether_analytics--develops->product:orionedge@doc_01_company",
+      "duplicate_count": 1,
+      "source": "organization:aether_analytics",
+      "target": "product:orionedge",
+      "key": "triple:organization:aether_analytics--develops->product:orionedge@doc_01_company"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_03_deployment",
+      "sentence_id": 0,
+      "sentence": "Aether Analytics partnered with Quantum Forge to provide GPU infrastructure for OrionEdge.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "Aether Analytics",
+      "original_object": "Quantum Forge",
+      "triple_id": "triple:organization:aether_analytics--partners_with->organization:quantum_forge@doc_03_deployment",
+      "duplicate_count": 1,
+      "source": "organization:aether_analytics",
+      "target": "organization:quantum_forge",
+      "key": "triple:organization:aether_analytics--partners_with->organization:quantum_forge@doc_03_deployment"
+    },
+    {
+      "relation": "deployed_at",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_03_deployment",
+      "sentence_id": 1,
+      "sentence": "OrionEdge was deployed at Helios Bank in 2025.",
+      "inferred": false,
+      "rule_id": "R_DEPLOYED_AT",
+      "original_subject": "OrionEdge",
+      "original_object": "Helios Bank",
+      "triple_id": "triple:product:orionedge--deployed_at->organization:helios_bank@doc_03_deployment",
+      "duplicate_count": 1,
+      "source": "product:orionedge",
+      "target": "organization:helios_bank",
+      "key": "triple:product:orionedge--deployed_at->organization:helios_bank@doc_03_deployment"
+    },
+    {
+      "relation": "customer_of",
+      "confidence": 0.8,
+      "coref_resolved": false,
+      "document_id": "doc_05_customer",
+      "sentence_id": 0,
+      "sentence": "Helios Bank renewed its contract with Aether Analytics after a successful pilot of OrionEdge.",
+      "inferred": true,
+      "rule_id": "R_CUSTOMER_OF",
+      "original_subject": "Helios Bank",
+      "original_object": "Aether Analytics",
+      "triple_id": "triple:organization:helios_bank--customer_of->organization:aether_analytics@doc_05_customer",
+      "duplicate_count": 1,
+      "source": "organization:helios_bank",
+      "target": "organization:aether_analytics",
+      "key": "triple:organization:helios_bank--customer_of->organization:aether_analytics@doc_05_customer"
+    },
+    {
+      "relation": "uses",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_03_deployment",
+      "sentence_id": 2,
+      "sentence": "The bank uses the platform to detect suspicious transactions.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "The bank",
+      "original_object": "the platform",
+      "triple_id": "triple:organization:helios_bank--uses->product:orionedge@doc_03_deployment",
+      "duplicate_count": 1,
+      "source": "organization:helios_bank",
+      "target": "product:orionedge",
+      "key": "triple:organization:helios_bank--uses->product:orionedge@doc_03_deployment"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_02_team",
+      "sentence_id": 2,
+      "sentence": "The engineer collaborates with Nila Rao, the data scientist leading Project Aurora.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "The engineer",
+      "original_object": "Nila Rao",
+      "triple_id": "triple:person:arun_mehta--collaborates_with->person:nila_rao@doc_02_team",
+      "duplicate_count": 1,
+      "source": "person:arun_mehta",
+      "target": "person:nila_rao",
+      "key": "triple:person:arun_mehta--collaborates_with->person:nila_rao@doc_02_team"
+    },
+    {
+      "relation": "works_at",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_02_team",
+      "sentence_id": 0,
+      "sentence": "Arun Mehta joined Aether Analytics as a senior machine learning engineer.",
+      "inferred": false,
+      "rule_id": "R_JOINED_EMPLOYMENT",
+      "original_subject": "Arun Mehta",
+      "original_object": "Aether Analytics",
+      "triple_id": "triple:person:arun_mehta--works_at->organization:aether_analytics@doc_02_team",
+      "duplicate_count": 1,
+      "source": "person:arun_mehta",
+      "target": "organization:aether_analytics",
+      "key": "triple:person:arun_mehta--works_at->organization:aether_analytics@doc_02_team"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_02_team",
+      "sentence_id": 1,
+      "sentence": "He works on OrionEdge.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "He",
+      "original_object": "OrionEdge",
+      "triple_id": "triple:person:arun_mehta--works_on->product:orionedge@doc_02_team",
+      "duplicate_count": 1,
+      "source": "person:arun_mehta",
+      "target": "product:orionedge",
+      "key": "triple:person:arun_mehta--works_on->product:orionedge@doc_02_team"
+    },
+    {
+      "relation": "improves",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_04_aurora",
+      "sentence_id": 0,
+      "sentence": "Nila Rao improved the Entity Resolution Engine inside Project Aurora.",
+      "inferred": false,
+      "rule_id": "R_IMPROVES",
+      "original_subject": "Nila Rao",
+      "original_object": "Entity Resolution Engine",
+      "triple_id": "triple:person:nila_rao--improves->component:entity_resolution_engine@doc_04_aurora",
+      "duplicate_count": 1,
+      "source": "person:nila_rao",
+      "target": "component:entity_resolution_engine",
+      "key": "triple:person:nila_rao--improves->component:entity_resolution_engine@doc_04_aurora"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_02_team",
+      "sentence_id": 2,
+      "sentence": "The engineer collaborates with Nila Rao, the data scientist leading Project Aurora.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Nila Rao",
+      "original_object": "Project Aurora",
+      "triple_id": "triple:person:nila_rao--leads->project:project_aurora@doc_02_team",
+      "duplicate_count": 1,
+      "source": "person:nila_rao",
+      "target": "project:project_aurora",
+      "key": "triple:person:nila_rao--leads->project:project_aurora@doc_02_team"
+    },
+    {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_01_company",
+      "sentence_id": 0,
+      "sentence": "Aether Analytics was founded by Dr. Mira Sen in 2021.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Dr. Mira Sen",
+      "original_object": "Aether Analytics",
+      "triple_id": "triple:person:mira_sen--founded->organization:aether_analytics@doc_01_company",
+      "duplicate_count": 1,
+      "source": "person:mira_sen",
+      "target": "organization:aether_analytics",
+      "key": "triple:person:mira_sen--founded->organization:aether_analytics@doc_01_company"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_01_company",
+      "sentence_id": 2,
+      "sentence": "Mira Sen leads Project Aurora.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Mira Sen",
+      "original_object": "Project Aurora",
+      "triple_id": "triple:person:mira_sen--leads->project:project_aurora@doc_01_company",
+      "duplicate_count": 1,
+      "source": "person:mira_sen",
+      "target": "project:project_aurora",
+      "key": "triple:person:mira_sen--leads->project:project_aurora@doc_01_company"
+    },
+    {
+      "relation": "contains",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_04_aurora",
+      "sentence_id": 0,
+      "sentence": "Nila Rao improved the Entity Resolution Engine inside Project Aurora.",
+      "inferred": false,
+      "rule_id": "R_CONTAINS_INSIDE",
+      "original_subject": "Project Aurora",
+      "original_object": "Entity Resolution Engine",
+      "triple_id": "triple:project:project_aurora--contains->component:entity_resolution_engine@doc_04_aurora",
+      "duplicate_count": 1,
+      "source": "project:project_aurora",
+      "target": "component:entity_resolution_engine",
+      "key": "triple:project:project_aurora--contains->component:entity_resolution_engine@doc_04_aurora"
+    },
+    {
+      "relation": "contains",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_05_customer",
+      "sentence_id": 2,
+      "sentence": "Arun Mehta said the extension will reuse Aurora's graph matching module.",
+      "inferred": false,
+      "rule_id": "R_CONTAINS_POSSESSIVE",
+      "original_subject": "Aurora",
+      "original_object": "graph matching module",
+      "triple_id": "triple:project:project_aurora--contains->component:graph_matching_module@doc_05_customer",
+      "duplicate_count": 1,
+      "source": "project:project_aurora",
+      "target": "component:graph_matching_module",
+      "key": "triple:project:project_aurora--contains->component:graph_matching_module@doc_05_customer"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 0.9,
+      "coref_resolved": true,
+      "document_id": "doc_01_company",
+      "sentence_id": 3,
+      "sentence": "The project focuses on graph-based transaction analysis.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "The project",
+      "original_object": "graph-based transaction analysis",
+      "triple_id": "triple:project:project_aurora--focuses_on->literal:graph_based_transaction_analysis@doc_01_company",
+      "duplicate_count": 1,
+      "source": "project:project_aurora",
+      "target": "literal:graph_based_transaction_analysis",
+      "key": "triple:project:project_aurora--focuses_on->literal:graph_based_transaction_analysis@doc_01_company"
+    },
+    {
+      "relation": "integrated_into",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_04_aurora",
+      "sentence_id": 2,
+      "sentence": "Aether Analytics plans to integrate Aurora into OrionEdge.",
+      "inferred": false,
+      "rule_id": "R_INTEGRATED_INTO",
+      "original_subject": "Aurora",
+      "original_object": "OrionEdge",
+      "triple_id": "triple:project:project_aurora--integrated_into->product:orionedge@doc_04_aurora",
+      "duplicate_count": 1,
+      "source": "project:project_aurora",
+      "target": "product:orionedge",
+      "key": "triple:project:project_aurora--integrated_into->product:orionedge@doc_04_aurora"
+    }
+  ]
+}

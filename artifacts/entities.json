@@ -1,0 +1,751 @@
+{
+  "entities": [
+    {
+      "id": "person:mira_sen",
+      "label": "Dr. Mira Sen",
+      "type": "PERSON",
+      "aliases": [
+        "Dr. Mira Sen",
+        "Mira Sen"
+      ],
+      "description": "Founder of Aether Analytics and lead of Project Aurora.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_01_company"
+      ]
+    },
+    {
+      "id": "person:arun_mehta",
+      "label": "Arun Mehta",
+      "type": "PERSON",
+      "aliases": [
+        "Arun Mehta"
+      ],
+      "description": "Senior machine learning engineer at Aether Analytics.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_02_team",
+        "doc_05_customer"
+      ]
+    },
+    {
+      "id": "person:nila_rao",
+      "label": "Nila Rao",
+      "type": "PERSON",
+      "aliases": [
+        "Nila Rao"
+      ],
+      "description": "Data scientist leading Project Aurora; author of the Entity Resolution Engine work.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_02_team",
+        "doc_04_aurora"
+      ]
+    },
+    {
+      "id": "organization:aether_analytics",
+      "label": "Aether Analytics",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Aether Analytics"
+      ],
+      "description": "Real-time fraud detection company founded in 2021.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 7,
+      "documents": [
+        "doc_01_company",
+        "doc_02_team",
+        "doc_03_deployment",
+        "doc_04_aurora",
+        "doc_05_customer"
+      ]
+    },
+    {
+      "id": "organization:quantum_forge",
+      "label": "Quantum Forge",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Quantum Forge"
+      ],
+      "description": "GPU infrastructure partner to Aether Analytics.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_03_deployment"
+      ]
+    },
+    {
+      "id": "organization:helios_bank",
+      "label": "Helios Bank",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Helios Bank"
+      ],
+      "description": "Customer of Aether Analytics; hosts the OrionEdge deployment.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_03_deployment",
+        "doc_05_customer"
+      ]
+    },
+    {
+      "id": "product:orionedge",
+      "label": "OrionEdge",
+      "type": "PRODUCT",
+      "aliases": [
+        "OrionEdge"
+      ],
+      "description": "Real-time fraud detection platform developed by Aether Analytics.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 9,
+      "documents": [
+        "doc_01_company",
+        "doc_02_team",
+        "doc_03_deployment",
+        "doc_04_aurora",
+        "doc_05_customer"
+      ]
+    },
+    {
+      "id": "project:project_aurora",
+      "label": "Project Aurora",
+      "type": "PROJECT",
+      "aliases": [
+        "Project Aurora",
+        "Aurora"
+      ],
+      "description": "Graph-based transaction analysis project.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 7,
+      "documents": [
+        "doc_01_company",
+        "doc_02_team",
+        "doc_04_aurora",
+        "doc_05_customer"
+      ]
+    },
+    {
+      "id": "component:entity_resolution_engine",
+      "label": "Entity Resolution Engine",
+      "type": "COMPONENT",
+      "aliases": [
+        "Entity Resolution Engine",
+        "the Entity Resolution Engine"
+      ],
+      "description": "Component inside Project Aurora that deduplicates alerts.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_04_aurora"
+      ]
+    },
+    {
+      "id": "component:graph_matching_module",
+      "label": "Graph Matching Module",
+      "type": "COMPONENT",
+      "aliases": [
+        "Graph Matching Module"
+      ],
+      "description": "Graph matching module belonging to Project Aurora.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_05_customer"
+      ]
+    },
+    {
+      "id": "literal:graph_based_transaction_analysis",
+      "label": "graph-based transaction analysis",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Project Aurora.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    }
+  ],
+  "alias_index": {
+    "aether analytics": [
+      "organization:aether_analytics"
+    ],
+    "arun mehta": [
+      "person:arun_mehta"
+    ],
+    "aurora": [
+      "project:project_aurora"
+    ],
+    "dr. mira sen": [
+      "person:mira_sen"
+    ],
+    "entity resolution engine": [
+      "component:entity_resolution_engine"
+    ],
+    "graph matching module": [
+      "component:graph_matching_module"
+    ],
+    "helios bank": [
+      "organization:helios_bank"
+    ],
+    "mira sen": [
+      "person:mira_sen"
+    ],
+    "nila rao": [
+      "person:nila_rao"
+    ],
+    "orionedge": [
+      "product:orionedge"
+    ],
+    "project aurora": [
+      "project:project_aurora"
+    ],
+    "quantum forge": [
+      "organization:quantum_forge"
+    ],
+    "the entity resolution engine": [
+      "component:entity_resolution_engine"
+    ]
+  },
+  "mention_inventory": {
+    "component:entity_resolution_engine": [
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 0,
+        "text": "Entity Resolution Engine",
+        "start_char": 22,
+        "end_char": 46,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "component:entity_resolution_engine",
+        "resolved_label": "Entity Resolution Engine",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 1,
+        "text": "the engine",
+        "start_char": 88,
+        "end_char": 98,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "component:entity_resolution_engine",
+        "resolved_label": "Entity Resolution Engine",
+        "conflict": false
+      }
+    ],
+    "component:graph_matching_module": [
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 2,
+        "text": "graph matching module",
+        "start_char": 205,
+        "end_char": 226,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "component:graph_matching_module",
+        "resolved_label": "Graph Matching Module",
+        "conflict": false
+      }
+    ],
+    "organization:aether_analytics": [
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 0,
+        "text": "Aether Analytics",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 1,
+        "text": "The company",
+        "start_char": 54,
+        "end_char": 65,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 0,
+        "text": "Aether Analytics",
+        "start_char": 18,
+        "end_char": 34,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 0,
+        "text": "Aether Analytics",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 2,
+        "text": "Aether Analytics",
+        "start_char": 139,
+        "end_char": 155,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 0,
+        "text": "Aether Analytics",
+        "start_char": 38,
+        "end_char": 54,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 1,
+        "text": "The company",
+        "start_char": 94,
+        "end_char": 105,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "organization:aether_analytics",
+        "resolved_label": "Aether Analytics",
+        "conflict": true
+      }
+    ],
+    "organization:helios_bank": [
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 1,
+        "text": "Helios Bank",
+        "start_char": 117,
+        "end_char": 128,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 2,
+        "text": "The bank",
+        "start_char": 138,
+        "end_char": 146,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 0,
+        "text": "Helios Bank",
+        "start_char": 0,
+        "end_char": 11,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 0,
+        "text": "its",
+        "start_char": 20,
+        "end_char": 23,
+        "source": "fastcoref",
+        "mention_source": "pronoun",
+        "resolved_to": "organization:helios_bank",
+        "resolved_label": "Helios Bank",
+        "conflict": false
+      }
+    ],
+    "organization:quantum_forge": [
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 0,
+        "text": "Quantum Forge",
+        "start_char": 32,
+        "end_char": 45,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:quantum_forge",
+        "resolved_label": "Quantum Forge",
+        "conflict": false
+      }
+    ],
+    "person:arun_mehta": [
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 0,
+        "text": "Arun Mehta",
+        "start_char": 0,
+        "end_char": 10,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:arun_mehta",
+        "resolved_label": "Arun Mehta",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 1,
+        "text": "He",
+        "start_char": 74,
+        "end_char": 76,
+        "source": "fastcoref",
+        "mention_source": "pronoun",
+        "resolved_to": "person:arun_mehta",
+        "resolved_label": "Arun Mehta",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 2,
+        "text": "The engineer",
+        "start_char": 97,
+        "end_char": 109,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "person:arun_mehta",
+        "resolved_label": "Arun Mehta",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 2,
+        "text": "Arun Mehta",
+        "start_char": 155,
+        "end_char": 165,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:arun_mehta",
+        "resolved_label": "Arun Mehta",
+        "conflict": false
+      }
+    ],
+    "person:mira_sen": [
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 0,
+        "text": "Dr. Mira Sen",
+        "start_char": 32,
+        "end_char": 44,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:mira_sen",
+        "resolved_label": "Dr. Mira Sen",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 2,
+        "text": "Mira Sen",
+        "start_char": 124,
+        "end_char": 132,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:mira_sen",
+        "resolved_label": "Dr. Mira Sen",
+        "conflict": false
+      }
+    ],
+    "person:nila_rao": [
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 2,
+        "text": "Nila Rao",
+        "start_char": 128,
+        "end_char": 136,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:nila_rao",
+        "resolved_label": "Nila Rao",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 3,
+        "text": "She",
+        "start_char": 181,
+        "end_char": 184,
+        "source": "antecedent",
+        "mention_source": "pronoun",
+        "resolved_to": "person:nila_rao",
+        "resolved_label": "Nila Rao",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 0,
+        "text": "Nila Rao",
+        "start_char": 0,
+        "end_char": 8,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:nila_rao",
+        "resolved_label": "Nila Rao",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 1,
+        "text": "She",
+        "start_char": 70,
+        "end_char": 73,
+        "source": "fastcoref",
+        "mention_source": "pronoun",
+        "resolved_to": "person:nila_rao",
+        "resolved_label": "Nila Rao",
+        "conflict": false
+      }
+    ],
+    "product:orionedge": [
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 1,
+        "text": "OrionEdge",
+        "start_char": 75,
+        "end_char": 84,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 1,
+        "text": "OrionEdge",
+        "start_char": 86,
+        "end_char": 95,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 0,
+        "text": "OrionEdge",
+        "start_char": 80,
+        "end_char": 89,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 1,
+        "text": "OrionEdge",
+        "start_char": 91,
+        "end_char": 100,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_03_deployment",
+        "sentence_index": 2,
+        "text": "the platform",
+        "start_char": 152,
+        "end_char": 164,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 2,
+        "text": "OrionEdge",
+        "start_char": 187,
+        "end_char": 196,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 0,
+        "text": "OrionEdge",
+        "start_char": 83,
+        "end_char": 92,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 1,
+        "text": "the platform",
+        "start_char": 118,
+        "end_char": 130,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 2,
+        "text": "the extension",
+        "start_char": 171,
+        "end_char": 184,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "product:orionedge",
+        "resolved_label": "OrionEdge",
+        "conflict": false
+      }
+    ],
+    "project:project_aurora": [
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 2,
+        "text": "Project Aurora",
+        "start_char": 139,
+        "end_char": 153,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_01_company",
+        "sentence_index": 3,
+        "text": "The project",
+        "start_char": 155,
+        "end_char": 166,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 2,
+        "text": "Project Aurora",
+        "start_char": 165,
+        "end_char": 179,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_02_team",
+        "sentence_index": 3,
+        "text": "the project",
+        "start_char": 222,
+        "end_char": 233,
+        "source": "alias",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 0,
+        "text": "Project Aurora",
+        "start_char": 54,
+        "end_char": 68,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_04_aurora",
+        "sentence_index": 2,
+        "text": "Aurora",
+        "start_char": 175,
+        "end_char": 181,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_05_customer",
+        "sentence_index": 2,
+        "text": "Aurora",
+        "start_char": 196,
+        "end_char": 202,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:project_aurora",
+        "resolved_label": "Project Aurora",
+        "conflict": false
+      }
+    ]
+  },
+  "unresolved_mentions": [
+    {
+      "document_id": "doc_03_deployment",
+      "sentence_index": 0,
+      "text": "GPU",
+      "start_char": 57,
+      "end_char": 60,
+      "source": "unresolved",
+      "mention_source": "spacy_ner",
+      "resolved_to": null,
+      "resolved_label": null,
+      "conflict": false
+    }
+  ]
+}
