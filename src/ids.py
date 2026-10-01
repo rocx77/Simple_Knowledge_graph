@@ -45,7 +45,7 @@ def slugify(text: str) -> str:
     return "_".join(parts)
 
 
-def make_entity_id(entity_type: "EntityType | str", label: str) -> str:
+def make_entity_id(entity_type: EntityType | str, label: str) -> str:
     """Build a canonical entity id, e.g. ``("PERSON", "Dr. Mira Sen") -> "person:mira_sen"``.
 
     ``LITERAL`` ids are prefixed ``literal:`` to keep them clearly distinguishable from

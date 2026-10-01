@@ -109,7 +109,7 @@ class AppConfig:
     max_path_length: int = DEFAULT_MAX_PATH_LENGTH
 
     @classmethod
-    def from_env(cls) -> "AppConfig":
+    def from_env(cls) -> AppConfig:
         """Build a configuration from environment variables, validating as we go."""
         root = _project_root()
         max_path_raw = os.environ.get("KG_MAX_PATH_LENGTH")

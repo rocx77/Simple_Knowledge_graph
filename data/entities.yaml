@@ -1,0 +1,105 @@
+# Canonical entity registry -- the declared lexicon for this MVP.
+#
+# This file declares WHAT NAMES EXIST. It deliberately does not declare what
+# relations hold between them: the knowledge graph must be derived from the
+# documents by the extraction rules (charter invariant I2, guideline M3).
+#
+# `aliases` are surface forms that refer to the same real-world entity. The lookup
+# is longest-match-first, so order within a list does not matter.
+#
+# `anaphors` are definite descriptions and pronouns. They are resolved by the
+# coreference stage (FastCoref, then this table, then a nearest-antecedent rule).
+# They are deliberately NOT EntityRuler patterns: they have no canonical identity
+# of their own and adding them to NER would corrupt the entity layer.
+
+version: 1
+description: >-
+  Canonical entities for the Aether Analytics / OrionEdge / Project Aurora
+  demonstration corpus (specification section 4).
+
+entities:
+  # ---------------------------------------------------------------- PERSON
+  - id: person:mira_sen
+    label: Dr. Mira Sen
+    type: PERSON
+    aliases:
+      - Mira Sen
+    anaphors: [she, her, hers]
+    description: Founder of Aether Analytics and lead of Project Aurora.
+
+  - id: person:arun_mehta
+    label: Arun Mehta
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the engineer"]
+    description: Senior machine learning engineer at Aether Analytics.
+
+  - id: person:nila_rao
+    label: Nila Rao
+    type: PERSON
+    aliases: []
+    anaphors: [she, her, hers, "the data scientist"]
+    description: >-
+      Data scientist leading Project Aurora; author of the Entity Resolution
+      Engine work.
+
+  # ---------------------------------------------------------- ORGANIZATION
+  - id: organization:aether_analytics
+    label: Aether Analytics
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the company"]
+    description: Real-time fraud detection company founded in 2021.
+
+  - id: organization:quantum_forge
+    label: Quantum Forge
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the partner"]
+    description: GPU infrastructure partner to Aether Analytics.
+
+  - id: organization:helios_bank
+    label: Helios Bank
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the bank"]
+    description: Customer of Aether Analytics; hosts the OrionEdge deployment.
+
+  # --------------------------------------------------------------- PRODUCT
+  - id: product:orionedge
+    label: OrionEdge
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the platform", "the extension"]
+    description: Real-time fraud detection platform developed by Aether Analytics.
+
+  # --------------------------------------------------------------- PROJECT
+  - id: project:project_aurora
+    label: Project Aurora
+    type: PROJECT
+    aliases:
+      - Aurora
+    anaphors: ["the project"]
+    description: Graph-based transaction analysis project.
+
+  # ------------------------------------------------------------- COMPONENT
+  - id: component:entity_resolution_engine
+    label: Entity Resolution Engine
+    type: COMPONENT
+    aliases: ["the Entity Resolution Engine"]
+    anaphors: ["the engine"]
+    description: Component inside Project Aurora that deduplicates alerts.
+
+  - id: component:graph_matching_module
+    label: Graph Matching Module
+    type: COMPONENT
+    aliases: []
+    anaphors: ["the module"]
+    description: Graph matching module belonging to Project Aurora.
+
+# Literal objects that the specification requires as graph nodes but which are
+# noun phrases rather than named entities (section 11, focuses_on).
+literals:
+  - id: literal:graph_based_transaction_analysis
+    label: graph-based transaction analysis
+    description: Focus area of Project Aurora.

@@ -22,8 +22,9 @@ FastCoref, which needs one for candidate span detection (rule P1).
 
 from __future__ import annotations
 
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, Iterable, Sequence
+from typing import TYPE_CHECKING
 
 from .config import AppConfig
 from .errors import ModelUnavailableError
@@ -65,18 +66,7 @@ _SOURCE_PRIORITY = {
 }
 
 
-def _morph_value(token: "Token") -> str:  # noqa: F821 - spacy Token
-    """Return a token's morphological features as a ``key=value|key=value`` string.
-
-    ``MorphAnalysis.get()`` returns a *list* (e.g. ``['Def']``), so any comparison
-    against a bare string silently fails. This normalises to the first value.
-    """
-    if not token.morph:
-        return ""
-    return "|".join(f"{key}={values[0] if values else ''}" for key, values in sorted(token.morph))
-
-
-def _morph_feature(token: "Token", key: str) -> str:  # noqa: F821 - spacy Token
+def _morph_feature(token: Token, key: str) -> str:  # noqa: F821 - spacy Token
     """Return one morphological feature as a plain string, or ``""`` if absent."""
     values = token.morph.get(key)
     if not values:
@@ -85,7 +75,7 @@ def _morph_feature(token: "Token", key: str) -> str:  # noqa: F821 - spacy Token
     return str(first).strip().lower()
 
 
-def _is_definite_reference(chunk: "Span") -> bool:  # noqa: F821 - spacy Span
+def _is_definite_reference(chunk: Span) -> bool:  # noqa: F821 - spacy Span
     """True when a noun chunk is a definite description, i.e. an anaphoric reference.
 
     Definiteness is the signal that separates a reference from a first mention:
@@ -134,7 +124,7 @@ class TokenView:
     gender: str = ""
 
     @classmethod
-    def from_token(cls, token: "Token") -> "TokenView":  # noqa: F821 - spacy Token
+    def from_token(cls, token: Token) -> TokenView:  # noqa: F821 - spacy Token
         return cls(
             index=token.i,
             text=token.text,
@@ -186,12 +176,12 @@ class ProcessedDocument:
     """
 
     document: Document
-    doc: "Doc"
+    doc: Doc
     sentences: tuple[SentenceView, ...] = ()
     tokens: tuple[TokenView, ...] = ()
     noun_chunks: tuple[NounChunkView, ...] = ()
     mentions: tuple[EntityMention, ...] = ()
-    ruler_surface_spans: frozenset[tuple[int, int]] = frozenset()
+    ruler_surface_spans: Mapping[int, str] = field(default_factory=dict)
     mentions_by_sentence: dict[int, tuple[EntityMention, ...]] = field(default_factory=dict)
 
     def sentence_text(self, index: int) -> str:
@@ -210,12 +200,11 @@ class NLPProcessor:
     def __init__(self, config: AppConfig, ruler_patterns: Sequence[RulerPattern] = ()) -> None:
         self._config = config
         self._patterns = tuple(ruler_patterns)
-        self._nlp: "Language | None" = None
-        self._ruler_surface_spans: frozenset[tuple[int, int]] = frozenset()
+        self._nlp: Language | None = None
 
     # -- model loading (rule P1: load once, reuse) --------------------------
 
-    def load(self) -> "Language":
+    def load(self) -> Language:
         """Load spaCy and register the EntityRuler. Cached on the instance."""
         if self._nlp is not None:
             return self._nlp
@@ -239,9 +228,6 @@ class NLPProcessor:
 
         if self._patterns:
             self._add_entity_ruler(nlp)
-            self._ruler_surface_spans = frozenset(
-                (p.surface.lower(), p.canonical_label) for p in self._patterns
-            )
 
         logger.info(
             "spaCy model %s loaded (pipes=%s, ruler patterns=%d)",
@@ -252,7 +238,7 @@ class NLPProcessor:
         self._nlp = nlp
         return nlp
 
-    def _add_entity_ruler(self, nlp: "Language") -> None:
+    def _add_entity_ruler(self, nlp: Language) -> None:
         """Register the EntityRuler *after* ``ner`` so it overwrites spaCy's labels."""
         if "entity_ruler" in nlp.pipe_names:
             ruler = nlp.get_pipe("entity_ruler")
@@ -304,7 +290,7 @@ class NLPProcessor:
             for chunk in doc.noun_chunks
         )
 
-        ruler_spans = self._ruler_span_lookup(document.text, doc)
+        ruler_spans = self._ruler_span_lookup(doc)
         mentions = self._detect_mentions(document, doc, ruler_spans)
 
         by_sentence: dict[int, tuple[EntityMention, ...]] = {}
@@ -328,21 +314,23 @@ class NLPProcessor:
             mentions_by_sentence=by_sentence,
         )
 
-    def _ruler_span_lookup(self, text: str, doc: "Doc") -> dict[int, str]:
-        """Map ``start_char -> canonical_label`` for spans produced by the ruler.
+    def _ruler_span_lookup(self, doc: Doc) -> dict[int, str]:
+        """Map ``start_char -> surface text`` for spans produced by the ruler.
 
         A span is attributed to the ruler when it matches a declared surface form, which
-        is what tells the resolver it may trust the label over spaCy's.
+        is what tells the resolver it may trust the label over spaCy's. Membership is
+        decided against the registered pattern set, so a surface the ruler matched
+        through tokenisation is still recognised.
         """
-        surfaces = {p.surface.lower() for p in self._patterns}
-        lookup: dict[int, str] = {}
-        for ent in doc.ents:
-            if ent.text.lower() in surfaces:
-                lookup[ent.start_char] = ent.text
-        return lookup
+        surfaces = {pattern.surface.lower() for pattern in self._patterns}
+        return {
+            ent.start_char: ent.text
+            for ent in doc.ents
+            if ent.text.lower() in surfaces
+        }
 
     def _detect_mentions(
-        self, document: Document, doc: "Doc", ruler_spans: dict[int, str]
+        self, document: Document, doc: Doc, ruler_spans: dict[int, str]
     ) -> tuple[EntityMention, ...]:
         """Collect candidate mentions from four sources and resolve overlaps.
 
@@ -394,8 +382,8 @@ class NLPProcessor:
     def _make_mention(
         self,
         document: Document,
-        doc: "Doc",
-        span: "Span | Token",  # noqa: F821 - spacy Span or Token
+        doc: Doc,
+        span: Span | Token,  # noqa: F821 - spacy Span or Token
         source: MentionSource,
         *,
         label: str,
@@ -420,7 +408,7 @@ class NLPProcessor:
         )
 
     @staticmethod
-    def _sentence_index_of(doc: "Doc", token_index: int) -> int:
+    def _sentence_index_of(doc: Doc, token_index: int) -> int:
         for index, sent in enumerate(doc.sents):
             if sent.start <= token_index < sent.end:
                 return index
