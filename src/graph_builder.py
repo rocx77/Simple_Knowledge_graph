@@ -65,6 +65,10 @@ class GraphBuilder:
                 rule_id=triple.rule_id,
                 original_subject=triple.original_subject,
                 original_object=triple.original_object,
+                # The canonical labels the surfaces resolved to. The query engine pairs
+                # these with the two fields above to show "Resolved: 'He' -> Arun Mehta".
+                canonical_subject=triple.subject,
+                canonical_object=triple.object,
                 triple_id=triple.triple_id,
                 duplicate_count=triple.duplicate_count,
             )
