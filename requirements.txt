@@ -14,7 +14,15 @@
 spacy>=3.8.0,<4.0.0           # tokenisation, POS, dependency parse, NER, noun chunks
 fastcoref>=2.1.6,<3.0.0      # neural coreference resolution (requires en_core_web_sm)
 torch>=2.0.0                 # inference backend for FastCoref (CPU build is sufficient)
-transformers>=4.40.0         # FastCoref checkpoint loader
+
+# HARD CONSTRAINT -- transformers must stay on the 4.x line.
+# fastcoref 2.1.6 subclasses transformers.BertPreTrainedModel but does not define
+# the `all_tied_weights_keys` attribute that transformers 5.x expects, so loading
+# biu-nlp/f-coref under 5.x raises:
+#     AttributeError: 'FCorefModel' object has no attribute 'all_tied_weights_keys'
+# Verified working ceiling: 4.57.6. Verified broken: 5.18.0.
+# See docs/07_RUNBOOK.md ("Dependency constraints") before relaxing this.
+transformers>=4.40.0,<5.0.0
 
 # --- spaCy English pipeline ---
 # NOT installable from PyPI. Installed separately, see docs/07_RUNBOOK.md:
