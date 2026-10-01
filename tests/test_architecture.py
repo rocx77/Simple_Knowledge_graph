@@ -67,15 +67,39 @@ class TestInvariantI1:
         assert pipeline.PROGRESS_MESSAGES[-1] == "Done."
 
     def test_no_transitive_import_of_ui_libraries(self):
-        """Importing src.pipeline must not pull in a UI library."""
+        """Importing src.pipeline must not pull in a UI library.
+
+        Every streamlit submodule is evicted and restored around the import. Evicting only
+        the top-level name is not enough: streamlit caches a process-wide
+        DeltaGeneratorSingleton in a submodule, and a partial eviction leaves that stale
+        instance behind, which makes every later streamlit import fail with
+        "DeltaGeneratorSingleton instance already exists".
+        """
         import importlib
         import sys
 
-        for module in ("streamlit", "pyvis"):
-            sys.modules.pop(module, None)
-        importlib.import_module("src.pipeline")
-        for module in ("streamlit", "pyvis"):
-            assert module not in sys.modules, f"importing src.pipeline loaded {module}"
+        def streamlit_modules() -> dict[str, object]:
+            return {
+                name: module
+                for name, module in sys.modules.items()
+                if name == "streamlit" or name.startswith("streamlit.")
+            }
+
+        def evict_tree(prefix: str) -> None:
+            for name in list(sys.modules):
+                if name == prefix or name.startswith(prefix + "."):
+                    del sys.modules[name]
+
+        saved = streamlit_modules()
+        try:
+            evict_tree("streamlit")
+            sys.modules.pop("pyvis", None)
+            importlib.import_module("src.pipeline")
+            assert "streamlit" not in sys.modules
+            assert "pyvis" not in sys.modules
+        finally:
+            evict_tree("streamlit")
+            sys.modules.update(saved)
 
 
 class TestInvariantI6:

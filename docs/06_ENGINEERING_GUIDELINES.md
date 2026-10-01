@@ -183,6 +183,31 @@ trigger, dependency signature, output, confidence and rationale.
 **Rule D3 — the corpus is immutable.** If `scripts/verify_corpus.py` fails, the text
 was changed by mistake. Restore it; do not update the manifest to match.
 
+**Rule D4 — an architectural fork gets an ADR.** When a decision has real, competing
+alternatives and a non-obvious cost (not merely "I picked X"), record it in
+`docs/adr/NNNN-slug.md` with context, the options considered, the decision, and the
+consequences. Numbering is sequential and never reused. This applies even when the
+decision looks forced in hindsight — the value is in the *rejected* options and the cost.
+
+Current ADRs:
+
+| # | Decision |
+|---|---|
+| 0001 | [Offline graph rendering](adr/0001-offline-graph-rendering.md) — PyVis cannot emit offline HTML; inline its bundled vis.js. |
+| 0002 | [UI layering and layout](adr/0002-ui-layering.md) — `app.py` + `ui/`, AST-based import checks, caching boundaries. |
+
+### Documentation index
+
+| Document | Role |
+|---|---|
+| `00_PROJECT_CHARTER.md` | scope, invariants, non-goals |
+| `02_PIPELINE_PLAN.md` | the stage contract (Rule D1) |
+| `04_RELATION_RULES.md` | rule catalogue, confidence bands, declined readings (Rule D2, invariant I7/I8) |
+| `05_QUERY_LANGUAGE.md` | query grammar, direction rule, synonym ambiguity, connection search |
+| `06_ENGINEERING_GUIDELINES.md` | this file |
+| `adr/` | architectural decision records (Rule D4) |
+| `HANDOFF_DESKTOP_APP.md` (repo root) | desktop shell + screenshot harness, environment findings |
+
 ## 11. Debugging playbook
 
 When a triple is wrong, work backwards along the chain — this order is the reverse of

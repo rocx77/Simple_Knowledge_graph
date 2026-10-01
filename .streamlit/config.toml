@@ -1,0 +1,19 @@
+# Project-level Streamlit configuration.
+#
+# Kept minimal and local: the app must present well offline, so no Google Fonts and no
+# remote theme assets. The graph palette lives in ui/theme.py, not here, because these
+# values cannot express per-entity-type colours.
+[theme]
+base = "light"
+primaryColor = "#4C8DF6"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F6F8"
+textColor = "#1B2733"
+font = "sans serif"
+
+[server]
+# The artifacts are small and local; a long headless delay only gets in the way of a demo.
+headless = true
+
+[browser]
+gatherUsageStats = false

@@ -1,6 +1,18 @@
 # Development-only dependencies (installed on top of requirements.txt).
 #
 #     .venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-dev.txt
+#
+# Kept separate from requirements.txt on purpose: the shipped app must stay offline and
+# dependency-light (spec section 4 bans unnecessary infrastructure). Neither pywebview nor
+# playwright is imported by app.py, ui/ or src/ -- they exist only for the desktop shell
+# and the screenshot harness described in HANDOFF_DESKTOP_APP.md.
+#
+# playwright additionally needs a one-time browser download:
+#     python -m playwright install chromium
 
 pytest>=8.0        # test runner
 ruff>=0.6          # lint + format
+
+# --- desktop shell + screenshot harness (optional) ---
+pywebview>=0.48    # native window over the local Streamlit server
+playwright>=1.49   # headless Chromium for reviewing the rendered page
