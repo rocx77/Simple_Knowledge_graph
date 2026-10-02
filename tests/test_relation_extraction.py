@@ -11,68 +11,101 @@ import pytest
 
 pytestmark = [pytest.mark.slow, pytest.mark.integration, pytest.mark.acceptance]
 
-#: (subject, relation, object) -- the 59 required triples.
+#: (subject, relation, object) -- the 92 required triples.
 REQUIRED_TRIPLES = frozenset(
     {
-        ("Aether Analytics", "develops", "OrionEdge"),
-        ("Aether Analytics", "improves", "GraphMatch"),
-        ("Aether Analytics", "partners_with", "LedgerLine"),
-        ("Aether Analytics", "partners_with", "Quantum Forge"),
-        ("Aether Analytics", "uses", "ChatGPT"),
-        ("AlphaFold", "focuses_on", "protein structure prediction"),
-        ("Arun Mehta", "collaborates_with", "Nila Rao"),
-        ("Arun Mehta", "works_at", "Aether Analytics"),
-        ("Arun Mehta", "works_on", "OrionEdge"),
-        ("CERN", "develops", "Large Hadron Collider"),
-        ("CERN", "partners_with", "Fermilab"),
-        ("ChatGPT", "focuses_on", "conversational AI assistants"),
-        ("DeepMind", "develops", "AlphaFold"),
-        ("Demis Hassabis", "founded", "DeepMind"),
-        ("Demis Hassabis", "leads", "DeepMind"),
-        ("Dmitri Volkov", "collaborates_with", "Priya Nair"),
-        ("Dmitri Volkov", "works_at", "LedgerLine"),
-        ("Dmitri Volkov", "works_on", "AuditLens"),
-        ("Dr. Mira Sen", "founded", "Aether Analytics"),
-        ("Dr. Mira Sen", "leads", "Project Aurora"),
-        ("Fermilab", "works_on", "Large Hadron Collider"),
-        ("Firefox", "focuses_on", "web browsing"),
-        ("Google", "uses", "AlphaFold"),
-        ("GraphMatch", "deployed_at", "Helios Bank"),
-        ("GraphMatch", "focuses_on", "ledger anomaly detection"),
-        ("GraphMatch", "uses", "Python"),
-        ("Guido van Rossum", "develops", "Python"),
-        ("Guido van Rossum", "works_on", "Python"),
-        ("Helios Bank", "customer_of", "Aether Analytics"),
-        ("Helios Bank", "uses", "Firefox"),
-        ("Helios Bank", "uses", "OrionEdge"),
-        ("Large Hadron Collider", "focuses_on", "particle physics experiments"),
-        ("LedgerLine", "integrated_into", "OrionEdge"),
-        ("Linus Torvalds", "leads", "Linux Foundation"),
-        ("Linus Torvalds", "works_on", "Linux"),
-        ("Linux Foundation", "develops", "Linux"),
-        ("Linux", "focuses_on", "open source kernels"),
-        ("Marc Andreessen", "founded", "Netscape"),
-        ("Marc Andreessen", "leads", "Netscape"),
-        ("Microsoft", "uses", "ChatGPT"),
-        ("Mozilla", "develops", "Firefox"),
-        ("Mozilla", "uses", "Linux"),
-        ("Netscape", "partners_with", "Mozilla"),
-        ("Nila Rao", "founded", "Resolution Working Group"),
-        ("Nila Rao", "improves", "Entity Resolution Engine"),
-        ("Nila Rao", "leads", "Project Aurora"),
-        ("OpenAI", "develops", "ChatGPT"),
-        ("OrionEdge", "deployed_at", "Helios Bank"),
-        ("OrionEdge", "uses", "Linux"),
-        ("Priya Nair", "collaborates_with", "Nila Rao"),
-        ("Priya Nair", "leads", "GraphMatch"),
-        ("Priya Nair", "leads", "Resolution Working Group"),
-        ("Project Aurora", "focuses_on", "graph-based transaction analysis"),
-        ("Project Aurora", "integrated_into", "OrionEdge"),
-        ("Python Software Foundation", "develops", "Python"),
-        ("Python", "focuses_on", "general purpose programming"),
-        ("Resolution Working Group", "uses", "GraphMatch"),
-        ("Sam Altman", "founded", "OpenAI"),
-        ("Sam Altman", "leads", "OpenAI"),
+        ('Aether Analytics', 'develops', 'OrionEdge'),
+        ('Aether Analytics', 'improves', 'GraphMatch'),
+        ('Aether Analytics', 'partners_with', 'LedgerLine'),
+        ('Aether Analytics', 'partners_with', 'Quantum Forge'),
+        ('Aether Analytics', 'uses', 'ChatGPT'),
+        ('AlphaFold', 'focuses_on', 'protein structure prediction'),
+        ('Arun Mehta', 'collaborates_with', 'Nila Rao'),
+        ('Arun Mehta', 'works_at', 'Aether Analytics'),
+        ('Arun Mehta', 'works_on', 'OrionEdge'),
+        ('CERN', 'develops', 'Large Hadron Collider'),
+        ('CERN', 'partners_with', 'Fermilab'),
+        ('ChatGPT', 'focuses_on', 'conversational AI assistants'),
+        ('Christopher Nolan', 'develops', 'Inception'),
+        ('DeepMind', 'develops', 'AlphaFold'),
+        ('Demis Hassabis', 'founded', 'DeepMind'),
+        ('Demis Hassabis', 'leads', 'DeepMind'),
+        ('Denis Villeneuve', 'works_on', 'Dune'),
+        ('Dmitri Volkov', 'collaborates_with', 'Priya Nair'),
+        ('Dmitri Volkov', 'works_at', 'LedgerLine'),
+        ('Dmitri Volkov', 'works_on', 'AuditLens'),
+        ('Dr. Mira Sen', 'founded', 'Aether Analytics'),
+        ('Dr. Mira Sen', 'leads', 'Project Aurora'),
+        ('Elon Musk', 'founded', 'SpaceX'),
+        ('Elon Musk', 'leads', 'SpaceX'),
+        ('European Commission', 'focuses_on', 'trade policy'),
+        ('FIFA', 'partners_with', 'adidas'),
+        ('FIFA', 'uses', 'World Cup'),
+        ('Fermilab', 'works_on', 'Large Hadron Collider'),
+        ('Firefox', 'focuses_on', 'web browsing'),
+        ('Gianni Infantino', 'leads', 'World Cup'),
+        ('Google', 'uses', 'AlphaFold'),
+        ('GraphMatch', 'deployed_at', 'Helios Bank'),
+        ('GraphMatch', 'focuses_on', 'ledger anomaly detection'),
+        ('GraphMatch', 'uses', 'Python'),
+        ('Guido van Rossum', 'develops', 'Python'),
+        ('Guido van Rossum', 'works_on', 'Python'),
+        ('Hayao Miyazaki', 'founded', 'Studio Ghibli'),
+        ('Hayao Miyazaki', 'leads', 'Studio Ghibli'),
+        ('Helios Bank', 'customer_of', 'Aether Analytics'),
+        ('Helios Bank', 'uses', 'Firefox'),
+        ('Helios Bank', 'uses', 'OrionEdge'),
+        ('Inception', 'focuses_on', 'dream heist thrillers'),
+        ('Jens Stoltenberg', 'leads', 'NATO'),
+        ('Kyoto Animation', 'collaborates_with', 'Makoto Shinkai'),
+        ('Large Hadron Collider', 'focuses_on', 'particle physics experiments'),
+        ('LedgerLine', 'integrated_into', 'OrionEdge'),
+        ('Linus Torvalds', 'leads', 'Linux Foundation'),
+        ('Linus Torvalds', 'works_on', 'Linux'),
+        ('Linux', 'focuses_on', 'open source kernels'),
+        ('Linux Foundation', 'develops', 'Linux'),
+        ('Makoto Shinkai', 'develops', 'Your Name'),
+        ('Makoto Shinkai', 'works_on', 'Suzume'),
+        ('Marc Andreessen', 'founded', 'Netscape'),
+        ('Marc Andreessen', 'leads', 'Netscape'),
+        ('Mario', 'focuses_on', 'platforming games'),
+        ('Microsoft', 'uses', 'ChatGPT'),
+        ('Mozilla', 'develops', 'Firefox'),
+        ('Mozilla', 'uses', 'Linux'),
+        ('NASA', 'partners_with', 'SpaceX'),
+        ('NASA', 'uses', 'Starship'),
+        ('NATO', 'partners_with', 'European Union'),
+        ('Netscape', 'partners_with', 'Mozilla'),
+        ('Nila Rao', 'founded', 'Resolution Working Group'),
+        ('Nila Rao', 'improves', 'Entity Resolution Engine'),
+        ('Nila Rao', 'leads', 'Project Aurora'),
+        ('Nintendo', 'develops', 'Mario'),
+        ('Nintendo', 'partners_with', 'DeNA'),
+        ('OpenAI', 'develops', 'ChatGPT'),
+        ('OrionEdge', 'deployed_at', 'Helios Bank'),
+        ('OrionEdge', 'uses', 'Linux'),
+        ('Priya Nair', 'collaborates_with', 'Nila Rao'),
+        ('Priya Nair', 'leads', 'GraphMatch'),
+        ('Priya Nair', 'leads', 'Resolution Working Group'),
+        ('Project Aurora', 'focuses_on', 'graph-based transaction analysis'),
+        ('Project Aurora', 'integrated_into', 'OrionEdge'),
+        ('Python', 'focuses_on', 'general purpose programming'),
+        ('Python Software Foundation', 'develops', 'Python'),
+        ('Resolution Working Group', 'uses', 'GraphMatch'),
+        ('Sam Altman', 'founded', 'OpenAI'),
+        ('Sam Altman', 'leads', 'OpenAI'),
+        ('Shigeru Miyamoto', 'develops', 'Mario'),
+        ('SpaceX', 'develops', 'Starship'),
+        ('Spirited Away', 'focuses_on', 'animated fantasy storytelling'),
+        ('Spotify', 'focuses_on', 'music streaming'),
+        ('Starship', 'focuses_on', 'deep space transport'),
+        ('Studio Ghibli', 'develops', 'Spirited Away'),
+        ('Suzume', 'focuses_on', 'animated disaster aftermath'),
+        ('Universal Music', 'collaborates_with', 'Daniel Ek'),
+        ('Ursula von der Leyen', 'leads', 'European Commission'),
+        ('Warner Bros', 'develops', 'Dune'),
+        ('World Cup', 'focuses_on', 'international football'),
+        ('Your Name', 'focuses_on', 'body swap romance'),
     }
 )
 
@@ -128,8 +161,8 @@ def test_no_unexpected_triples(extracted):
 
 
 def test_triple_count(triples):
-    assert len(triples) == 61
-    assert len({t.as_tuple for t in triples}) == 61, "duplicates should be deduplicated"
+    assert len(triples) == 94
+    assert len({t.as_tuple for t in triples}) == 94, "duplicates should be deduplicated"
 
 
 @pytest.mark.parametrize("key, reason", sorted(FORBIDDEN_TRIPLES.items()))
@@ -195,11 +228,11 @@ class TestGraphInvariants:
 
     def test_node_count(self, triples):
         labels = {t.subject for t in triples} | {t.object for t in triples}
-        assert len(labels) == 45
+        assert len(labels) == 86
 
     def test_type_distribution(self, triples, registry):
-        """Ten people, fourteen organisations, eight products, three projects,
-        two components, eight literal objects."""
+        """Twenty people, twenty-seven organisations, sixteen products, four projects,
+        two components, seventeen literal objects."""
         from collections import Counter
 
         def type_of(label: str) -> str:
@@ -213,12 +246,12 @@ class TestGraphInvariants:
             for label in {t.subject for t in triples} | {t.object for t in triples}
         )
         assert counts == {
-            "person": 10,
-            "organization": 14,
-            "product": 8,
-            "project": 3,
+            "person": 20,
+            "organization": 27,
+            "product": 16,
+            "project": 4,
             "component": 2,
-            "literal": 8,
+            "literal": 17,
         }
 
     def test_no_self_loops(self, triples):

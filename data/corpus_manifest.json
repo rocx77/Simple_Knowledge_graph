@@ -94,5 +94,53 @@
     "bytes": 133,
     "characters": 133,
     "sentences_estimate": 3
+  },
+  "doc_17_nato.txt": {
+    "sha256": "1054df7eda0626a11c9e78ad35ff30286383c6ac5a75397f3ec7e04b0a724dca",
+    "bytes": 169,
+    "characters": 169,
+    "sentences_estimate": 3
+  },
+  "doc_18_ghibli.txt": {
+    "sha256": "1f774a9d981fecbce31f7b605da1fd8ef2c4e29efee5fab8f0b8553feb62ca86",
+    "bytes": 191,
+    "characters": 191,
+    "sentences_estimate": 3
+  },
+  "doc_19_shinkai.txt": {
+    "sha256": "0102faa6aa01423bacec7368075b06e58ba15a8135d46f400bafc0b548697f5e",
+    "bytes": 204,
+    "characters": 204,
+    "sentences_estimate": 4
+  },
+  "doc_20_space.txt": {
+    "sha256": "7d932e1e97d96f5c52534e78f5e7912f066f5e32c20a538b9092f250b0e3f372",
+    "bytes": 228,
+    "characters": 228,
+    "sentences_estimate": 5
+  },
+  "doc_21_nintendo.txt": {
+    "sha256": "a714204f27e63a3a6626ed4b7f7ec3b47f3db93150c516f1e3fc204907a88a46",
+    "bytes": 124,
+    "characters": 124,
+    "sentences_estimate": 3
+  },
+  "doc_22_fifa.txt": {
+    "sha256": "039f7a40d2fa028bd5c9e47b00213c65fc8f0dd96a492add7c0f714dde35617f",
+    "bytes": 158,
+    "characters": 158,
+    "sentences_estimate": 3
+  },
+  "doc_23_spotify.txt": {
+    "sha256": "3f302d3618b8a47cbe7d140c77fcaf90ab99aba36c03474f16d236f86728d951",
+    "bytes": 105,
+    "characters": 105,
+    "sentences_estimate": 2
+  },
+  "doc_24_nolan.txt": {
+    "sha256": "107cffd8a231758aa157a62eefc4bd0f7ce1d20c5774d87108783e0dc8c0ee92",
+    "bytes": 142,
+    "characters": 142,
+    "sentences_estimate": 3
   }
 }

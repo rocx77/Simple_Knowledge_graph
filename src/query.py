@@ -33,8 +33,8 @@ from .models import RelationName
 #: A strict superset of the specification's table: "deployed" and "is deployed" are added
 #: because query 8 ("Where is OrionEdge deployed?") contains none of the listed forms.
 RELATION_SYNONYMS: dict[RelationName, tuple[str, ...]] = {
-    RelationName.FOUNDED: ("founded", "founder of", "started", "created", "co-founded"),
-    RelationName.DEVELOPS: ("develops", "developed", "develop", "builds", "built", "makes"),
+    RelationName.FOUNDED: ("founded", "founder of", "started", "co-founded"),
+    RelationName.DEVELOPS: ("develops", "developed", "develop", "builds", "built", "makes", "made", "creates", "created"),
     RelationName.WORKS_ON: ("works on", "working on", "contributes to", "worked on"),
     RelationName.WORKS_AT: ("works at", "works for", "working at", "joined", "employee of"),
     RelationName.LEADS: ("leads", "leading", "leader of", "headed by", "heads", "lead of"),

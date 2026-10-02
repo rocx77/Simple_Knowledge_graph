@@ -2,8 +2,8 @@
   "directed": true,
   "multigraph": true,
   "graph": {
-    "node_count": 45,
-    "edge_count": 61
+    "node_count": 86,
+    "edge_count": 94
   },
   "nodes": [
     {
@@ -190,6 +190,77 @@
       "id": "product:alphafold"
     },
     {
+      "label": "European Commission",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "European Commission"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_17_nato"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "organization:european_commission"
+    },
+    {
+      "label": "trade policy",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:trade_policy"
+    },
+    {
+      "label": "FIFA",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "FIFA"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_22_fifa"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "organization:fifa"
+    },
+    {
+      "label": "adidas",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "adidas"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_22_fifa"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:adidas"
+    },
+    {
+      "label": "World Cup",
+      "type": "PROJECT",
+      "aliases": [
+        "World Cup"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_22_fifa"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "project:world_cup"
+    },
+    {
       "label": "Google",
       "type": "ORGANIZATION",
       "aliases": [
@@ -239,6 +310,36 @@
       "out_degree": 1,
       "degree": 3,
       "id": "product:firefox"
+    },
+    {
+      "label": "Kyoto Animation",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Kyoto Animation"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_19_shinkai"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:kyoto_animation"
+    },
+    {
+      "label": "Makoto Shinkai",
+      "type": "PERSON",
+      "aliases": [
+        "Makoto Shinkai"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_19_shinkai"
+      ],
+      "in_degree": 1,
+      "out_degree": 2,
+      "degree": 3,
+      "id": "person:makoto_shinkai"
     },
     {
       "label": "Linux Foundation",
@@ -303,6 +404,81 @@
       "id": "organization:mozilla"
     },
     {
+      "label": "NASA",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "NASA"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_20_space"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "organization:nasa"
+    },
+    {
+      "label": "SpaceX",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "SpaceX"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_20_space"
+      ],
+      "in_degree": 3,
+      "out_degree": 1,
+      "degree": 4,
+      "id": "organization:spacex"
+    },
+    {
+      "label": "Starship",
+      "type": "PRODUCT",
+      "aliases": [
+        "Starship"
+      ],
+      "mention_count": 4,
+      "documents": [
+        "doc_20_space"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "product:starship"
+    },
+    {
+      "label": "NATO",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "NATO"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_17_nato"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "organization:nato"
+    },
+    {
+      "label": "European Union",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "European Union"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_17_nato"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:european_union"
+    },
+    {
       "label": "Netscape",
       "type": "ORGANIZATION",
       "aliases": [
@@ -316,6 +492,51 @@
       "out_degree": 1,
       "degree": 3,
       "id": "organization:netscape"
+    },
+    {
+      "label": "Nintendo",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Nintendo"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_21_nintendo"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "organization:nintendo"
+    },
+    {
+      "label": "Mario",
+      "type": "PRODUCT",
+      "aliases": [
+        "Mario"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_21_nintendo"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "product:mario"
+    },
+    {
+      "label": "DeNA",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "DeNA"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_21_nintendo"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:dena"
     },
     {
       "label": "OpenAI",
@@ -364,6 +585,96 @@
       "id": "product:python"
     },
     {
+      "label": "Studio Ghibli",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Studio Ghibli"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_18_ghibli"
+      ],
+      "in_degree": 2,
+      "out_degree": 1,
+      "degree": 3,
+      "id": "organization:studio_ghibli"
+    },
+    {
+      "label": "Spirited Away",
+      "type": "PRODUCT",
+      "aliases": [
+        "Spirited Away"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_18_ghibli"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:spirited_away"
+    },
+    {
+      "label": "Universal Music",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Universal Music"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_23_spotify"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:universal_music"
+    },
+    {
+      "label": "Daniel Ek",
+      "type": "PERSON",
+      "aliases": [
+        "Daniel Ek"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_23_spotify"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "person:daniel_ek"
+    },
+    {
+      "label": "Warner Bros",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Warner Bros"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_24_nolan"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:warner_bros"
+    },
+    {
+      "label": "Dune",
+      "type": "PRODUCT",
+      "aliases": [
+        "Dune"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_24_nolan"
+      ],
+      "in_degree": 2,
+      "out_degree": 0,
+      "degree": 2,
+      "id": "product:dune"
+    },
+    {
       "label": "Arun Mehta",
       "type": "PERSON",
       "aliases": [
@@ -398,6 +709,36 @@
       "id": "person:nila_rao"
     },
     {
+      "label": "Christopher Nolan",
+      "type": "PERSON",
+      "aliases": [
+        "Christopher Nolan"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_24_nolan"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:christopher_nolan"
+    },
+    {
+      "label": "Inception",
+      "type": "PRODUCT",
+      "aliases": [
+        "Inception"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_24_nolan"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:inception"
+    },
+    {
       "label": "Demis Hassabis",
       "type": "PERSON",
       "aliases": [
@@ -411,6 +752,21 @@
       "out_degree": 2,
       "degree": 2,
       "id": "person:demis_hassabis"
+    },
+    {
+      "label": "Denis Villeneuve",
+      "type": "PERSON",
+      "aliases": [
+        "Denis Villeneuve"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_24_nolan"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:denis_villeneuve"
     },
     {
       "label": "Dmitri Volkov",
@@ -460,6 +816,36 @@
       "id": "product:auditlens"
     },
     {
+      "label": "Elon Musk",
+      "type": "PERSON",
+      "aliases": [
+        "Elon Musk"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_20_space"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:elon_musk"
+    },
+    {
+      "label": "Gianni Infantino",
+      "type": "PERSON",
+      "aliases": [
+        "Gianni Infantino"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_22_fifa"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:gianni_infantino"
+    },
+    {
       "label": "Guido van Rossum",
       "type": "PERSON",
       "aliases": [
@@ -475,6 +861,36 @@
       "id": "person:guido_van_rossum"
     },
     {
+      "label": "Hayao Miyazaki",
+      "type": "PERSON",
+      "aliases": [
+        "Hayao Miyazaki"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_18_ghibli"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:hayao_miyazaki"
+    },
+    {
+      "label": "Jens Stoltenberg",
+      "type": "PERSON",
+      "aliases": [
+        "Jens Stoltenberg"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_17_nato"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:jens_stoltenberg"
+    },
+    {
       "label": "Linus Torvalds",
       "type": "PERSON",
       "aliases": [
@@ -488,6 +904,36 @@
       "out_degree": 2,
       "degree": 2,
       "id": "person:linus_torvalds"
+    },
+    {
+      "label": "Your Name",
+      "type": "PRODUCT",
+      "aliases": [
+        "Your Name"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_19_shinkai"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:your_name"
+    },
+    {
+      "label": "Suzume",
+      "type": "PRODUCT",
+      "aliases": [
+        "Suzume"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_19_shinkai"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:suzume"
     },
     {
       "label": "Marc Andreessen",
@@ -586,6 +1032,36 @@
       "id": "person:sam_altman"
     },
     {
+      "label": "Shigeru Miyamoto",
+      "type": "PERSON",
+      "aliases": [
+        "Shigeru Miyamoto"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_21_nintendo"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:shigeru_miyamoto"
+    },
+    {
+      "label": "Ursula von der Leyen",
+      "type": "PERSON",
+      "aliases": [
+        "Ursula von der Leyen"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_17_nato"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:ursula_von_der_leyen"
+    },
+    {
       "label": "protein structure prediction",
       "type": "LITERAL",
       "aliases": [],
@@ -630,6 +1106,17 @@
       "id": "literal:ledger_anomaly_detection"
     },
     {
+      "label": "dream heist thrillers",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:dream_heist_thrillers"
+    },
+    {
       "label": "particle physics experiments",
       "type": "LITERAL",
       "aliases": [],
@@ -641,6 +1128,17 @@
       "id": "literal:particle_physics_experiments"
     },
     {
+      "label": "platforming games",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:platforming_games"
+    },
+    {
       "label": "general purpose programming",
       "type": "LITERAL",
       "aliases": [],
@@ -650,6 +1148,76 @@
       "out_degree": 0,
       "degree": 1,
       "id": "literal:general_purpose_programming"
+    },
+    {
+      "label": "animated fantasy storytelling",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:animated_fantasy_storytelling"
+    },
+    {
+      "label": "Spotify",
+      "type": "PRODUCT",
+      "aliases": [
+        "Spotify"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_23_spotify"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "product:spotify"
+    },
+    {
+      "label": "music streaming",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:music_streaming"
+    },
+    {
+      "label": "deep space transport",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:deep_space_transport"
+    },
+    {
+      "label": "animated disaster aftermath",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:animated_disaster_aftermath"
+    },
+    {
+      "label": "body swap romance",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:body_swap_romance"
     },
     {
       "label": "open source kernels",
@@ -687,6 +1255,17 @@
       "out_degree": 0,
       "degree": 1,
       "id": "literal:graph_based_transaction_analysis"
+    },
+    {
+      "label": "international football",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:international_football"
     }
   ],
   "links": [
@@ -1033,6 +1612,82 @@
       "key": "triple:product:alphafold--focuses_on->literal:protein_structure_prediction@doc_11_deepmind"
     },
     {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_17_nato",
+      "sentence_id": 3,
+      "sentence": "The European Commission focuses on trade policy.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "European Commission",
+      "original_object": "trade policy",
+      "canonical_subject": "European Commission",
+      "canonical_object": "trade policy",
+      "triple_id": "triple:organization:european_commission--focuses_on->literal:trade_policy@doc_17_nato",
+      "duplicate_count": 1,
+      "source": "organization:european_commission",
+      "target": "literal:trade_policy",
+      "key": "triple:organization:european_commission--focuses_on->literal:trade_policy@doc_17_nato"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_22_fifa",
+      "sentence_id": 1,
+      "sentence": "FIFA partnered with adidas to equip the teams.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "FIFA",
+      "original_object": "adidas",
+      "canonical_subject": "FIFA",
+      "canonical_object": "adidas",
+      "triple_id": "triple:organization:fifa--partners_with->organization:adidas@doc_22_fifa",
+      "duplicate_count": 1,
+      "source": "organization:fifa",
+      "target": "organization:adidas",
+      "key": "triple:organization:fifa--partners_with->organization:adidas@doc_22_fifa"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_22_fifa",
+      "sentence_id": 3,
+      "sentence": "FIFA uses the World Cup.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "FIFA",
+      "original_object": "World Cup",
+      "canonical_subject": "FIFA",
+      "canonical_object": "World Cup",
+      "triple_id": "triple:organization:fifa--uses->project:world_cup@doc_22_fifa",
+      "duplicate_count": 1,
+      "source": "organization:fifa",
+      "target": "project:world_cup",
+      "key": "triple:organization:fifa--uses->project:world_cup@doc_22_fifa"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_22_fifa",
+      "sentence_id": 2,
+      "sentence": "The World Cup focuses on international football.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "World Cup",
+      "original_object": "international football",
+      "canonical_subject": "World Cup",
+      "canonical_object": "international football",
+      "triple_id": "triple:project:world_cup--focuses_on->literal:international_football@doc_22_fifa",
+      "duplicate_count": 1,
+      "source": "project:world_cup",
+      "target": "literal:international_football",
+      "key": "triple:project:world_cup--focuses_on->literal:international_football@doc_22_fifa"
+    },
+    {
       "relation": "uses",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -1126,6 +1781,63 @@
       "source": "product:firefox",
       "target": "literal:web_browsing",
       "key": "triple:product:firefox--focuses_on->literal:web_browsing@doc_15_mozilla"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_19_shinkai",
+      "sentence_id": 4,
+      "sentence": "Kyoto Animation collaborates with Makoto Shinkai.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "Kyoto Animation",
+      "original_object": "Makoto Shinkai",
+      "canonical_subject": "Kyoto Animation",
+      "canonical_object": "Makoto Shinkai",
+      "triple_id": "triple:organization:kyoto_animation--collaborates_with->person:makoto_shinkai@doc_19_shinkai",
+      "duplicate_count": 1,
+      "source": "organization:kyoto_animation",
+      "target": "person:makoto_shinkai",
+      "key": "triple:organization:kyoto_animation--collaborates_with->person:makoto_shinkai@doc_19_shinkai"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_19_shinkai",
+      "sentence_id": 0,
+      "sentence": "Makoto Shinkai developed Your Name.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Makoto Shinkai",
+      "original_object": "Your Name",
+      "canonical_subject": "Makoto Shinkai",
+      "canonical_object": "Your Name",
+      "triple_id": "triple:person:makoto_shinkai--develops->product:your_name@doc_19_shinkai",
+      "duplicate_count": 1,
+      "source": "person:makoto_shinkai",
+      "target": "product:your_name",
+      "key": "triple:person:makoto_shinkai--develops->product:your_name@doc_19_shinkai"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_19_shinkai",
+      "sentence_id": 2,
+      "sentence": "Makoto Shinkai works on Suzume.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Makoto Shinkai",
+      "original_object": "Suzume",
+      "canonical_subject": "Makoto Shinkai",
+      "canonical_object": "Suzume",
+      "triple_id": "triple:person:makoto_shinkai--works_on->product:suzume@doc_19_shinkai",
+      "duplicate_count": 1,
+      "source": "person:makoto_shinkai",
+      "target": "product:suzume",
+      "key": "triple:person:makoto_shinkai--works_on->product:suzume@doc_19_shinkai"
     },
     {
       "relation": "develops",
@@ -1226,6 +1938,101 @@
       "relation": "partners_with",
       "confidence": 1.0,
       "coref_resolved": false,
+      "document_id": "doc_20_space",
+      "sentence_id": 4,
+      "sentence": "NASA partnered with SpaceX to launch the Starship rocket.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "NASA",
+      "original_object": "SpaceX",
+      "canonical_subject": "NASA",
+      "canonical_object": "SpaceX",
+      "triple_id": "triple:organization:nasa--partners_with->organization:spacex@doc_20_space",
+      "duplicate_count": 1,
+      "source": "organization:nasa",
+      "target": "organization:spacex",
+      "key": "triple:organization:nasa--partners_with->organization:spacex@doc_20_space"
+    },
+    {
+      "relation": "uses",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_20_space",
+      "sentence_id": 5,
+      "sentence": "NASA uses Starship.",
+      "inferred": false,
+      "rule_id": "R_USES",
+      "original_subject": "NASA",
+      "original_object": "Starship",
+      "canonical_subject": "NASA",
+      "canonical_object": "Starship",
+      "triple_id": "triple:organization:nasa--uses->product:starship@doc_20_space",
+      "duplicate_count": 1,
+      "source": "organization:nasa",
+      "target": "product:starship",
+      "key": "triple:organization:nasa--uses->product:starship@doc_20_space"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_20_space",
+      "sentence_id": 2,
+      "sentence": "SpaceX developed Starship.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "SpaceX",
+      "original_object": "Starship",
+      "canonical_subject": "SpaceX",
+      "canonical_object": "Starship",
+      "triple_id": "triple:organization:spacex--develops->product:starship@doc_20_space",
+      "duplicate_count": 1,
+      "source": "organization:spacex",
+      "target": "product:starship",
+      "key": "triple:organization:spacex--develops->product:starship@doc_20_space"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_20_space",
+      "sentence_id": 3,
+      "sentence": "Starship focuses on deep space transport.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Starship",
+      "original_object": "deep space transport",
+      "canonical_subject": "Starship",
+      "canonical_object": "deep space transport",
+      "triple_id": "triple:product:starship--focuses_on->literal:deep_space_transport@doc_20_space",
+      "duplicate_count": 1,
+      "source": "product:starship",
+      "target": "literal:deep_space_transport",
+      "key": "triple:product:starship--focuses_on->literal:deep_space_transport@doc_20_space"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_17_nato",
+      "sentence_id": 1,
+      "sentence": "NATO partnered with the European Union.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "NATO",
+      "original_object": "European Union",
+      "canonical_subject": "NATO",
+      "canonical_object": "European Union",
+      "triple_id": "triple:organization:nato--partners_with->organization:european_union@doc_17_nato",
+      "duplicate_count": 1,
+      "source": "organization:nato",
+      "target": "organization:european_union",
+      "key": "triple:organization:nato--partners_with->organization:european_union@doc_17_nato"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
       "document_id": "doc_15_mozilla",
       "sentence_id": 4,
       "sentence": "Netscape partnered with Mozilla.\n",
@@ -1240,6 +2047,63 @@
       "source": "organization:netscape",
       "target": "organization:mozilla",
       "key": "triple:organization:netscape--partners_with->organization:mozilla@doc_15_mozilla"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_21_nintendo",
+      "sentence_id": 2,
+      "sentence": "Nintendo develops Mario.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Nintendo",
+      "original_object": "Mario",
+      "canonical_subject": "Nintendo",
+      "canonical_object": "Mario",
+      "triple_id": "triple:organization:nintendo--develops->product:mario@doc_21_nintendo",
+      "duplicate_count": 1,
+      "source": "organization:nintendo",
+      "target": "product:mario",
+      "key": "triple:organization:nintendo--develops->product:mario@doc_21_nintendo"
+    },
+    {
+      "relation": "partners_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_21_nintendo",
+      "sentence_id": 3,
+      "sentence": "Nintendo partnered with DeNA.",
+      "inferred": false,
+      "rule_id": "R_PARTNERS_WITH",
+      "original_subject": "Nintendo",
+      "original_object": "DeNA",
+      "canonical_subject": "Nintendo",
+      "canonical_object": "DeNA",
+      "triple_id": "triple:organization:nintendo--partners_with->organization:dena@doc_21_nintendo",
+      "duplicate_count": 1,
+      "source": "organization:nintendo",
+      "target": "organization:dena",
+      "key": "triple:organization:nintendo--partners_with->organization:dena@doc_21_nintendo"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_21_nintendo",
+      "sentence_id": 1,
+      "sentence": "Mario focuses on platforming games.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Mario",
+      "original_object": "platforming games",
+      "canonical_subject": "Mario",
+      "canonical_object": "platforming games",
+      "triple_id": "triple:product:mario--focuses_on->literal:platforming_games@doc_21_nintendo",
+      "duplicate_count": 1,
+      "source": "product:mario",
+      "target": "literal:platforming_games",
+      "key": "triple:product:mario--focuses_on->literal:platforming_games@doc_21_nintendo"
     },
     {
       "relation": "develops",
@@ -1297,6 +2161,82 @@
       "source": "product:python",
       "target": "literal:general_purpose_programming",
       "key": "triple:product:python--focuses_on->literal:general_purpose_programming@doc_14_python"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_18_ghibli",
+      "sentence_id": 2,
+      "sentence": "Studio Ghibli developed Spirited Away, a fantasy film.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Studio Ghibli",
+      "original_object": "Spirited Away",
+      "canonical_subject": "Studio Ghibli",
+      "canonical_object": "Spirited Away",
+      "triple_id": "triple:organization:studio_ghibli--develops->product:spirited_away@doc_18_ghibli",
+      "duplicate_count": 1,
+      "source": "organization:studio_ghibli",
+      "target": "product:spirited_away",
+      "key": "triple:organization:studio_ghibli--develops->product:spirited_away@doc_18_ghibli"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_18_ghibli",
+      "sentence_id": 3,
+      "sentence": "Spirited Away focuses on animated fantasy storytelling.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Spirited Away",
+      "original_object": "animated fantasy storytelling",
+      "canonical_subject": "Spirited Away",
+      "canonical_object": "animated fantasy storytelling",
+      "triple_id": "triple:product:spirited_away--focuses_on->literal:animated_fantasy_storytelling@doc_18_ghibli",
+      "duplicate_count": 1,
+      "source": "product:spirited_away",
+      "target": "literal:animated_fantasy_storytelling",
+      "key": "triple:product:spirited_away--focuses_on->literal:animated_fantasy_storytelling@doc_18_ghibli"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_23_spotify",
+      "sentence_id": 2,
+      "sentence": "Universal Music collaborates with Daniel Ek.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "Universal Music",
+      "original_object": "Daniel Ek",
+      "canonical_subject": "Universal Music",
+      "canonical_object": "Daniel Ek",
+      "triple_id": "triple:organization:universal_music--collaborates_with->person:daniel_ek@doc_23_spotify",
+      "duplicate_count": 1,
+      "source": "organization:universal_music",
+      "target": "person:daniel_ek",
+      "key": "triple:organization:universal_music--collaborates_with->person:daniel_ek@doc_23_spotify"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_24_nolan",
+      "sentence_id": 2,
+      "sentence": "Warner Bros developed Dune.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Warner Bros",
+      "original_object": "Dune",
+      "canonical_subject": "Warner Bros",
+      "canonical_object": "Dune",
+      "triple_id": "triple:organization:warner_bros--develops->product:dune@doc_24_nolan",
+      "duplicate_count": 1,
+      "source": "organization:warner_bros",
+      "target": "product:dune",
+      "key": "triple:organization:warner_bros--develops->product:dune@doc_24_nolan"
     },
     {
       "relation": "collaborates_with",
@@ -1413,6 +2353,44 @@
       "key": "triple:person:nila_rao--leads->project:project_aurora@doc_02_team"
     },
     {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_24_nolan",
+      "sentence_id": 0,
+      "sentence": "Christopher Nolan developed Inception.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Christopher Nolan",
+      "original_object": "Inception",
+      "canonical_subject": "Christopher Nolan",
+      "canonical_object": "Inception",
+      "triple_id": "triple:person:christopher_nolan--develops->product:inception@doc_24_nolan",
+      "duplicate_count": 1,
+      "source": "person:christopher_nolan",
+      "target": "product:inception",
+      "key": "triple:person:christopher_nolan--develops->product:inception@doc_24_nolan"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_24_nolan",
+      "sentence_id": 1,
+      "sentence": "Inception focuses on dream heist thrillers.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Inception",
+      "original_object": "dream heist thrillers",
+      "canonical_subject": "Inception",
+      "canonical_object": "dream heist thrillers",
+      "triple_id": "triple:product:inception--focuses_on->literal:dream_heist_thrillers@doc_24_nolan",
+      "duplicate_count": 1,
+      "source": "product:inception",
+      "target": "literal:dream_heist_thrillers",
+      "key": "triple:product:inception--focuses_on->literal:dream_heist_thrillers@doc_24_nolan"
+    },
+    {
       "relation": "founded",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -1449,6 +2427,25 @@
       "source": "person:demis_hassabis",
       "target": "organization:deepmind",
       "key": "triple:person:demis_hassabis--leads->organization:deepmind@doc_11_deepmind"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_24_nolan",
+      "sentence_id": 3,
+      "sentence": "Denis Villeneuve works on Dune.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Denis Villeneuve",
+      "original_object": "Dune",
+      "canonical_subject": "Denis Villeneuve",
+      "canonical_object": "Dune",
+      "triple_id": "triple:person:denis_villeneuve--works_on->product:dune@doc_24_nolan",
+      "duplicate_count": 1,
+      "source": "person:denis_villeneuve",
+      "target": "product:dune",
+      "key": "triple:person:denis_villeneuve--works_on->product:dune@doc_24_nolan"
     },
     {
       "relation": "collaborates_with",
@@ -1565,6 +2562,63 @@
       "key": "triple:person:priya_nair--leads->project:resolution_working_group@doc_09_working_group"
     },
     {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_20_space",
+      "sentence_id": 0,
+      "sentence": "SpaceX was founded by Elon Musk.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Elon Musk",
+      "original_object": "SpaceX",
+      "canonical_subject": "Elon Musk",
+      "canonical_object": "SpaceX",
+      "triple_id": "triple:person:elon_musk--founded->organization:spacex@doc_20_space",
+      "duplicate_count": 1,
+      "source": "person:elon_musk",
+      "target": "organization:spacex",
+      "key": "triple:person:elon_musk--founded->organization:spacex@doc_20_space"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_20_space",
+      "sentence_id": 1,
+      "sentence": "Elon Musk leads SpaceX, the spaceflight company.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Elon Musk",
+      "original_object": "SpaceX",
+      "canonical_subject": "Elon Musk",
+      "canonical_object": "SpaceX",
+      "triple_id": "triple:person:elon_musk--leads->organization:spacex@doc_20_space",
+      "duplicate_count": 1,
+      "source": "person:elon_musk",
+      "target": "organization:spacex",
+      "key": "triple:person:elon_musk--leads->organization:spacex@doc_20_space"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_22_fifa",
+      "sentence_id": 0,
+      "sentence": "Gianni Infantino leads the World Cup.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Gianni Infantino",
+      "original_object": "World Cup",
+      "canonical_subject": "Gianni Infantino",
+      "canonical_object": "World Cup",
+      "triple_id": "triple:person:gianni_infantino--leads->project:world_cup@doc_22_fifa",
+      "duplicate_count": 1,
+      "source": "person:gianni_infantino",
+      "target": "project:world_cup",
+      "key": "triple:person:gianni_infantino--leads->project:world_cup@doc_22_fifa"
+    },
+    {
       "relation": "develops",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -1603,6 +2657,63 @@
       "key": "triple:person:guido_van_rossum--works_on->product:python@doc_14_python"
     },
     {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_18_ghibli",
+      "sentence_id": 0,
+      "sentence": "Studio Ghibli was founded by Hayao Miyazaki.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Hayao Miyazaki",
+      "original_object": "Studio Ghibli",
+      "canonical_subject": "Hayao Miyazaki",
+      "canonical_object": "Studio Ghibli",
+      "triple_id": "triple:person:hayao_miyazaki--founded->organization:studio_ghibli@doc_18_ghibli",
+      "duplicate_count": 1,
+      "source": "person:hayao_miyazaki",
+      "target": "organization:studio_ghibli",
+      "key": "triple:person:hayao_miyazaki--founded->organization:studio_ghibli@doc_18_ghibli"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_18_ghibli",
+      "sentence_id": 1,
+      "sentence": "Hayao Miyazaki leads Studio Ghibli.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Hayao Miyazaki",
+      "original_object": "Studio Ghibli",
+      "canonical_subject": "Hayao Miyazaki",
+      "canonical_object": "Studio Ghibli",
+      "triple_id": "triple:person:hayao_miyazaki--leads->organization:studio_ghibli@doc_18_ghibli",
+      "duplicate_count": 1,
+      "source": "person:hayao_miyazaki",
+      "target": "organization:studio_ghibli",
+      "key": "triple:person:hayao_miyazaki--leads->organization:studio_ghibli@doc_18_ghibli"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_17_nato",
+      "sentence_id": 0,
+      "sentence": "Jens Stoltenberg leads NATO.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Jens Stoltenberg",
+      "original_object": "NATO",
+      "canonical_subject": "Jens Stoltenberg",
+      "canonical_object": "NATO",
+      "triple_id": "triple:person:jens_stoltenberg--leads->organization:nato@doc_17_nato",
+      "duplicate_count": 1,
+      "source": "person:jens_stoltenberg",
+      "target": "organization:nato",
+      "key": "triple:person:jens_stoltenberg--leads->organization:nato@doc_17_nato"
+    },
+    {
       "relation": "leads",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -1639,6 +2750,44 @@
       "source": "person:linus_torvalds",
       "target": "project:linux",
       "key": "triple:person:linus_torvalds--works_on->project:linux@doc_12_linux"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_19_shinkai",
+      "sentence_id": 1,
+      "sentence": "Your Name focuses on body swap romance.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Your Name",
+      "original_object": "body swap romance",
+      "canonical_subject": "Your Name",
+      "canonical_object": "body swap romance",
+      "triple_id": "triple:product:your_name--focuses_on->literal:body_swap_romance@doc_19_shinkai",
+      "duplicate_count": 1,
+      "source": "product:your_name",
+      "target": "literal:body_swap_romance",
+      "key": "triple:product:your_name--focuses_on->literal:body_swap_romance@doc_19_shinkai"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_19_shinkai",
+      "sentence_id": 3,
+      "sentence": "Suzume focuses on animated disaster aftermath.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Suzume",
+      "original_object": "animated disaster aftermath",
+      "canonical_subject": "Suzume",
+      "canonical_object": "animated disaster aftermath",
+      "triple_id": "triple:product:suzume--focuses_on->literal:animated_disaster_aftermath@doc_19_shinkai",
+      "duplicate_count": 1,
+      "source": "product:suzume",
+      "target": "literal:animated_disaster_aftermath",
+      "key": "triple:product:suzume--focuses_on->literal:animated_disaster_aftermath@doc_19_shinkai"
     },
     {
       "relation": "founded",
@@ -1848,6 +2997,63 @@
       "source": "person:sam_altman",
       "target": "organization:openai",
       "key": "triple:person:sam_altman--leads->organization:openai@doc_10_openai"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_21_nintendo",
+      "sentence_id": 0,
+      "sentence": "Shigeru Miyamoto developed Mario.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Shigeru Miyamoto",
+      "original_object": "Mario",
+      "canonical_subject": "Shigeru Miyamoto",
+      "canonical_object": "Mario",
+      "triple_id": "triple:person:shigeru_miyamoto--develops->product:mario@doc_21_nintendo",
+      "duplicate_count": 1,
+      "source": "person:shigeru_miyamoto",
+      "target": "product:mario",
+      "key": "triple:person:shigeru_miyamoto--develops->product:mario@doc_21_nintendo"
+    },
+    {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_17_nato",
+      "sentence_id": 2,
+      "sentence": "Ursula von der Leyen leads the European Commission.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Ursula von der Leyen",
+      "original_object": "European Commission",
+      "canonical_subject": "Ursula von der Leyen",
+      "canonical_object": "European Commission",
+      "triple_id": "triple:person:ursula_von_der_leyen--leads->organization:european_commission@doc_17_nato",
+      "duplicate_count": 1,
+      "source": "person:ursula_von_der_leyen",
+      "target": "organization:european_commission",
+      "key": "triple:person:ursula_von_der_leyen--leads->organization:european_commission@doc_17_nato"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_23_spotify",
+      "sentence_id": 1,
+      "sentence": "Spotify focuses on music streaming.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Spotify",
+      "original_object": "music streaming",
+      "canonical_subject": "Spotify",
+      "canonical_object": "music streaming",
+      "triple_id": "triple:product:spotify--focuses_on->literal:music_streaming@doc_23_spotify",
+      "duplicate_count": 1,
+      "source": "product:spotify",
+      "target": "literal:music_streaming",
+      "key": "triple:product:spotify--focuses_on->literal:music_streaming@doc_23_spotify"
     }
   ]
 }

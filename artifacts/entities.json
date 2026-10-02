@@ -595,6 +595,486 @@
       ]
     },
     {
+      "id": "person:jens_stoltenberg",
+      "label": "Jens Stoltenberg",
+      "type": "PERSON",
+      "aliases": [
+        "Jens Stoltenberg"
+      ],
+      "description": "Secretary General of NATO.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_17_nato"
+      ]
+    },
+    {
+      "id": "organization:nato",
+      "label": "NATO",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "NATO"
+      ],
+      "description": "North Atlantic Treaty Organization.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_17_nato"
+      ]
+    },
+    {
+      "id": "organization:european_union",
+      "label": "European Union",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "European Union"
+      ],
+      "description": "Political and economic union of European states.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_17_nato"
+      ]
+    },
+    {
+      "id": "person:ursula_von_der_leyen",
+      "label": "Ursula von der Leyen",
+      "type": "PERSON",
+      "aliases": [
+        "Ursula von der Leyen"
+      ],
+      "description": "President of the European Commission.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_17_nato"
+      ]
+    },
+    {
+      "id": "organization:european_commission",
+      "label": "European Commission",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "European Commission"
+      ],
+      "description": "Executive branch of the European Union.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_17_nato"
+      ]
+    },
+    {
+      "id": "person:hayao_miyazaki",
+      "label": "Hayao Miyazaki",
+      "type": "PERSON",
+      "aliases": [
+        "Hayao Miyazaki"
+      ],
+      "description": "Co-founder of Studio Ghibli.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_18_ghibli"
+      ]
+    },
+    {
+      "id": "organization:studio_ghibli",
+      "label": "Studio Ghibli",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Studio Ghibli"
+      ],
+      "description": "Japanese animation studio.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_18_ghibli"
+      ]
+    },
+    {
+      "id": "product:spirited_away",
+      "label": "Spirited Away",
+      "type": "PRODUCT",
+      "aliases": [
+        "Spirited Away"
+      ],
+      "description": "Studio Ghibli animated film.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_18_ghibli"
+      ]
+    },
+    {
+      "id": "person:makoto_shinkai",
+      "label": "Makoto Shinkai",
+      "type": "PERSON",
+      "aliases": [
+        "Makoto Shinkai"
+      ],
+      "description": "Japanese animation director.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_19_shinkai"
+      ]
+    },
+    {
+      "id": "product:your_name",
+      "label": "Your Name",
+      "type": "PRODUCT",
+      "aliases": [
+        "Your Name"
+      ],
+      "description": "Makoto Shinkai animated film.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_19_shinkai"
+      ]
+    },
+    {
+      "id": "product:suzume",
+      "label": "Suzume",
+      "type": "PRODUCT",
+      "aliases": [
+        "Suzume"
+      ],
+      "description": "Makoto Shinkai animated film.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_19_shinkai"
+      ]
+    },
+    {
+      "id": "organization:kyoto_animation",
+      "label": "Kyoto Animation",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Kyoto Animation"
+      ],
+      "description": "Japanese animation studio.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_19_shinkai"
+      ]
+    },
+    {
+      "id": "person:elon_musk",
+      "label": "Elon Musk",
+      "type": "PERSON",
+      "aliases": [
+        "Elon Musk"
+      ],
+      "description": "Founder and chief executive of SpaceX.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_20_space"
+      ]
+    },
+    {
+      "id": "organization:spacex",
+      "label": "SpaceX",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "SpaceX"
+      ],
+      "description": "American spaceflight company.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_20_space"
+      ]
+    },
+    {
+      "id": "organization:nasa",
+      "label": "NASA",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "NASA"
+      ],
+      "description": "United States space agency.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_20_space"
+      ]
+    },
+    {
+      "id": "product:starship",
+      "label": "Starship",
+      "type": "PRODUCT",
+      "aliases": [
+        "Starship"
+      ],
+      "description": "SpaceX launch vehicle.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 4,
+      "documents": [
+        "doc_20_space"
+      ]
+    },
+    {
+      "id": "person:shigeru_miyamoto",
+      "label": "Shigeru Miyamoto",
+      "type": "PERSON",
+      "aliases": [
+        "Shigeru Miyamoto"
+      ],
+      "description": "Nintendo game designer.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_21_nintendo"
+      ]
+    },
+    {
+      "id": "organization:nintendo",
+      "label": "Nintendo",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Nintendo"
+      ],
+      "description": "Japanese video game company.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_21_nintendo"
+      ]
+    },
+    {
+      "id": "organization:dena",
+      "label": "DeNA",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "DeNA"
+      ],
+      "description": "Japanese internet company.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_21_nintendo"
+      ]
+    },
+    {
+      "id": "product:mario",
+      "label": "Mario",
+      "type": "PRODUCT",
+      "aliases": [
+        "Mario"
+      ],
+      "description": "Nintendo game franchise.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_21_nintendo"
+      ]
+    },
+    {
+      "id": "person:gianni_infantino",
+      "label": "Gianni Infantino",
+      "type": "PERSON",
+      "aliases": [
+        "Gianni Infantino"
+      ],
+      "description": "President of FIFA.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_22_fifa"
+      ]
+    },
+    {
+      "id": "organization:fifa",
+      "label": "FIFA",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "FIFA"
+      ],
+      "description": "International football governing body.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_22_fifa"
+      ]
+    },
+    {
+      "id": "organization:adidas",
+      "label": "adidas",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "adidas"
+      ],
+      "description": "German sportswear company.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_22_fifa"
+      ]
+    },
+    {
+      "id": "project:world_cup",
+      "label": "World Cup",
+      "type": "PROJECT",
+      "aliases": [
+        "World Cup"
+      ],
+      "description": "FIFA international football tournament.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_22_fifa"
+      ]
+    },
+    {
+      "id": "person:daniel_ek",
+      "label": "Daniel Ek",
+      "type": "PERSON",
+      "aliases": [
+        "Daniel Ek"
+      ],
+      "description": "Co-founder and chief executive of Spotify.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_23_spotify"
+      ]
+    },
+    {
+      "id": "product:spotify",
+      "label": "Spotify",
+      "type": "PRODUCT",
+      "aliases": [
+        "Spotify"
+      ],
+      "description": "Music streaming service.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_23_spotify"
+      ]
+    },
+    {
+      "id": "organization:universal_music",
+      "label": "Universal Music",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Universal Music"
+      ],
+      "description": "Global music company.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_23_spotify"
+      ]
+    },
+    {
+      "id": "person:christopher_nolan",
+      "label": "Christopher Nolan",
+      "type": "PERSON",
+      "aliases": [
+        "Christopher Nolan"
+      ],
+      "description": "Film director.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_24_nolan"
+      ]
+    },
+    {
+      "id": "product:inception",
+      "label": "Inception",
+      "type": "PRODUCT",
+      "aliases": [
+        "Inception"
+      ],
+      "description": "Christopher Nolan film.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_24_nolan"
+      ]
+    },
+    {
+      "id": "organization:warner_bros",
+      "label": "Warner Bros",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Warner Bros"
+      ],
+      "description": "American film studio.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_24_nolan"
+      ]
+    },
+    {
+      "id": "product:dune",
+      "label": "Dune",
+      "type": "PRODUCT",
+      "aliases": [
+        "Dune"
+      ],
+      "description": "Science fiction film franchise.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_24_nolan"
+      ]
+    },
+    {
+      "id": "person:denis_villeneuve",
+      "label": "Denis Villeneuve",
+      "type": "PERSON",
+      "aliases": [
+        "Denis Villeneuve"
+      ],
+      "description": "Film director.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_24_nolan"
+      ]
+    },
+    {
       "id": "literal:graph_based_transaction_analysis",
       "label": "graph-based transaction analysis",
       "type": "LITERAL",
@@ -681,9 +1161,111 @@
       "has_edges": true,
       "mention_count": 0,
       "documents": []
+    },
+    {
+      "id": "literal:trade_policy",
+      "label": "trade policy",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the European Commission.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:animated_fantasy_storytelling",
+      "label": "animated fantasy storytelling",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Spirited Away.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:body_swap_romance",
+      "label": "body swap romance",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Your Name.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:animated_disaster_aftermath",
+      "label": "animated disaster aftermath",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Suzume.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:deep_space_transport",
+      "label": "deep space transport",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Starship.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:platforming_games",
+      "label": "platforming games",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Mario.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:international_football",
+      "label": "international football",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the World Cup.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:music_streaming",
+      "label": "music streaming",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Spotify.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:dream_heist_thrillers",
+      "label": "dream heist thrillers",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of Inception.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
     }
   ],
   "alias_index": {
+    "adidas": [
+      "organization:adidas"
+    ],
     "aether analytics": [
       "organization:aether_analytics"
     ],
@@ -705,11 +1287,23 @@
     "chatgpt": [
       "product:chatgpt"
     ],
+    "christopher nolan": [
+      "person:christopher_nolan"
+    ],
+    "daniel ek": [
+      "person:daniel_ek"
+    ],
     "deepmind": [
       "organization:deepmind"
     ],
     "demis hassabis": [
       "person:demis_hassabis"
+    ],
+    "dena": [
+      "organization:dena"
+    ],
+    "denis villeneuve": [
+      "person:denis_villeneuve"
     ],
     "dmitri volkov": [
       "person:dmitri_volkov"
@@ -717,14 +1311,32 @@
     "dr. mira sen": [
       "person:mira_sen"
     ],
+    "dune": [
+      "product:dune"
+    ],
+    "elon musk": [
+      "person:elon_musk"
+    ],
     "entity resolution engine": [
       "component:entity_resolution_engine"
+    ],
+    "european commission": [
+      "organization:european_commission"
+    ],
+    "european union": [
+      "organization:european_union"
     ],
     "fermilab": [
       "organization:fermilab"
     ],
+    "fifa": [
+      "organization:fifa"
+    ],
     "firefox": [
       "product:firefox"
+    ],
+    "gianni infantino": [
+      "person:gianni_infantino"
     ],
     "google": [
       "organization:google"
@@ -738,8 +1350,20 @@
     "guido van rossum": [
       "person:guido_van_rossum"
     ],
+    "hayao miyazaki": [
+      "person:hayao_miyazaki"
+    ],
     "helios bank": [
       "organization:helios_bank"
+    ],
+    "inception": [
+      "product:inception"
+    ],
+    "jens stoltenberg": [
+      "person:jens_stoltenberg"
+    ],
+    "kyoto animation": [
+      "organization:kyoto_animation"
     ],
     "large hadron collider": [
       "product:large_hadron_collider"
@@ -759,8 +1383,14 @@
     "linux foundation": [
       "organization:linux_foundation"
     ],
+    "makoto shinkai": [
+      "person:makoto_shinkai"
+    ],
     "marc andreessen": [
       "person:marc_andreessen"
+    ],
+    "mario": [
+      "product:mario"
     ],
     "microsoft": [
       "organization:microsoft"
@@ -771,11 +1401,20 @@
     "mozilla": [
       "organization:mozilla"
     ],
+    "nasa": [
+      "organization:nasa"
+    ],
+    "nato": [
+      "organization:nato"
+    ],
     "netscape": [
       "organization:netscape"
     ],
     "nila rao": [
       "person:nila_rao"
+    ],
+    "nintendo": [
+      "organization:nintendo"
     ],
     "openai": [
       "organization:openai"
@@ -804,8 +1443,44 @@
     "sam altman": [
       "person:sam_altman"
     ],
+    "shigeru miyamoto": [
+      "person:shigeru_miyamoto"
+    ],
+    "spacex": [
+      "organization:spacex"
+    ],
+    "spirited away": [
+      "product:spirited_away"
+    ],
+    "spotify": [
+      "product:spotify"
+    ],
+    "starship": [
+      "product:starship"
+    ],
+    "studio ghibli": [
+      "organization:studio_ghibli"
+    ],
+    "suzume": [
+      "product:suzume"
+    ],
     "the entity resolution engine": [
       "component:entity_resolution_engine"
+    ],
+    "universal music": [
+      "organization:universal_music"
+    ],
+    "ursula von der leyen": [
+      "person:ursula_von_der_leyen"
+    ],
+    "warner bros": [
+      "organization:warner_bros"
+    ],
+    "world cup": [
+      "project:world_cup"
+    ],
+    "your name": [
+      "product:your_name"
     ]
   },
   "mention_inventory": {
@@ -846,6 +1521,32 @@
         "mention_source": "entity_ruler",
         "resolved_to": "component:graph_matching_module",
         "resolved_label": "Graph Matching Module",
+        "conflict": false
+      }
+    ],
+    "organization:adidas": [
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 1,
+        "text": "adidas",
+        "start_char": 58,
+        "end_char": 64,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:adidas",
+        "resolved_label": "adidas",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 1,
+        "text": "the teams",
+        "start_char": 74,
+        "end_char": 83,
+        "source": "antecedent",
+        "mention_source": "common_noun_noun_chunk",
+        "resolved_to": "organization:adidas",
+        "resolved_label": "adidas",
         "conflict": false
       }
     ],
@@ -1047,6 +1748,60 @@
         "conflict": false
       }
     ],
+    "organization:dena": [
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 3,
+        "text": "DeNA",
+        "start_char": 119,
+        "end_char": 123,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:dena",
+        "resolved_label": "DeNA",
+        "conflict": false
+      }
+    ],
+    "organization:european_commission": [
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 2,
+        "text": "European Commission",
+        "start_char": 100,
+        "end_char": 119,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:european_commission",
+        "resolved_label": "European Commission",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 3,
+        "text": "European Commission",
+        "start_char": 125,
+        "end_char": 144,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:european_commission",
+        "resolved_label": "European Commission",
+        "conflict": false
+      }
+    ],
+    "organization:european_union": [
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 1,
+        "text": "European Union",
+        "start_char": 53,
+        "end_char": 67,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:european_union",
+        "resolved_label": "European Union",
+        "conflict": false
+      }
+    ],
     "organization:fermilab": [
       {
         "document_id": "doc_13_cern",
@@ -1070,6 +1825,32 @@
         "mention_source": "entity_ruler",
         "resolved_to": "organization:fermilab",
         "resolved_label": "Fermilab",
+        "conflict": false
+      }
+    ],
+    "organization:fifa": [
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 1,
+        "text": "FIFA",
+        "start_char": 38,
+        "end_char": 42,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:fifa",
+        "resolved_label": "FIFA",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 3,
+        "text": "FIFA",
+        "start_char": 134,
+        "end_char": 138,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:fifa",
+        "resolved_label": "FIFA",
         "conflict": false
       }
     ],
@@ -1182,6 +1963,20 @@
         "mention_source": "entity_ruler",
         "resolved_to": "organization:helios_bank",
         "resolved_label": "Helios Bank",
+        "conflict": false
+      }
+    ],
+    "organization:kyoto_animation": [
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 4,
+        "text": "Kyoto Animation",
+        "start_char": 155,
+        "end_char": 170,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:kyoto_animation",
+        "resolved_label": "Kyoto Animation",
         "conflict": false
       }
     ],
@@ -1313,6 +2108,58 @@
         "conflict": false
       }
     ],
+    "organization:nasa": [
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 4,
+        "text": "NASA",
+        "start_char": 151,
+        "end_char": 155,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:nasa",
+        "resolved_label": "NASA",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 5,
+        "text": "NASA",
+        "start_char": 209,
+        "end_char": 213,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:nasa",
+        "resolved_label": "NASA",
+        "conflict": false
+      }
+    ],
+    "organization:nato": [
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 0,
+        "text": "NATO",
+        "start_char": 23,
+        "end_char": 27,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:nato",
+        "resolved_label": "NATO",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 1,
+        "text": "NATO",
+        "start_char": 29,
+        "end_char": 33,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:nato",
+        "resolved_label": "NATO",
+        "conflict": false
+      }
+    ],
     "organization:netscape": [
       {
         "document_id": "doc_15_mozilla",
@@ -1348,6 +2195,32 @@
         "mention_source": "entity_ruler",
         "resolved_to": "organization:netscape",
         "resolved_label": "Netscape",
+        "conflict": false
+      }
+    ],
+    "organization:nintendo": [
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 2,
+        "text": "Nintendo",
+        "start_char": 70,
+        "end_char": 78,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:nintendo",
+        "resolved_label": "Nintendo",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 3,
+        "text": "Nintendo",
+        "start_char": 95,
+        "end_char": 103,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:nintendo",
+        "resolved_label": "Nintendo",
         "conflict": false
       }
     ],
@@ -1417,6 +2290,122 @@
         "conflict": false
       }
     ],
+    "organization:spacex": [
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 0,
+        "text": "SpaceX",
+        "start_char": 0,
+        "end_char": 6,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:spacex",
+        "resolved_label": "SpaceX",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 1,
+        "text": "SpaceX",
+        "start_char": 49,
+        "end_char": 55,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:spacex",
+        "resolved_label": "SpaceX",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 2,
+        "text": "SpaceX",
+        "start_char": 82,
+        "end_char": 88,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:spacex",
+        "resolved_label": "SpaceX",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 4,
+        "text": "SpaceX",
+        "start_char": 171,
+        "end_char": 177,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:spacex",
+        "resolved_label": "SpaceX",
+        "conflict": false
+      }
+    ],
+    "organization:studio_ghibli": [
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 0,
+        "text": "Studio Ghibli",
+        "start_char": 0,
+        "end_char": 13,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:studio_ghibli",
+        "resolved_label": "Studio Ghibli",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 1,
+        "text": "Studio Ghibli",
+        "start_char": 66,
+        "end_char": 79,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:studio_ghibli",
+        "resolved_label": "Studio Ghibli",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 2,
+        "text": "Studio Ghibli",
+        "start_char": 81,
+        "end_char": 94,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:studio_ghibli",
+        "resolved_label": "Studio Ghibli",
+        "conflict": false
+      }
+    ],
+    "organization:universal_music": [
+      {
+        "document_id": "doc_23_spotify",
+        "sentence_index": 2,
+        "text": "Universal Music",
+        "start_char": 61,
+        "end_char": 76,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:universal_music",
+        "resolved_label": "Universal Music",
+        "conflict": false
+      }
+    ],
+    "organization:warner_bros": [
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 2,
+        "text": "Warner Bros",
+        "start_char": 83,
+        "end_char": 94,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:warner_bros",
+        "resolved_label": "Warner Bros",
+        "conflict": false
+      }
+    ],
     "person:arun_mehta": [
       {
         "document_id": "doc_02_team",
@@ -1467,6 +2456,46 @@
         "conflict": false
       }
     ],
+    "person:christopher_nolan": [
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 0,
+        "text": "Christopher Nolan",
+        "start_char": 0,
+        "end_char": 17,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:christopher_nolan",
+        "resolved_label": "Christopher Nolan",
+        "conflict": false
+      }
+    ],
+    "person:daniel_ek": [
+      {
+        "document_id": "doc_23_spotify",
+        "sentence_index": 0,
+        "text": "Daniel Ek",
+        "start_char": 0,
+        "end_char": 9,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:daniel_ek",
+        "resolved_label": "Daniel Ek",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_23_spotify",
+        "sentence_index": 2,
+        "text": "Daniel Ek",
+        "start_char": 95,
+        "end_char": 104,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:daniel_ek",
+        "resolved_label": "Daniel Ek",
+        "conflict": false
+      }
+    ],
     "person:demis_hassabis": [
       {
         "document_id": "doc_11_deepmind",
@@ -1490,6 +2519,20 @@
         "mention_source": "entity_ruler",
         "resolved_to": "person:demis_hassabis",
         "resolved_label": "Demis Hassabis",
+        "conflict": false
+      }
+    ],
+    "person:denis_villeneuve": [
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 3,
+        "text": "Denis Villeneuve",
+        "start_char": 111,
+        "end_char": 127,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:denis_villeneuve",
+        "resolved_label": "Denis Villeneuve",
         "conflict": false
       }
     ],
@@ -1543,6 +2586,46 @@
         "conflict": false
       }
     ],
+    "person:elon_musk": [
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 0,
+        "text": "Elon Musk",
+        "start_char": 22,
+        "end_char": 31,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:elon_musk",
+        "resolved_label": "Elon Musk",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 1,
+        "text": "Elon Musk",
+        "start_char": 33,
+        "end_char": 42,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:elon_musk",
+        "resolved_label": "Elon Musk",
+        "conflict": false
+      }
+    ],
+    "person:gianni_infantino": [
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 0,
+        "text": "Gianni Infantino",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:gianni_infantino",
+        "resolved_label": "Gianni Infantino",
+        "conflict": false
+      }
+    ],
     "person:guido_van_rossum": [
       {
         "document_id": "doc_14_python",
@@ -1569,6 +2652,46 @@
         "conflict": false
       }
     ],
+    "person:hayao_miyazaki": [
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 0,
+        "text": "Hayao Miyazaki",
+        "start_char": 29,
+        "end_char": 43,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:hayao_miyazaki",
+        "resolved_label": "Hayao Miyazaki",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 1,
+        "text": "Hayao Miyazaki",
+        "start_char": 45,
+        "end_char": 59,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:hayao_miyazaki",
+        "resolved_label": "Hayao Miyazaki",
+        "conflict": false
+      }
+    ],
+    "person:jens_stoltenberg": [
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 0,
+        "text": "Jens Stoltenberg",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:jens_stoltenberg",
+        "resolved_label": "Jens Stoltenberg",
+        "conflict": false
+      }
+    ],
     "person:linus_torvalds": [
       {
         "document_id": "doc_12_linux",
@@ -1592,6 +2715,44 @@
         "mention_source": "entity_ruler",
         "resolved_to": "person:linus_torvalds",
         "resolved_label": "Linus Torvalds",
+        "conflict": false
+      }
+    ],
+    "person:makoto_shinkai": [
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 0,
+        "text": "Makoto Shinkai",
+        "start_char": 0,
+        "end_char": 14,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:makoto_shinkai",
+        "resolved_label": "Makoto Shinkai",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 2,
+        "text": "Makoto Shinkai",
+        "start_char": 76,
+        "end_char": 90,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:makoto_shinkai",
+        "resolved_label": "Makoto Shinkai",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 4,
+        "text": "Makoto Shinkai",
+        "start_char": 189,
+        "end_char": 203,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:makoto_shinkai",
+        "resolved_label": "Makoto Shinkai",
         "conflict": false
       }
     ],
@@ -1797,6 +2958,34 @@
         "conflict": false
       }
     ],
+    "person:shigeru_miyamoto": [
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 0,
+        "text": "Shigeru Miyamoto",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:shigeru_miyamoto",
+        "resolved_label": "Shigeru Miyamoto",
+        "conflict": false
+      }
+    ],
+    "person:ursula_von_der_leyen": [
+      {
+        "document_id": "doc_17_nato",
+        "sentence_index": 2,
+        "text": "Ursula von der Leyen",
+        "start_char": 69,
+        "end_char": 89,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:ursula_von_der_leyen",
+        "resolved_label": "Ursula von der Leyen",
+        "conflict": false
+      }
+    ],
     "product:alphafold": [
       {
         "document_id": "doc_11_deepmind",
@@ -1908,6 +3097,32 @@
         "mention_source": "entity_ruler",
         "resolved_to": "product:chatgpt",
         "resolved_label": "ChatGPT",
+        "conflict": false
+      }
+    ],
+    "product:dune": [
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 2,
+        "text": "Dune",
+        "start_char": 105,
+        "end_char": 109,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:dune",
+        "resolved_label": "Dune",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 3,
+        "text": "Dune",
+        "start_char": 137,
+        "end_char": 141,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:dune",
+        "resolved_label": "Dune",
         "conflict": false
       }
     ],
@@ -2035,6 +3250,32 @@
         "conflict": false
       }
     ],
+    "product:inception": [
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 0,
+        "text": "Inception",
+        "start_char": 28,
+        "end_char": 37,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:inception",
+        "resolved_label": "Inception",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_24_nolan",
+        "sentence_index": 1,
+        "text": "Inception",
+        "start_char": 39,
+        "end_char": 48,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:inception",
+        "resolved_label": "Inception",
+        "conflict": false
+      }
+    ],
     "product:large_hadron_collider": [
       {
         "document_id": "doc_13_cern",
@@ -2070,6 +3311,44 @@
         "mention_source": "entity_ruler",
         "resolved_to": "product:large_hadron_collider",
         "resolved_label": "Large Hadron Collider",
+        "conflict": false
+      }
+    ],
+    "product:mario": [
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 0,
+        "text": "Mario",
+        "start_char": 27,
+        "end_char": 32,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:mario",
+        "resolved_label": "Mario",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 1,
+        "text": "Mario",
+        "start_char": 34,
+        "end_char": 39,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:mario",
+        "resolved_label": "Mario",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_21_nintendo",
+        "sentence_index": 2,
+        "text": "Mario",
+        "start_char": 88,
+        "end_char": 93,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:mario",
+        "resolved_label": "Mario",
         "conflict": false
       }
     ],
@@ -2269,6 +3548,160 @@
         "conflict": false
       }
     ],
+    "product:spirited_away": [
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 2,
+        "text": "Spirited Away",
+        "start_char": 105,
+        "end_char": 118,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:spirited_away",
+        "resolved_label": "Spirited Away",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_18_ghibli",
+        "sentence_index": 3,
+        "text": "Spirited Away",
+        "start_char": 136,
+        "end_char": 149,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:spirited_away",
+        "resolved_label": "Spirited Away",
+        "conflict": false
+      }
+    ],
+    "product:spotify": [
+      {
+        "document_id": "doc_23_spotify",
+        "sentence_index": 0,
+        "text": "Spotify",
+        "start_char": 16,
+        "end_char": 23,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:spotify",
+        "resolved_label": "Spotify",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_23_spotify",
+        "sentence_index": 1,
+        "text": "Spotify",
+        "start_char": 25,
+        "end_char": 32,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:spotify",
+        "resolved_label": "Spotify",
+        "conflict": false
+      }
+    ],
+    "product:starship": [
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 2,
+        "text": "Starship",
+        "start_char": 99,
+        "end_char": 107,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:starship",
+        "resolved_label": "Starship",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 3,
+        "text": "Starship",
+        "start_char": 109,
+        "end_char": 117,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:starship",
+        "resolved_label": "Starship",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 4,
+        "text": "Starship",
+        "start_char": 192,
+        "end_char": 200,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:starship",
+        "resolved_label": "Starship",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_20_space",
+        "sentence_index": 5,
+        "text": "Starship",
+        "start_char": 219,
+        "end_char": 227,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:starship",
+        "resolved_label": "Starship",
+        "conflict": false
+      }
+    ],
+    "product:suzume": [
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 2,
+        "text": "Suzume",
+        "start_char": 100,
+        "end_char": 106,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:suzume",
+        "resolved_label": "Suzume",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 3,
+        "text": "Suzume",
+        "start_char": 108,
+        "end_char": 114,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:suzume",
+        "resolved_label": "Suzume",
+        "conflict": false
+      }
+    ],
+    "product:your_name": [
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 0,
+        "text": "Your Name",
+        "start_char": 25,
+        "end_char": 34,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:your_name",
+        "resolved_label": "Your Name",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_19_shinkai",
+        "sentence_index": 1,
+        "text": "Your Name",
+        "start_char": 36,
+        "end_char": 45,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:your_name",
+        "resolved_label": "Your Name",
+        "conflict": false
+      }
+    ],
     "project:linux": [
       {
         "document_id": "doc_12_linux",
@@ -2452,6 +3885,44 @@
         "mention_source": "common_noun_noun_chunk",
         "resolved_to": "project:resolution_working_group",
         "resolved_label": "Resolution Working Group",
+        "conflict": false
+      }
+    ],
+    "project:world_cup": [
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 0,
+        "text": "World Cup",
+        "start_char": 27,
+        "end_char": 36,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:world_cup",
+        "resolved_label": "World Cup",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 2,
+        "text": "World Cup",
+        "start_char": 89,
+        "end_char": 98,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:world_cup",
+        "resolved_label": "World Cup",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_22_fifa",
+        "sentence_index": 3,
+        "text": "World Cup",
+        "start_char": 148,
+        "end_char": 157,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:world_cup",
+        "resolved_label": "World Cup",
         "conflict": false
       }
     ]

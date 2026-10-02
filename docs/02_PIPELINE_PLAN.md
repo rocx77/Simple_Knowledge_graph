@@ -49,7 +49,7 @@ CUDA is present; `tests/test_config.py` covers the matrix.
 **Failure modes** Unreadable file → warning, file skipped, run continues. Empty corpus →
 `CorpusError` (this is configuration, not data — rule E5).
 
-**Acceptance** 16 documents loaded, hashes match `data/corpus_manifest.json`.
+**Acceptance** 24 documents loaded, hashes match `data/corpus_manifest.json`.
 
 ---
 
@@ -259,7 +259,7 @@ Every triple carries: `triple_id`, `subject`, `subject_id`, `relation`, `object`
 `object_id`, `document_id`, `sentence_id`, `sentence`, `original_subject`,
 `original_object`, `coref_resolved`, `inferred`, `confidence`, `rule_id`.
 
-**Acceptance** 61 triples; every field populated; the 59 required present.
+**Acceptance** 94 triples; every field populated; the 92 required present.
 
 ---
 
@@ -288,7 +288,7 @@ Artifacts, all human-readable JSON, indent 2:
 | `artifacts/entities.json` | Canonical registry + mention inventory + alias index |
 | `artifacts/pipeline_report.json` | Stage timings, counts, device, library versions, warnings, unresolved mentions, skipped candidates, relation histogram |
 
-**Acceptance** 45 nodes, 61 edges; all four files written; JSON round-trips.
+**Acceptance** 85 nodes, 94 edges; all four files written; JSON round-trips.
 
 ---
 

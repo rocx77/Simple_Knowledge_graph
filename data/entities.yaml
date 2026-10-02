@@ -293,6 +293,230 @@ entities:
     anaphors: [he, his, him, "the Netscape founder"]
     description: Co-founder of Netscape.
 
+  - id: person:jens_stoltenberg
+    label: Jens Stoltenberg
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the NATO chief"]
+    description: Secretary General of NATO.
+
+  - id: organization:nato
+    label: NATO
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: North Atlantic Treaty Organization.
+
+  - id: organization:european_union
+    label: European Union
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the EU"]
+    description: Political and economic union of European states.
+
+  - id: person:ursula_von_der_leyen
+    label: Ursula von der Leyen
+    type: PERSON
+    aliases: []
+    anaphors: [she, her, hers]
+    description: President of the European Commission.
+
+  - id: organization:european_commission
+    label: European Commission
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the Commission"]
+    description: Executive branch of the European Union.
+
+  - id: person:hayao_miyazaki
+    label: Hayao Miyazaki
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: Co-founder of Studio Ghibli.
+
+  - id: organization:studio_ghibli
+    label: Studio Ghibli
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Japanese animation studio.
+
+  - id: product:spirited_away
+    label: Spirited Away
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Studio Ghibli animated film.
+
+  - id: person:makoto_shinkai
+    label: Makoto Shinkai
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: Japanese animation director.
+
+  - id: product:your_name
+    label: Your Name
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Makoto Shinkai animated film.
+
+  - id: product:suzume
+    label: Suzume
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Makoto Shinkai animated film.
+
+  - id: organization:kyoto_animation
+    label: Kyoto Animation
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Japanese animation studio.
+
+  - id: person:elon_musk
+    label: Elon Musk
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him, "the SpaceX chief executive"]
+    description: Founder and chief executive of SpaceX.
+
+  - id: organization:spacex
+    label: SpaceX
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: American spaceflight company.
+
+  - id: organization:nasa
+    label: NASA
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: United States space agency.
+
+  - id: product:starship
+    label: Starship
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: SpaceX launch vehicle.
+
+  - id: person:shigeru_miyamoto
+    label: Shigeru Miyamoto
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: Nintendo game designer.
+
+  - id: organization:nintendo
+    label: Nintendo
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Japanese video game company.
+
+  - id: organization:dena
+    label: DeNA
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Japanese internet company.
+
+  - id: product:mario
+    label: Mario
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Nintendo game franchise.
+
+  - id: person:gianni_infantino
+    label: Gianni Infantino
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: President of FIFA.
+
+  - id: organization:fifa
+    label: FIFA
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: International football governing body.
+
+  - id: organization:adidas
+    label: adidas
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: German sportswear company.
+
+  - id: project:world_cup
+    label: World Cup
+    type: PROJECT
+    aliases: []
+    anaphors: ["the World Cup"]
+    description: FIFA international football tournament.
+
+  - id: person:daniel_ek
+    label: Daniel Ek
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: Co-founder and chief executive of Spotify.
+
+  - id: product:spotify
+    label: Spotify
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Music streaming service.
+
+  - id: organization:universal_music
+    label: Universal Music
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: Global music company.
+
+  - id: person:christopher_nolan
+    label: Christopher Nolan
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: Film director.
+
+  - id: product:inception
+    label: Inception
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Christopher Nolan film.
+
+  - id: organization:warner_bros
+    label: Warner Bros
+    type: ORGANIZATION
+    aliases: []
+    anaphors: []
+    description: American film studio.
+
+  - id: product:dune
+    label: Dune
+    type: PRODUCT
+    aliases: []
+    anaphors: []
+    description: Science fiction film franchise.
+
+  - id: person:denis_villeneuve
+    label: Denis Villeneuve
+    type: PERSON
+    aliases: []
+    anaphors: [he, his, him]
+    description: Film director.
+
 # Literal objects that the specification requires as graph nodes but which are
 # noun phrases rather than named entities (section 11, focuses_on).
 literals:
@@ -327,3 +551,39 @@ literals:
   - id: literal:web_browsing
     label: web browsing
     description: Focus area of Firefox.
+
+  - id: literal:trade_policy
+    label: trade policy
+    description: Focus area of the European Commission.
+
+  - id: literal:animated_fantasy_storytelling
+    label: animated fantasy storytelling
+    description: Focus area of Spirited Away.
+
+  - id: literal:body_swap_romance
+    label: body swap romance
+    description: Focus area of Your Name.
+
+  - id: literal:animated_disaster_aftermath
+    label: animated disaster aftermath
+    description: Focus area of Suzume.
+
+  - id: literal:deep_space_transport
+    label: deep space transport
+    description: Focus area of Starship.
+
+  - id: literal:platforming_games
+    label: platforming games
+    description: Focus area of Mario.
+
+  - id: literal:international_football
+    label: international football
+    description: Focus area of the World Cup.
+
+  - id: literal:music_streaming
+    label: music streaming
+    description: Focus area of Spotify.
+
+  - id: literal:dream_heist_thrillers
+    label: dream heist thrillers
+    description: Focus area of Inception.

@@ -126,14 +126,55 @@ def get_pipeline() -> KnowledgeGraphPipeline:
     return KnowledgeGraphPipeline(AppConfig.from_env())
 
 
-@st.cache_data(show_spinner="Loading graph…", ttl=None, max_entries=2)
-def load_knowledge_base(artifacts_dir: str | Path, rebuild_token: int = 0) -> KnowledgeBase:
+#: The four artifacts the UI reads. Used to build the cache signature below.
+ARTIFACT_NAMES = ("graph.json", "triples.csv", "entities.json", "pipeline_report.json")
+
+
+def artifact_signature(artifacts_dir: str | Path) -> tuple[tuple[str, int, int | None], ...]:
+    """A cheap, hashable fingerprint of the artifacts as they are *on disk right now*.
+
+    This has to be computed OUTSIDE the cached function, because
+    :func:`st.cache_data` keys on its arguments only. Computing it inside would let a
+    stale entry be served while claiming to be fresh.
+
+    Why this is needed: the cache below has ``ttl=None`` and is keyed on
+    ``(artifacts_dir, rebuild_token)``. ``rebuild_token`` only advances when a user
+    presses *Rebuild*, so if the artifacts are rewritten by anything else -- running the
+    pipeline from a terminal, a test, or another session -- an already-running app keeps
+    serving the old :class:`KnowledgeBase` indefinitely and displays numbers that
+    contradict the files on disk, with no indication that it is stale.
+
+    ``st_mtime_ns`` rather than whole seconds so two rebuilds inside one second still
+    register, and the file size is included so a restore from backup is caught even if a
+    timestamp is preserved.
+    """
+    directory = Path(artifacts_dir)
+    signature: list[tuple[str, int, int | None]] = []
+    for name in ARTIFACT_NAMES:
+        try:
+            info = (directory / name).stat()
+        except OSError:
+            # Missing (or unreadable) artifacts must invalidate rather than silently reuse.
+            signature.append((name, -1, None))
+        else:
+            signature.append((name, info.st_mtime_ns, info.st_size))
+    return tuple(signature)
+
+
+@st.cache_data(show_spinner="Loading graph…", ttl=None, max_entries=8)
+def load_knowledge_base(
+    artifacts_dir: str | Path,
+    on_disk: tuple[tuple[str, int, int | None], ...] = (),
+    rebuild_token: int = 0,
+) -> KnowledgeBase:
     """Read the four artifacts into a :class:`KnowledgeBase`.
 
-    ``rebuild_token`` exists only to invalidate this cache after a rebuild; bumping it is
-    cheaper and clearer than calling ``clear()`` on this specific function.
+    ``on_disk`` is the :func:`artifact_signature` of this directory and is never read here.
+    It is passed purely so that rewriting an artifact on disk invalidates this cache
+    without anyone having to press *Rebuild*. ``rebuild_token`` remains as an explicit
+    override and is likewise only a cache key.
     """
-    del rebuild_token  # only ever read as a cache key
+    del on_disk, rebuild_token  # only ever read as a cache key
     from src.serialization import load_graph
 
     directory = Path(artifacts_dir)

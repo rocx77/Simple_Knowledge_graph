@@ -40,6 +40,14 @@ EXPECTED_FILES = [
     "doc_14_python.txt",
     "doc_15_mozilla.txt",
     "doc_16_bridge.txt",
+    "doc_17_nato.txt",
+    "doc_18_ghibli.txt",
+    "doc_19_shinkai.txt",
+    "doc_20_space.txt",
+    "doc_21_nintendo.txt",
+    "doc_22_fifa.txt",
+    "doc_23_spotify.txt",
+    "doc_24_nolan.txt",
 ]
 
 
