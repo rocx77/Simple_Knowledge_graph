@@ -293,6 +293,7 @@ class QueryEngine:
     def __init__(self, graph: nx.MultiDiGraph, registry: EntityRegistry) -> None:
         self._graph = graph
         self._registry = registry
+        self._var_counter = 0
         # Longest surface first so "Entity Resolution Engine" wins over a bare "Engine"
         # and multiword aliases are never shadowed by their own tail.
         self._surfaces = self._build_surface_index()
@@ -300,6 +301,7 @@ class QueryEngine:
     # -- public API --------------------------------------------------------
 
     def run(self, question: str) -> QueryResult:
+        self._var_counter = 0
         parse = self.parse(question)
         if not parse.understood:
             return QueryResult(
@@ -466,7 +468,10 @@ class QueryEngine:
         noun = m.group("noun").strip()
         if noun not in _NOUN_TYPES:
             raise _NoCompile()
-        var = "?" + noun.replace(" ", "_")
+        base = "?" + noun.replace(" ", "_")
+        # Ensure unique variable names when the same noun type appears multiple times
+        self._var_counter += 1
+        var = f"{base}_{self._var_counter}"
         expected = _NOUN_TYPES.get(noun)
         rest = m.group("rest").strip()
         if not rest:
