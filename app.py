@@ -305,136 +305,6 @@ def pipeline_details(kb: KnowledgeBase) -> None:
                 )
 
 
-def _add_document(text: str, config: AppConfig) -> None:
-    """Parse a single document and merge its triples into the existing artifacts.
-    
-    This is a simplified version of the pipeline that handles one document at a time.
-    Errors are caught and handled gracefully - complex passages that can't be parsed
-    are simply skipped with a warning.
-    """
-    from src.config import AppConfig
-    from src.document_loader import Document
-    from src.entity_resolver import EntityRegistry
-    from src.graph_builder import GraphBuilder
-    from src.nlp_processor import NLPProcessor
-    from src.serialization import ArtifactWriter, load_graph, write_triples_csv, PipelineReport, relation_histogram
-    from src.triple_builder import TripleBuilder
-    from src.coreference import (
-        CoreferenceResolver,
-        DeterministicCorefFallback,
-        FastCorefResolver,
-    )
-    from src.rules import RelationExtractor
-    import csv
-    from src.models import Triple
-    
-    # Load existing artifacts
-    registry = EntityRegistry.load()
-    existing_graph = load_graph(config.artifacts_dir / "graph.json")
-    
-    # Read existing triples from CSV
-    triples_path = config.artifacts_dir / "triples.csv"
-    existing_triples_list = []
-    if triples_path.exists():
-        with triples_path.open(newline="", encoding="utf-8") as handle:
-            rows = list(csv.DictReader(handle))
-        for row in rows:
-            existing_triples_list.append(
-                Triple(
-                    triple_id=row["triple_id"],
-                    subject=row["subject"],
-                    subject_id=row["subject_id"],
-                    relation=row["relation"],
-                    object=row["object"],
-                    object_id=row["object_id"],
-                    document_id=row["document_id"],
-                    sentence_index=int(row["sentence_index"]),
-                    sentence=row["sentence"],
-                    original_subject=row["original_subject"],
-                    original_object=row["original_object"],
-                    coref_resolved=row.get("coref_resolved", "") == "True",
-                    confidence=float(row["confidence"]),
-                    rule_id=row["rule_id"],
-                    inferred=row.get("inferred", "") == "True",
-                )
-            )
-    
-    # Process the new document
-    new_doc_id = f"doc_uploaded_{len(existing_triples_list) + 1}"
-    new_doc = Document(document_id=new_doc_id, filename=f"{new_doc_id}.txt", text=text)
-    
-    try:
-        processor = NLPProcessor(config, registry.ruler_patterns())
-        processor.load()
-        processed = processor.process(new_doc)
-        
-        coref = CoreferenceResolver(
-            config,
-            registry,
-            FastCorefResolver(config, processor.load()),
-            DeterministicCorefFallback(registry),
-        )
-        item_resolutions = coref.resolve(processed)
-        
-        extractor = RelationExtractor(
-            enable_optional_relations=config.enable_optional_relations
-        )
-        candidates, skipped = extractor.extract(
-            [(processed, {(r.start_char, r.end_char): r for r in item_resolutions})],
-            registry=registry,
-        )
-        new_triples, rejections = TripleBuilder(registry).build(candidates)
-        
-        if not new_triples:
-            st.warning("No triples extracted from the uploaded document.")
-            return
-        
-        # Merge with existing triples
-        all_triples = tuple(existing_triples_list) + tuple(new_triples)
-        
-        # Rebuild graph
-        graph = GraphBuilder(registry).build(all_triples, item_resolutions)
-        
-        # Write updated artifacts
-        report = PipelineReport(
-            device=config.coref_device,
-            environment={**config.summary(), "python": "3.14.3"},
-            versions={
-                "spacy": "3.8.16",
-                "fastcoref": "2.1.6",
-                "networkx": "3.7",
-                "pyvis": "0.3.2",
-                "transformers": "4.57.6",
-                "torch": "2.14.1",
-            },
-        )
-        report.counts = {
-            "documents": len(existing_triples_list) + 1,
-            "mentions": len(item_resolutions),
-            "resolved_mentions": sum(1 for r in item_resolutions if r.entity_id),
-            "unresolved_mentions": sum(1 for r in item_resolutions if not r.entity_id),
-            "relation_candidates": len(all_triples),
-            "triples": len(all_triples),
-            "nodes": graph.number_of_nodes(),
-            "edges": graph.number_of_edges(),
-            "skipped_candidates": len(skipped),
-        }
-        report.counts.update(
-            {f"rejected_{k}": v for k, v in rejections._asdict().items()}
-        )
-        report.relation_histogram = relation_histogram(all_triples)
-        
-        artifacts = ArtifactWriter(config, registry).write_all(
-            graph, all_triples, item_resolutions, report
-        )
-        write_triples_csv(config.artifacts_dir / "triples.csv", all_triples)
-        st.info(f"Added {len(new_triples)} new triples to the graph.")
-        
-    except Exception as e:
-        st.error(f"Error processing document: {e}")
-        raise
-
-
 def triple_table(kb: KnowledgeBase) -> None:
     """Triple list grouped by document, using the original surface forms."""
 
@@ -443,8 +313,7 @@ st.html(PAGE_CSS)
 config = AppConfig.from_env()
 
 # Load pre-built artifacts (generated locally via `python -m src.pipeline`)
-# The cloud deployment doesn't rebuild the graph - it only loads existing artifacts
-# and processes uploaded documents incrementally.
+# The cloud deployment doesn't rebuild the graph - it only loads existing artifacts.
 kb = load_knowledge_base(config.artifacts_dir, st.session_state.get("rebuild_token", 0))
 
 # ``st.title`` renders a real ``<h1>``. The previous version hand-rolled this as a styled
@@ -494,27 +363,6 @@ with st.sidebar:
     show_details = st.checkbox("Show NLP pipeline details", value=False)
 
     st.divider()
-    st.markdown("**Add document**")
-    uploaded = st.file_uploader(
-        "Upload a text document",
-        type=["txt"],
-        help="Upload a plain text file. It will be parsed and added to the knowledge graph.",
-    )
-    if uploaded is not None:
-        try:
-            text = uploaded.read().decode("utf-8").strip()
-            if text:
-                with st.spinner("Parsing document…"):
-                    _add_document(text, config)
-                st.success("Document added and graph updated.")
-                st.cache_data.clear()
-                st.rerun()
-            else:
-                st.warning("Uploaded file is empty.")
-        except Exception as e:
-            st.error(f"Failed to parse document: {e}")
-
-    st.divider()
     st.caption("Graph derived from thirty documents. No LLM, no external API, no network.")
 visible = filter_graph(kb.graph, entity_types, relations)
 
@@ -557,7 +405,7 @@ if focus_id:
 # ---------------------------------------------------------------------------------- query
 query_col, interpretation_col = st.columns([1, 1], gap="medium")
 
-with query_col, st.container(border=True, height=280):
+with query_col, st.container(border=True, height=380):
     st.markdown("**Query engine**")
     typed = st.text_input(
         "Query",
@@ -570,6 +418,26 @@ with query_col, st.container(border=True, height=280):
         label_visibility="collapsed",
     )
     question = typed or (chosen if chosen != "— pick an example —" else "")
+    
+    st.divider()
+    st.markdown("**Multi-hop query suggestions**")
+    st.caption("These require 2–3 hops through the graph:")
+    multi_hop_examples = [
+        "Who founded the company that developed Starship?",
+        "What does the organization that NASA partners with develop?",
+        "Who founded the organization that partnered with the organization that develops Firefox?",
+        "Who works on the product developed by the company founded by Elon Musk?",
+        "What does the company that uses Firefox focus on?",
+        "Who developed the product that the organization partnered with Quantum Forge develops?",
+        "Who founded the organization that developed the Turing machine?",
+        "What does the organization that founded the Turing Award develop?",
+        "Who collaborated with the person who developed the incompleteness theorems?",
+        "What does the organization that developed the von Neumann architecture focus on?",
+    ]
+    for q in multi_hop_examples:
+        if st.button(q, key=f"mh_{hash(q)}", width="stretch", use_container_width=True):
+            question = q
+    
     execute = st.button("Execute", icon=":material/search:", type="primary")
 
 with interpretation_col, st.container(border=True, height=280):
