@@ -141,22 +141,32 @@ def result_cards(result) -> None:
         return
 
     st.markdown(f"**{len(result.answers)} result(s) found**")
-    for answer, (subject, relation, obj) in zip(
-        result.answers, result.matched_triples, strict=True
-    ):
-        # The engine orients each triple query-entity-first, which for most of these
-        # questions puts the answer on the right. Render the stored direction with an
-        # arrow so "incoming" reads correctly instead of needing a "(reverse)" label.
-        if subject == answer:
-            line = f"{answer} &nbsp;──&nbsp;{relation}&nbsp;──▶&nbsp; {obj}"
-        else:
-            line = f"{subject} &nbsp;──&nbsp;{relation}&nbsp;──▶&nbsp; {answer}"
-        with st.container(border=True):
-            st.markdown(
-                f"<span class='kg-answer'>{answer}</span>"
-                f"&nbsp;&nbsp;<span class='kg-muted'>{line}</span>",
-                unsafe_allow_html=True,
-            )
+    # For single-hop queries, matched_triples aligns 1:1 with answers.
+    # For multi-hop semantic queries, matched_triples contains all steps;
+    # show the trace in the execution panel and just list answers here.
+    if len(result.matched_triples) == len(result.answers):
+        # Single-hop path: show answer + its direct triple
+        for answer, (subject, relation, obj) in zip(
+            result.answers, result.matched_triples, strict=True
+        ):
+            if subject == answer:
+                line = f"{answer} &nbsp;──&nbsp;{relation}&nbsp;──▶&nbsp; {obj}"
+            else:
+                line = f"{subject} &nbsp;──&nbsp;{relation}&nbsp;──▶&nbsp; {answer}"
+            with st.container(border=True):
+                st.markdown(
+                    f"<span class='kg-answer'>{answer}</span>"
+                    f"&nbsp;&nbsp;<span class='kg-muted'>{line}</span>",
+                    unsafe_allow_html=True,
+                )
+    else:
+        # Multi-hop path: show each answer without forcing a single triple
+        for answer in result.answers:
+            with st.container(border=True):
+                st.markdown(
+                    f"<span class='kg-answer'>{answer}</span>",
+                    unsafe_allow_html=True,
+                )
 
 
 def evidence_panel(result) -> None:
