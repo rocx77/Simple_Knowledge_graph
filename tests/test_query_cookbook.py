@@ -23,6 +23,7 @@ SPECIFIED: dict[str, list[str]] = {
     "Who made Mario?": ["Shigeru Miyamoto", "Nintendo"],
     "Who created Mario?": ["Shigeru Miyamoto", "Nintendo"],
     # Complex multi-hop traversal across the graph's components.
+    "How is OrionEdge connected to Mozilla?": ["Mozilla"],
     "How is Helios Bank connected to OpenAI?": ["OpenAI"],
     "How is Helios Bank connected to Netscape?": ["Netscape"],
     "How is OrionEdge connected to Linux Foundation?": ["Linux Foundation"],

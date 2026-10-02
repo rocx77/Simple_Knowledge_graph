@@ -47,6 +47,8 @@ EXAMPLE_QUERIES = [
     "Who works on AuditLens?",
     "What is integrated into OrionEdge?",
     "How is Dmitri Volkov connected to Helios Bank?",
+    "Who founded the company that developed Starship?",
+    "What does the organization that NASA partners with develop?",
 ]
 
 
@@ -66,6 +68,30 @@ def interpretation_panel(result) -> None:
     """The structured parse, which is the point of the deterministic parser."""
     parse = result.parse
     st.markdown("**Query interpretation**")
+    if parse is None and result.query_plan is not None:
+        plan = result.query_plan
+        rows = {
+            "Intent": plan.intent,
+            "Answer variable": plan.answer_variable,
+            "Patterns": str(len(plan.patterns)),
+        }
+        st.dataframe(
+            [{"Field": k, "Value": v} for k, v in rows.items()],
+            hide_index=True,
+            width="stretch",
+        )
+        for p in plan.patterns:
+            st.markdown(f"`{p.describe()}`")
+        if plan.candidates:
+            st.info(
+                f"{plan.note}. {len(plan.candidates)} candidate plan(s) executed — "
+                "see the execution trace for each outcome.",
+                icon=":material/help:",
+            )
+        return
+    if parse is None:
+        st.caption("No structured parse for this result.")
+        return
     rows = {
         "Entity": parse.entity_label or "—",
         "Relation": ", ".join(str(r.value) for r in parse.relations) or "—",
@@ -169,6 +195,15 @@ def _resolution_line(item: dict) -> str:
     if not pairs:
         return ""
     return "<span class='kg-resolved'>Resolved: " + " &nbsp;·&nbsp; ".join(pairs) + "</span>"
+
+
+def trace_panel(result) -> None:
+    """Human-readable execution trace for planner-backed (multi-hop) queries."""
+    if not result.trace:
+        return
+    st.markdown("**Execution trace**")
+    for line in result.trace:
+        st.markdown(f"- {line}")
 
 
 def triple_table(kb: KnowledgeBase) -> None:
@@ -397,6 +432,7 @@ if result is not None:
     st.markdown("**Query results**")
     result_cards(result)
     evidence_panel(result)
+    trace_panel(result)
 
 st.divider()
 triple_table(kb)
