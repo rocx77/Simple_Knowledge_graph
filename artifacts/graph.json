@@ -2,8 +2,8 @@
   "directed": true,
   "multigraph": true,
   "graph": {
-    "node_count": 86,
-    "edge_count": 94
+    "node_count": 109,
+    "edge_count": 113
   },
   "nodes": [
     {
@@ -112,6 +112,39 @@
       "out_degree": 1,
       "degree": 4,
       "id": "product:chatgpt"
+    },
+    {
+      "label": "Association for Computing Machinery",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Association for Computing Machinery",
+        "ACM"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_26_turing_award"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "organization:association_for_computing_machinery"
+    },
+    {
+      "label": "ACM Turing Award",
+      "type": "PRODUCT",
+      "aliases": [
+        "ACM Turing Award",
+        "Turing Award"
+      ],
+      "mention_count": 6,
+      "documents": [
+        "doc_26_turing_award",
+        "doc_28_knuth"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:acm_turing_award"
     },
     {
       "label": "CERN",
@@ -675,6 +708,100 @@
       "id": "product:dune"
     },
     {
+      "label": "Alan Turing",
+      "type": "PERSON",
+      "aliases": [
+        "Alan Turing",
+        "Turing"
+      ],
+      "mention_count": 6,
+      "documents": [
+        "doc_25_turing",
+        "doc_29_lambda_calculus",
+        "doc_30_godel"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:alan_turing"
+    },
+    {
+      "label": "Turing machine",
+      "type": "PRODUCT",
+      "aliases": [
+        "Turing machine"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_25_turing"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:turing_machine"
+    },
+    {
+      "label": "Bletchley Park",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Bletchley Park"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_25_turing"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:bletchley_park"
+    },
+    {
+      "label": "Alonzo Church",
+      "type": "PERSON",
+      "aliases": [
+        "Alonzo Church",
+        "Church"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ],
+      "in_degree": 0,
+      "out_degree": 2,
+      "degree": 2,
+      "id": "person:alonzo_church"
+    },
+    {
+      "label": "lambda calculus",
+      "type": "PRODUCT",
+      "aliases": [
+        "lambda calculus"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:lambda_calculus"
+    },
+    {
+      "label": "Princeton University",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Princeton University"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:princeton_university"
+    },
+    {
       "label": "Arun Mehta",
       "type": "PERSON",
       "aliases": [
@@ -816,6 +943,38 @@
       "id": "product:auditlens"
     },
     {
+      "label": "Donald Knuth",
+      "type": "PERSON",
+      "aliases": [
+        "Donald Knuth",
+        "Knuth"
+      ],
+      "mention_count": 5,
+      "documents": [
+        "doc_26_turing_award",
+        "doc_28_knuth"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "person:donald_knuth"
+    },
+    {
+      "label": "Stanford Computer Science Department",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Stanford Computer Science Department"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_28_knuth"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "organization:stanford_computer_science_department"
+    },
+    {
       "label": "Elon Musk",
       "type": "PERSON",
       "aliases": [
@@ -889,6 +1048,102 @@
       "out_degree": 1,
       "degree": 1,
       "id": "person:jens_stoltenberg"
+    },
+    {
+      "label": "John von Neumann",
+      "type": "PERSON",
+      "aliases": [
+        "John von Neumann",
+        "von Neumann"
+      ],
+      "mention_count": 5,
+      "documents": [
+        "doc_27_von_neumann",
+        "doc_30_godel"
+      ],
+      "in_degree": 1,
+      "out_degree": 3,
+      "degree": 4,
+      "id": "person:john_von_neumann"
+    },
+    {
+      "label": "Kurt Godel",
+      "type": "PERSON",
+      "aliases": [
+        "Kurt Godel",
+        "Godel"
+      ],
+      "mention_count": 6,
+      "documents": [
+        "doc_27_von_neumann",
+        "doc_30_godel"
+      ],
+      "in_degree": 1,
+      "out_degree": 4,
+      "degree": 5,
+      "id": "person:kurt_godel"
+    },
+    {
+      "label": "von Neumann architecture",
+      "type": "PRODUCT",
+      "aliases": [
+        "von Neumann architecture"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_27_von_neumann"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:von_neumann_architecture"
+    },
+    {
+      "label": "Manhattan Project",
+      "type": "PROJECT",
+      "aliases": [
+        "Manhattan Project"
+      ],
+      "mention_count": 1,
+      "documents": [
+        "doc_27_von_neumann"
+      ],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "project:manhattan_project"
+    },
+    {
+      "label": "incompleteness theorems",
+      "type": "PRODUCT",
+      "aliases": [
+        "incompleteness theorems"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_30_godel"
+      ],
+      "in_degree": 1,
+      "out_degree": 1,
+      "degree": 2,
+      "id": "product:incompleteness_theorems"
+    },
+    {
+      "label": "Institute for Advanced Study",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Institute for Advanced Study",
+        "IAS"
+      ],
+      "mention_count": 3,
+      "documents": [
+        "doc_27_von_neumann",
+        "doc_30_godel"
+      ],
+      "in_degree": 2,
+      "out_degree": 0,
+      "degree": 2,
+      "id": "organization:institute_for_advanced_study"
     },
     {
       "label": "Linus Torvalds",
@@ -1062,6 +1317,17 @@
       "id": "person:ursula_von_der_leyen"
     },
     {
+      "label": "computing contributions",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:computing_contributions"
+    },
+    {
       "label": "protein structure prediction",
       "type": "LITERAL",
       "aliases": [],
@@ -1115,6 +1381,28 @@
       "out_degree": 0,
       "degree": 1,
       "id": "literal:dream_heist_thrillers"
+    },
+    {
+      "label": "formal systems",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:formal_systems"
+    },
+    {
+      "label": "functional computation",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:functional_computation"
     },
     {
       "label": "particle physics experiments",
@@ -1207,6 +1495,55 @@
       "out_degree": 0,
       "degree": 1,
       "id": "literal:animated_disaster_aftermath"
+    },
+    {
+      "label": "The Art of Computer Programming",
+      "type": "PRODUCT",
+      "aliases": [
+        "The Art of Computer Programming",
+        "TAOCP"
+      ],
+      "mention_count": 2,
+      "documents": [
+        "doc_28_knuth"
+      ],
+      "in_degree": 0,
+      "out_degree": 1,
+      "degree": 1,
+      "id": "product:the_art_of_computer_programming"
+    },
+    {
+      "label": "algorithm analysis",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:algorithm_analysis"
+    },
+    {
+      "label": "computability theory",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:computability_theory"
+    },
+    {
+      "label": "stored program computers",
+      "type": "LITERAL",
+      "aliases": [],
+      "mention_count": 0,
+      "documents": [],
+      "in_degree": 1,
+      "out_degree": 0,
+      "degree": 1,
+      "id": "literal:stored_program_computers"
     },
     {
       "label": "body swap romance",
@@ -1496,6 +1833,44 @@
       "source": "product:chatgpt",
       "target": "literal:conversational_ai_assistants",
       "key": "triple:product:chatgpt--focuses_on->literal:conversational_ai_assistants@doc_10_openai"
+    },
+    {
+      "relation": "founded",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_26_turing_award",
+      "sentence_id": 0,
+      "sentence": "The ACM Turing Award was established by the Association for Computing Machinery.",
+      "inferred": false,
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "original_subject": "Association for Computing Machinery",
+      "original_object": "ACM Turing Award",
+      "canonical_subject": "Association for Computing Machinery",
+      "canonical_object": "ACM Turing Award",
+      "triple_id": "triple:organization:association_for_computing_machinery--founded->product:acm_turing_award@doc_26_turing_award",
+      "duplicate_count": 1,
+      "source": "organization:association_for_computing_machinery",
+      "target": "product:acm_turing_award",
+      "key": "triple:organization:association_for_computing_machinery--founded->product:acm_turing_award@doc_26_turing_award"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_26_turing_award",
+      "sentence_id": 1,
+      "sentence": "The Turing Award focuses on computing contributions.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Turing Award",
+      "original_object": "computing contributions",
+      "canonical_subject": "ACM Turing Award",
+      "canonical_object": "computing contributions",
+      "triple_id": "triple:product:acm_turing_award--focuses_on->literal:computing_contributions@doc_26_turing_award",
+      "duplicate_count": 1,
+      "source": "product:acm_turing_award",
+      "target": "literal:computing_contributions",
+      "key": "triple:product:acm_turing_award--focuses_on->literal:computing_contributions@doc_26_turing_award"
     },
     {
       "relation": "develops",
@@ -2239,6 +2614,120 @@
       "key": "triple:organization:warner_bros--develops->product:dune@doc_24_nolan"
     },
     {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_25_turing",
+      "sentence_id": 0,
+      "sentence": "Alan Turing developed the Turing machine.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Alan Turing",
+      "original_object": "Turing machine",
+      "canonical_subject": "Alan Turing",
+      "canonical_object": "Turing machine",
+      "triple_id": "triple:person:alan_turing--develops->product:turing_machine@doc_25_turing",
+      "duplicate_count": 1,
+      "source": "person:alan_turing",
+      "target": "product:turing_machine",
+      "key": "triple:person:alan_turing--develops->product:turing_machine@doc_25_turing"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_25_turing",
+      "sentence_id": 1,
+      "sentence": "Alan Turing worked at Bletchley Park.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Alan Turing",
+      "original_object": "Bletchley Park",
+      "canonical_subject": "Alan Turing",
+      "canonical_object": "Bletchley Park",
+      "triple_id": "triple:person:alan_turing--works_on->organization:bletchley_park@doc_25_turing",
+      "duplicate_count": 1,
+      "source": "person:alan_turing",
+      "target": "organization:bletchley_park",
+      "key": "triple:person:alan_turing--works_on->organization:bletchley_park@doc_25_turing"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_25_turing",
+      "sentence_id": 2,
+      "sentence": "The Turing machine focuses on computability theory.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "Turing machine",
+      "original_object": "computability theory",
+      "canonical_subject": "Turing machine",
+      "canonical_object": "computability theory",
+      "triple_id": "triple:product:turing_machine--focuses_on->literal:computability_theory@doc_25_turing",
+      "duplicate_count": 1,
+      "source": "product:turing_machine",
+      "target": "literal:computability_theory",
+      "key": "triple:product:turing_machine--focuses_on->literal:computability_theory@doc_25_turing"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_29_lambda_calculus",
+      "sentence_id": 0,
+      "sentence": "Alonzo Church developed the lambda calculus.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Alonzo Church",
+      "original_object": "lambda calculus",
+      "canonical_subject": "Alonzo Church",
+      "canonical_object": "lambda calculus",
+      "triple_id": "triple:person:alonzo_church--develops->product:lambda_calculus@doc_29_lambda_calculus",
+      "duplicate_count": 1,
+      "source": "person:alonzo_church",
+      "target": "product:lambda_calculus",
+      "key": "triple:person:alonzo_church--develops->product:lambda_calculus@doc_29_lambda_calculus"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_29_lambda_calculus",
+      "sentence_id": 1,
+      "sentence": "Alonzo Church worked at Princeton University.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Alonzo Church",
+      "original_object": "Princeton University",
+      "canonical_subject": "Alonzo Church",
+      "canonical_object": "Princeton University",
+      "triple_id": "triple:person:alonzo_church--works_on->organization:princeton_university@doc_29_lambda_calculus",
+      "duplicate_count": 1,
+      "source": "person:alonzo_church",
+      "target": "organization:princeton_university",
+      "key": "triple:person:alonzo_church--works_on->organization:princeton_university@doc_29_lambda_calculus"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_29_lambda_calculus",
+      "sentence_id": 2,
+      "sentence": "The lambda calculus focuses on functional computation.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "lambda calculus",
+      "original_object": "functional computation",
+      "canonical_subject": "lambda calculus",
+      "canonical_object": "functional computation",
+      "triple_id": "triple:product:lambda_calculus--focuses_on->literal:functional_computation@doc_29_lambda_calculus",
+      "duplicate_count": 1,
+      "source": "product:lambda_calculus",
+      "target": "literal:functional_computation",
+      "key": "triple:product:lambda_calculus--focuses_on->literal:functional_computation@doc_29_lambda_calculus"
+    },
+    {
       "relation": "collaborates_with",
       "confidence": 0.9,
       "coref_resolved": true,
@@ -2562,6 +3051,25 @@
       "key": "triple:person:priya_nair--leads->project:resolution_working_group@doc_09_working_group"
     },
     {
+      "relation": "leads",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_28_knuth",
+      "sentence_id": 3,
+      "sentence": "Donald Knuth leads the Stanford Computer Science department.",
+      "inferred": false,
+      "rule_id": "R_LEADS",
+      "original_subject": "Donald Knuth",
+      "original_object": "Stanford Computer Science department",
+      "canonical_subject": "Donald Knuth",
+      "canonical_object": "Stanford Computer Science Department",
+      "triple_id": "triple:person:donald_knuth--leads->organization:stanford_computer_science_department@doc_28_knuth",
+      "duplicate_count": 1,
+      "source": "person:donald_knuth",
+      "target": "organization:stanford_computer_science_department",
+      "key": "triple:person:donald_knuth--leads->organization:stanford_computer_science_department@doc_28_knuth"
+    },
+    {
       "relation": "founded",
       "confidence": 1.0,
       "coref_resolved": false,
@@ -2712,6 +3220,177 @@
       "source": "person:jens_stoltenberg",
       "target": "organization:nato",
       "key": "triple:person:jens_stoltenberg--leads->organization:nato@doc_17_nato"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_27_von_neumann",
+      "sentence_id": 3,
+      "sentence": "John von Neumann collaborated with Kurt Godel.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "John von Neumann",
+      "original_object": "Kurt Godel",
+      "canonical_subject": "John von Neumann",
+      "canonical_object": "Kurt Godel",
+      "triple_id": "triple:person:john_von_neumann--collaborates_with->person:kurt_godel@doc_27_von_neumann",
+      "duplicate_count": 1,
+      "source": "person:john_von_neumann",
+      "target": "person:kurt_godel",
+      "key": "triple:person:john_von_neumann--collaborates_with->person:kurt_godel@doc_27_von_neumann"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_27_von_neumann",
+      "sentence_id": 0,
+      "sentence": "John von Neumann developed the von Neumann architecture.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "John von Neumann",
+      "original_object": "von Neumann architecture",
+      "canonical_subject": "John von Neumann",
+      "canonical_object": "von Neumann architecture",
+      "triple_id": "triple:person:john_von_neumann--develops->product:von_neumann_architecture@doc_27_von_neumann",
+      "duplicate_count": 1,
+      "source": "person:john_von_neumann",
+      "target": "product:von_neumann_architecture",
+      "key": "triple:person:john_von_neumann--develops->product:von_neumann_architecture@doc_27_von_neumann"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_27_von_neumann",
+      "sentence_id": 4,
+      "sentence": "John von Neumann worked on the Manhattan Project.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "John von Neumann",
+      "original_object": "Manhattan Project",
+      "canonical_subject": "John von Neumann",
+      "canonical_object": "Manhattan Project",
+      "triple_id": "triple:person:john_von_neumann--works_on->project:manhattan_project@doc_27_von_neumann",
+      "duplicate_count": 1,
+      "source": "person:john_von_neumann",
+      "target": "project:manhattan_project",
+      "key": "triple:person:john_von_neumann--works_on->project:manhattan_project@doc_27_von_neumann"
+    },
+    {
+      "relation": "collaborates_with",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_30_godel",
+      "sentence_id": 3,
+      "sentence": "Kurt Godel collaborated with John von Neumann.",
+      "inferred": false,
+      "rule_id": "R_COLLABORATES_WITH",
+      "original_subject": "Kurt Godel",
+      "original_object": "John von Neumann",
+      "canonical_subject": "Kurt Godel",
+      "canonical_object": "John von Neumann",
+      "triple_id": "triple:person:kurt_godel--collaborates_with->person:john_von_neumann@doc_30_godel",
+      "duplicate_count": 1,
+      "source": "person:kurt_godel",
+      "target": "person:john_von_neumann",
+      "key": "triple:person:kurt_godel--collaborates_with->person:john_von_neumann@doc_30_godel"
+    },
+    {
+      "relation": "develops",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_30_godel",
+      "sentence_id": 0,
+      "sentence": "Kurt Godel developed the incompleteness theorems.",
+      "inferred": false,
+      "rule_id": "R_DEVELOPS",
+      "original_subject": "Kurt Godel",
+      "original_object": "incompleteness theorems",
+      "canonical_subject": "Kurt Godel",
+      "canonical_object": "incompleteness theorems",
+      "triple_id": "triple:person:kurt_godel--develops->product:incompleteness_theorems@doc_30_godel",
+      "duplicate_count": 1,
+      "source": "person:kurt_godel",
+      "target": "product:incompleteness_theorems",
+      "key": "triple:person:kurt_godel--develops->product:incompleteness_theorems@doc_30_godel"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_27_von_neumann",
+      "sentence_id": 5,
+      "sentence": "Kurt Godel worked at the Institute for Advanced Study.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Kurt Godel",
+      "original_object": "Institute for Advanced Study",
+      "canonical_subject": "Kurt Godel",
+      "canonical_object": "Institute for Advanced Study",
+      "triple_id": "triple:person:kurt_godel--works_on->organization:institute_for_advanced_study@doc_27_von_neumann",
+      "duplicate_count": 1,
+      "source": "person:kurt_godel",
+      "target": "organization:institute_for_advanced_study",
+      "key": "triple:person:kurt_godel--works_on->organization:institute_for_advanced_study@doc_27_von_neumann"
+    },
+    {
+      "relation": "works_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_30_godel",
+      "sentence_id": 1,
+      "sentence": "Kurt Godel worked at the Institute for Advanced Study.",
+      "inferred": false,
+      "rule_id": "R_WORKS_ON",
+      "original_subject": "Kurt Godel",
+      "original_object": "Institute for Advanced Study",
+      "canonical_subject": "Kurt Godel",
+      "canonical_object": "Institute for Advanced Study",
+      "triple_id": "triple:person:kurt_godel--works_on->organization:institute_for_advanced_study@doc_30_godel",
+      "duplicate_count": 1,
+      "source": "person:kurt_godel",
+      "target": "organization:institute_for_advanced_study",
+      "key": "triple:person:kurt_godel--works_on->organization:institute_for_advanced_study@doc_30_godel"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_27_von_neumann",
+      "sentence_id": 2,
+      "sentence": "The von Neumann architecture focuses on stored program computers.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "von Neumann architecture",
+      "original_object": "stored program computers",
+      "canonical_subject": "von Neumann architecture",
+      "canonical_object": "stored program computers",
+      "triple_id": "triple:product:von_neumann_architecture--focuses_on->literal:stored_program_computers@doc_27_von_neumann",
+      "duplicate_count": 1,
+      "source": "product:von_neumann_architecture",
+      "target": "literal:stored_program_computers",
+      "key": "triple:product:von_neumann_architecture--focuses_on->literal:stored_program_computers@doc_27_von_neumann"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_30_godel",
+      "sentence_id": 2,
+      "sentence": "The incompleteness theorems focus on formal systems.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "incompleteness theorems",
+      "original_object": "formal systems",
+      "canonical_subject": "incompleteness theorems",
+      "canonical_object": "formal systems",
+      "triple_id": "triple:product:incompleteness_theorems--focuses_on->literal:formal_systems@doc_30_godel",
+      "duplicate_count": 1,
+      "source": "product:incompleteness_theorems",
+      "target": "literal:formal_systems",
+      "key": "triple:product:incompleteness_theorems--focuses_on->literal:formal_systems@doc_30_godel"
     },
     {
       "relation": "leads",
@@ -3054,6 +3733,25 @@
       "source": "product:spotify",
       "target": "literal:music_streaming",
       "key": "triple:product:spotify--focuses_on->literal:music_streaming@doc_23_spotify"
+    },
+    {
+      "relation": "focuses_on",
+      "confidence": 1.0,
+      "coref_resolved": false,
+      "document_id": "doc_28_knuth",
+      "sentence_id": 1,
+      "sentence": "The Art of Computer Programming focuses on algorithm analysis.",
+      "inferred": false,
+      "rule_id": "R_FOCUSES_ON",
+      "original_subject": "The Art of Computer Programming",
+      "original_object": "algorithm analysis",
+      "canonical_subject": "The Art of Computer Programming",
+      "canonical_object": "algorithm analysis",
+      "triple_id": "triple:product:the_art_of_computer_programming--focuses_on->literal:algorithm_analysis@doc_28_knuth",
+      "duplicate_count": 1,
+      "source": "product:the_art_of_computer_programming",
+      "target": "literal:algorithm_analysis",
+      "key": "triple:product:the_art_of_computer_programming--focuses_on->literal:algorithm_analysis@doc_28_knuth"
     }
   ]
 }

@@ -25,9 +25,8 @@ torch>=2.0.0                 # inference backend for FastCoref (CPU build is suf
 transformers>=4.40.0,<5.0.0
 
 # --- spaCy English pipeline ---
-# NOT installable from PyPI. Installed separately, see docs/07_RUNBOOK.md:
-#   .venv\Scripts\python.exe -m pip install \
-#     https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+# NOT installable from PyPI. For Streamlit Cloud deployment, include the direct URL:
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
 
 # --- Graph ---
 networkx>=3.0                # in-memory MultiDiGraph + traversal (BFS paths)
@@ -38,3 +37,4 @@ streamlit>=1.57.0            # local web application
 
 # --- Tabular output ---
 pandas>=2.0                  # triple table export + UI tables
+pyarrow>=20.0                # pandas dependency, used for Parquet/Arrow support

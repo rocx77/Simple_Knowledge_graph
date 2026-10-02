@@ -1,0 +1,1 @@
+Alonzo Church developed the lambda calculus. Alonzo Church worked at Princeton University. The lambda calculus focuses on functional computation. Alan Turing worked with Alonzo Church. The Church-Turing thesis states that lambda calculus and Turing machines are equivalent.

@@ -47,6 +47,12 @@ EXPECTED_FILES = [
     "doc_22_fifa.txt",
     "doc_23_spotify.txt",
     "doc_24_nolan.txt",
+    "doc_25_turing.txt",
+    "doc_26_turing_award.txt",
+    "doc_27_von_neumann.txt",
+    "doc_28_knuth.txt",
+    "doc_29_lambda_calculus.txt",
+    "doc_30_godel.txt",
 ]
 
 

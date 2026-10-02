@@ -517,6 +517,167 @@ entities:
     anaphors: [he, his, him]
     description: Film director.
 
+# ------------------------------------------------------------ MATHEMATICS & CS
+# Alan Turing and the Turing Award
+  - id: person:alan_turing
+    label: Alan Turing
+    type: PERSON
+    aliases: [Turing]
+    anaphors: [he, his, him, "the codebreaker"]
+    description: Pioneer of computer science and artificial intelligence.
+
+  - id: organization:association_for_computing_machinery
+    label: Association for Computing Machinery
+    type: ORGANIZATION
+    aliases: [ACM]
+    anaphors: ["the association"]
+    description: Professional organization for computing.
+
+  - id: product:acm_turing_award
+    label: ACM Turing Award
+    type: PRODUCT
+    aliases: ["Turing Award"]
+    anaphors: ["the award"]
+    description: Annual prize for contributions to computing.
+
+  - id: organization:bletchley_park
+    label: Bletchley Park
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the park"]
+    description: British codebreaking center during WWII.
+
+  - id: product:turing_machine
+    label: Turing machine
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the machine"]
+    description: Abstract model of computation.
+
+  - id: product:bombe
+    label: Bombe
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the Bombe"]
+    description: Electromechanical Enigma decryption device.
+
+# John von Neumann
+  - id: person:john_von_neumann
+    label: John von Neumann
+    type: PERSON
+    aliases: [von Neumann]
+    anaphors: [he, his, him, "the polymath"]
+    description: Pioneer of computer architecture and game theory.
+
+  - id: organization:institute_for_advanced_study
+    label: Institute for Advanced Study
+    type: ORGANIZATION
+    aliases: [IAS]
+    anaphors: ["the institute"]
+    description: Theoretical research institute in Princeton.
+
+  - id: product:von_neumann_architecture
+    label: von Neumann architecture
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the architecture"]
+    description: Stored-program computer architecture.
+
+  - id: project:manhattan_project
+    label: Manhattan Project
+    type: PROJECT
+    aliases: []
+    anaphors: ["the project"]
+    description: US nuclear weapons program during WWII.
+
+# Donald Knuth
+  - id: person:donald_knuth
+    label: Donald Knuth
+    type: PERSON
+    aliases: [Knuth]
+    anaphors: [he, his, him, "the TeX creator"]
+    description: Computer scientist, author of The Art of Computer Programming.
+
+  - id: product:tex
+    label: TeX
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the typesetting system"]
+    description: Typesetting system for mathematics.
+
+  - id: product:the_art_of_computer_programming
+    label: The Art of Computer Programming
+    type: PRODUCT
+    aliases: ["TAOCP"]
+    anaphors: ["the book"]
+    description: Comprehensive treatise on algorithms.
+
+  - id: organization:stanford_computer_science_department
+    label: Stanford Computer Science Department
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the department"]
+    description: Computer science department at Stanford University.
+
+# Alonzo Church and Lambda Calculus
+  - id: person:alonzo_church
+    label: Alonzo Church
+    type: PERSON
+    aliases: [Church]
+    anaphors: [he, his, him, "the logician"]
+    description: Founder of lambda calculus.
+
+  - id: organization:princeton_university
+    label: Princeton University
+    type: ORGANIZATION
+    aliases: []
+    anaphors: ["the university"]
+    description: Ivy League university.
+
+  - id: product:lambda_calculus
+    label: lambda calculus
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the calculus"]
+    description: Formal system for functional computation.
+
+# Kurt Godel
+  - id: person:kurt_godel
+    label: Kurt Godel
+    type: PERSON
+    aliases: [Godel]
+    anaphors: [he, his, him, "the logician"]
+    description: Logician who proved the incompleteness theorems.
+
+  - id: product:incompleteness_theorems
+    label: incompleteness theorems
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the theorems"]
+    description: Fundamental results about formal systems.
+
+  - id: product:church_turing_thesis
+    label: Church-Turing thesis
+    type: PRODUCT
+    aliases: []
+    anaphors: ["the thesis"]
+    description: Equivalence of computability models.
+
+# Turing Award recipients
+  - id: person:alan_perlis
+    label: Alan Perlis
+    type: PERSON
+    aliases: [Perlis]
+    anaphors: [he, his, him]
+    description: First recipient of the Turing Award.
+
+  - id: person:edsger_dijkstra
+    label: Edsger Dijkstra
+    type: PERSON
+    aliases: [Dijkstra]
+    anaphors: [he, his, him]
+    description: Turing Award recipient for contributions to programming languages.
+
 # Literal objects that the specification requires as graph nodes but which are
 # noun phrases rather than named entities (section 11, focuses_on).
 literals:
@@ -587,3 +748,28 @@ literals:
   - id: literal:dream_heist_thrillers
     label: dream heist thrillers
     description: Focus area of Inception.
+
+# Mathematics & CS literals
+  - id: literal:computability_theory
+    label: computability theory
+    description: Focus area of the Turing machine.
+
+  - id: literal:algorithm_analysis
+    label: algorithm analysis
+    description: Focus area of The Art of Computer Programming.
+
+  - id: literal:functional_computation
+    label: functional computation
+    description: Focus area of lambda calculus.
+
+  - id: literal:formal_systems
+    label: formal systems
+    description: Focus area of the incompleteness theorems.
+
+  - id: literal:stored_program_computers
+    label: stored program computers
+    description: Focus area of the von Neumann architecture.
+
+  - id: literal:computing_contributions
+    label: computing contributions
+    description: Focus area of the Turing Award.

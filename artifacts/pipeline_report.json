@@ -20,34 +20,34 @@
   },
   "stages": [],
   "counts": {
-    "documents": 24,
-    "mentions": 194,
-    "resolved_mentions": 192,
-    "unresolved_mentions": 2,
-    "relation_candidates": 94,
-    "triples": 94,
-    "nodes": 86,
-    "edges": 94,
-    "skipped_candidates": 4,
+    "documents": 30,
+    "mentions": 250,
+    "resolved_mentions": 247,
+    "unresolved_mentions": 3,
+    "relation_candidates": 113,
+    "triples": 113,
+    "nodes": 109,
+    "edges": 113,
+    "skipped_candidates": 7,
     "rejected_unresolved_endpoint": 0,
     "rejected_self_loop": 0,
     "rejected_literal_endpoint": 0
   },
   "relation_histogram": {
-    "collaborates_with": 5,
+    "collaborates_with": 7,
     "contains": 2,
     "customer_of": 1,
     "deployed_at": 2,
-    "develops": 15,
-    "focuses_on": 17,
-    "founded": 7,
+    "develops": 19,
+    "focuses_on": 23,
+    "founded": 8,
     "improves": 2,
     "integrated_into": 2,
-    "leads": 13,
+    "leads": 14,
     "partners_with": 8,
     "uses": 11,
     "works_at": 2,
-    "works_on": 7
+    "works_on": 12
   },
   "warnings": [],
   "unresolved_mentions": [
@@ -62,6 +62,12 @@
       "sentence_index": 3,
       "text": "AI",
       "detail": "'AI' is not in the canonical registry; left unresolved (charter invariant I3)"
+    },
+    {
+      "document_id": "doc_25_turing",
+      "sentence_index": 4,
+      "text": "Enigma",
+      "detail": "'Enigma' is not in the canonical registry; left unresolved (charter invariant I3)"
     }
   ],
   "coref_conflicts": [
@@ -100,6 +106,27 @@
       "document_id": "doc_23_spotify",
       "sentence_index": 0,
       "reason": "object of 'leads' is not a canonical entity ('leads' has no object)"
+    },
+    {
+      "rule_id": "R_FOUNDED_PASSIVE",
+      "relation": "founded",
+      "document_id": "doc_27_von_neumann",
+      "sentence_index": 1,
+      "reason": "'founded' has no agent preposition; cannot invert"
+    },
+    {
+      "rule_id": "R_DEVELOPS",
+      "relation": "develops",
+      "document_id": "doc_28_knuth",
+      "sentence_index": 0,
+      "reason": "'developed' sits inside a reporting verb clause; the sentence reports it rather than asserting it"
+    },
+    {
+      "rule_id": "R_WORKS_ON",
+      "relation": "works_on",
+      "document_id": "doc_29_lambda_calculus",
+      "sentence_index": 3,
+      "reason": "object of 'worked' is not a canonical entity ('worked' has no object)"
     }
   ]
 }

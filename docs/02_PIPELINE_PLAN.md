@@ -49,7 +49,7 @@ CUDA is present; `tests/test_config.py` covers the matrix.
 **Failure modes** Unreadable file → warning, file skipped, run continues. Empty corpus →
 `CorpusError` (this is configuration, not data — rule E5).
 
-**Acceptance** 24 documents loaded, hashes match `data/corpus_manifest.json`.
+**Acceptance** 30 documents loaded, hashes match `data/corpus_manifest.json`.
 
 ---
 

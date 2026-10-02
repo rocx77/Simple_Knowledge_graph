@@ -50,7 +50,7 @@ These are **banned** by specification. Adding any of them invalidates the case s
 - No external API, cloud service, or network access **at runtime**.
 - No Neo4j, Redis, Elasticsearch, Kafka, Docker, LangChain, or vector database.
 - No semantic embeddings for query parsing. No fuzzy entity matching.
-- No scaling work. The corpus is 24 documents; premature optimisation is a defect.
+- No scaling work. The corpus is 30 documents; premature optimisation is a defect.
 - No persistence beyond the four JSON/CSV artifacts.
 
 ## 5. Non-negotiable invariants

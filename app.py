@@ -454,4 +454,4 @@ if show_details:
 
 with st.sidebar:
     st.divider()
-    st.caption("Graph derived from twenty-four documents. No LLM, no external API, no network.")
+    st.caption("Graph derived from thirty documents. No LLM, no external API, no network.")

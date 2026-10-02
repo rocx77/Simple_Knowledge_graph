@@ -142,5 +142,41 @@
     "bytes": 142,
     "characters": 142,
     "sentences_estimate": 3
+  },
+  "doc_25_turing.txt": {
+    "sha256": "6e35b2548c8d2054f0b7c77e5c18c3bec2b4497d30bf4730acc12c43e25c62e0",
+    "bytes": 200,
+    "characters": 200,
+    "sentences_estimate": 4
+  },
+  "doc_26_turing_award.txt": {
+    "sha256": "7e6fa2724984cbc1c9858562a6fdc1ecc236e20d35422a02e983953fbe43a7b6",
+    "bytes": 261,
+    "characters": 261,
+    "sentences_estimate": 4
+  },
+  "doc_27_von_neumann.txt": {
+    "sha256": "0b8f116094ea9c91ccaac894955d2ddc2d30d4c0500e90cb475bd1a87af4b196",
+    "bytes": 333,
+    "characters": 333,
+    "sentences_estimate": 5
+  },
+  "doc_28_knuth.txt": {
+    "sha256": "9c832d51c76ea20512f848094972bf0e31cebf1d21af70c991c4d0a2f771783d",
+    "bytes": 243,
+    "characters": 243,
+    "sentences_estimate": 4
+  },
+  "doc_29_lambda_calculus.txt": {
+    "sha256": "cf77ec21b0ea8e98f2b3c8c0fe4df6345c9bda0432f957b1a29617a95e8e80da",
+    "bytes": 273,
+    "characters": 273,
+    "sentences_estimate": 4
+  },
+  "doc_30_godel.txt": {
+    "sha256": "62aba55eaf8dbcce3bf81497b6d3c86b2d55c5a8ace65b055559c0b1b9a00985",
+    "bytes": 239,
+    "characters": 239,
+    "sentences_estimate": 4
   }
 }

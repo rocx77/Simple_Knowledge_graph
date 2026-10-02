@@ -150,7 +150,7 @@ not per call. In the UI they are additionally wrapped in `st.cache_resource` /
 Queries are graph traversals and must not trigger NLP. If a query re-runs the
 pipeline, that is a bug.
 
-**Rule P3 — no premature optimisation.** The corpus is twenty-four documents. Optimise only
+**Rule P3 — no premature optimisation.** The corpus is thirty documents. Optimise only
 what a measurement shows is slow, and record the measurement.
 
 ## 9. Testing

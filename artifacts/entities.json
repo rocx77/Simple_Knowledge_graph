@@ -1075,6 +1075,352 @@
       ]
     },
     {
+      "id": "person:alan_turing",
+      "label": "Alan Turing",
+      "type": "PERSON",
+      "aliases": [
+        "Alan Turing",
+        "Turing"
+      ],
+      "description": "Pioneer of computer science and artificial intelligence.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 6,
+      "documents": [
+        "doc_25_turing",
+        "doc_29_lambda_calculus",
+        "doc_30_godel"
+      ]
+    },
+    {
+      "id": "organization:association_for_computing_machinery",
+      "label": "Association for Computing Machinery",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Association for Computing Machinery",
+        "ACM"
+      ],
+      "description": "Professional organization for computing.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_26_turing_award"
+      ]
+    },
+    {
+      "id": "product:acm_turing_award",
+      "label": "ACM Turing Award",
+      "type": "PRODUCT",
+      "aliases": [
+        "ACM Turing Award",
+        "Turing Award"
+      ],
+      "description": "Annual prize for contributions to computing.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 6,
+      "documents": [
+        "doc_26_turing_award",
+        "doc_28_knuth"
+      ]
+    },
+    {
+      "id": "organization:bletchley_park",
+      "label": "Bletchley Park",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Bletchley Park"
+      ],
+      "description": "British codebreaking center during WWII.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_25_turing"
+      ]
+    },
+    {
+      "id": "product:turing_machine",
+      "label": "Turing machine",
+      "type": "PRODUCT",
+      "aliases": [
+        "Turing machine"
+      ],
+      "description": "Abstract model of computation.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_25_turing"
+      ]
+    },
+    {
+      "id": "product:bombe",
+      "label": "Bombe",
+      "type": "PRODUCT",
+      "aliases": [
+        "Bombe"
+      ],
+      "description": "Electromechanical Enigma decryption device.",
+      "canonical": true,
+      "has_edges": false,
+      "mention_count": 2,
+      "documents": [
+        "doc_25_turing"
+      ]
+    },
+    {
+      "id": "person:john_von_neumann",
+      "label": "John von Neumann",
+      "type": "PERSON",
+      "aliases": [
+        "John von Neumann",
+        "von Neumann"
+      ],
+      "description": "Pioneer of computer architecture and game theory.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 5,
+      "documents": [
+        "doc_27_von_neumann",
+        "doc_30_godel"
+      ]
+    },
+    {
+      "id": "organization:institute_for_advanced_study",
+      "label": "Institute for Advanced Study",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Institute for Advanced Study",
+        "IAS"
+      ],
+      "description": "Theoretical research institute in Princeton.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_27_von_neumann",
+        "doc_30_godel"
+      ]
+    },
+    {
+      "id": "product:von_neumann_architecture",
+      "label": "von Neumann architecture",
+      "type": "PRODUCT",
+      "aliases": [
+        "von Neumann architecture"
+      ],
+      "description": "Stored-program computer architecture.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_27_von_neumann"
+      ]
+    },
+    {
+      "id": "project:manhattan_project",
+      "label": "Manhattan Project",
+      "type": "PROJECT",
+      "aliases": [
+        "Manhattan Project"
+      ],
+      "description": "US nuclear weapons program during WWII.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_27_von_neumann"
+      ]
+    },
+    {
+      "id": "person:donald_knuth",
+      "label": "Donald Knuth",
+      "type": "PERSON",
+      "aliases": [
+        "Donald Knuth",
+        "Knuth"
+      ],
+      "description": "Computer scientist, author of The Art of Computer Programming.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 5,
+      "documents": [
+        "doc_26_turing_award",
+        "doc_28_knuth"
+      ]
+    },
+    {
+      "id": "product:tex",
+      "label": "TeX",
+      "type": "PRODUCT",
+      "aliases": [
+        "TeX"
+      ],
+      "description": "Typesetting system for mathematics.",
+      "canonical": true,
+      "has_edges": false,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "product:the_art_of_computer_programming",
+      "label": "The Art of Computer Programming",
+      "type": "PRODUCT",
+      "aliases": [
+        "The Art of Computer Programming",
+        "TAOCP"
+      ],
+      "description": "Comprehensive treatise on algorithms.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_28_knuth"
+      ]
+    },
+    {
+      "id": "organization:stanford_computer_science_department",
+      "label": "Stanford Computer Science Department",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Stanford Computer Science Department"
+      ],
+      "description": "Computer science department at Stanford University.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_28_knuth"
+      ]
+    },
+    {
+      "id": "person:alonzo_church",
+      "label": "Alonzo Church",
+      "type": "PERSON",
+      "aliases": [
+        "Alonzo Church",
+        "Church"
+      ],
+      "description": "Founder of lambda calculus.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ]
+    },
+    {
+      "id": "organization:princeton_university",
+      "label": "Princeton University",
+      "type": "ORGANIZATION",
+      "aliases": [
+        "Princeton University"
+      ],
+      "description": "Ivy League university.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 1,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ]
+    },
+    {
+      "id": "product:lambda_calculus",
+      "label": "lambda calculus",
+      "type": "PRODUCT",
+      "aliases": [
+        "lambda calculus"
+      ],
+      "description": "Formal system for functional computation.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 3,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ]
+    },
+    {
+      "id": "person:kurt_godel",
+      "label": "Kurt Godel",
+      "type": "PERSON",
+      "aliases": [
+        "Kurt Godel",
+        "Godel"
+      ],
+      "description": "Logician who proved the incompleteness theorems.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 6,
+      "documents": [
+        "doc_27_von_neumann",
+        "doc_30_godel"
+      ]
+    },
+    {
+      "id": "product:incompleteness_theorems",
+      "label": "incompleteness theorems",
+      "type": "PRODUCT",
+      "aliases": [
+        "incompleteness theorems"
+      ],
+      "description": "Fundamental results about formal systems.",
+      "canonical": true,
+      "has_edges": true,
+      "mention_count": 2,
+      "documents": [
+        "doc_30_godel"
+      ]
+    },
+    {
+      "id": "product:church_turing_thesis",
+      "label": "Church-Turing thesis",
+      "type": "PRODUCT",
+      "aliases": [
+        "Church-Turing thesis"
+      ],
+      "description": "Equivalence of computability models.",
+      "canonical": true,
+      "has_edges": false,
+      "mention_count": 1,
+      "documents": [
+        "doc_29_lambda_calculus"
+      ]
+    },
+    {
+      "id": "person:alan_perlis",
+      "label": "Alan Perlis",
+      "type": "PERSON",
+      "aliases": [
+        "Alan Perlis",
+        "Perlis"
+      ],
+      "description": "First recipient of the Turing Award.",
+      "canonical": true,
+      "has_edges": false,
+      "mention_count": 1,
+      "documents": [
+        "doc_26_turing_award"
+      ]
+    },
+    {
+      "id": "person:edsger_dijkstra",
+      "label": "Edsger Dijkstra",
+      "type": "PERSON",
+      "aliases": [
+        "Edsger Dijkstra",
+        "Dijkstra"
+      ],
+      "description": "Turing Award recipient for contributions to programming languages.",
+      "canonical": true,
+      "has_edges": false,
+      "mention_count": 1,
+      "documents": [
+        "doc_26_turing_award"
+      ]
+    },
+    {
       "id": "literal:graph_based_transaction_analysis",
       "label": "graph-based transaction analysis",
       "type": "LITERAL",
@@ -1260,14 +1606,95 @@
       "has_edges": true,
       "mention_count": 0,
       "documents": []
+    },
+    {
+      "id": "literal:computability_theory",
+      "label": "computability theory",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the Turing machine.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:algorithm_analysis",
+      "label": "algorithm analysis",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of The Art of Computer Programming.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:functional_computation",
+      "label": "functional computation",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of lambda calculus.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:formal_systems",
+      "label": "formal systems",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the incompleteness theorems.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:stored_program_computers",
+      "label": "stored program computers",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the von Neumann architecture.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
+    },
+    {
+      "id": "literal:computing_contributions",
+      "label": "computing contributions",
+      "type": "LITERAL",
+      "aliases": [],
+      "description": "Focus area of the Turing Award.",
+      "canonical": false,
+      "has_edges": true,
+      "mention_count": 0,
+      "documents": []
     }
   ],
   "alias_index": {
+    "acm": [
+      "organization:association_for_computing_machinery"
+    ],
+    "acm turing award": [
+      "product:acm_turing_award"
+    ],
     "adidas": [
       "organization:adidas"
     ],
     "aether analytics": [
       "organization:aether_analytics"
+    ],
+    "alan perlis": [
+      "person:alan_perlis"
+    ],
+    "alan turing": [
+      "person:alan_turing"
+    ],
+    "alonzo church": [
+      "person:alonzo_church"
     ],
     "alphafold": [
       "product:alphafold"
@@ -1275,11 +1702,20 @@
     "arun mehta": [
       "person:arun_mehta"
     ],
+    "association for computing machinery": [
+      "organization:association_for_computing_machinery"
+    ],
     "auditlens": [
       "product:auditlens"
     ],
     "aurora": [
       "project:project_aurora"
+    ],
+    "bletchley park": [
+      "organization:bletchley_park"
+    ],
+    "bombe": [
+      "product:bombe"
     ],
     "cern": [
       "organization:cern"
@@ -1289,6 +1725,12 @@
     ],
     "christopher nolan": [
       "person:christopher_nolan"
+    ],
+    "church": [
+      "person:alonzo_church"
+    ],
+    "church-turing thesis": [
+      "product:church_turing_thesis"
     ],
     "daniel ek": [
       "person:daniel_ek"
@@ -1305,14 +1747,23 @@
     "denis villeneuve": [
       "person:denis_villeneuve"
     ],
+    "dijkstra": [
+      "person:edsger_dijkstra"
+    ],
     "dmitri volkov": [
       "person:dmitri_volkov"
+    ],
+    "donald knuth": [
+      "person:donald_knuth"
     ],
     "dr. mira sen": [
       "person:mira_sen"
     ],
     "dune": [
       "product:dune"
+    ],
+    "edsger dijkstra": [
+      "person:edsger_dijkstra"
     ],
     "elon musk": [
       "person:elon_musk"
@@ -1338,6 +1789,9 @@
     "gianni infantino": [
       "person:gianni_infantino"
     ],
+    "godel": [
+      "person:kurt_godel"
+    ],
     "google": [
       "organization:google"
     ],
@@ -1356,14 +1810,35 @@
     "helios bank": [
       "organization:helios_bank"
     ],
+    "ias": [
+      "organization:institute_for_advanced_study"
+    ],
     "inception": [
       "product:inception"
+    ],
+    "incompleteness theorems": [
+      "product:incompleteness_theorems"
+    ],
+    "institute for advanced study": [
+      "organization:institute_for_advanced_study"
     ],
     "jens stoltenberg": [
       "person:jens_stoltenberg"
     ],
+    "john von neumann": [
+      "person:john_von_neumann"
+    ],
+    "knuth": [
+      "person:donald_knuth"
+    ],
+    "kurt godel": [
+      "person:kurt_godel"
+    ],
     "kyoto animation": [
       "organization:kyoto_animation"
+    ],
+    "lambda calculus": [
+      "product:lambda_calculus"
     ],
     "large hadron collider": [
       "product:large_hadron_collider"
@@ -1385,6 +1860,9 @@
     ],
     "makoto shinkai": [
       "person:makoto_shinkai"
+    ],
+    "manhattan project": [
+      "project:manhattan_project"
     ],
     "marc andreessen": [
       "person:marc_andreessen"
@@ -1422,6 +1900,12 @@
     "orionedge": [
       "product:orionedge"
     ],
+    "perlis": [
+      "person:alan_perlis"
+    ],
+    "princeton university": [
+      "organization:princeton_university"
+    ],
     "priya nair": [
       "person:priya_nair"
     ],
@@ -1455,6 +1939,9 @@
     "spotify": [
       "product:spotify"
     ],
+    "stanford computer science department": [
+      "organization:stanford_computer_science_department"
+    ],
     "starship": [
       "product:starship"
     ],
@@ -1464,14 +1951,38 @@
     "suzume": [
       "product:suzume"
     ],
+    "taocp": [
+      "product:the_art_of_computer_programming"
+    ],
+    "tex": [
+      "product:tex"
+    ],
+    "the art of computer programming": [
+      "product:the_art_of_computer_programming"
+    ],
     "the entity resolution engine": [
       "component:entity_resolution_engine"
+    ],
+    "turing": [
+      "person:alan_turing"
+    ],
+    "turing award": [
+      "product:acm_turing_award"
+    ],
+    "turing machine": [
+      "product:turing_machine"
     ],
     "universal music": [
       "organization:universal_music"
     ],
     "ursula von der leyen": [
       "person:ursula_von_der_leyen"
+    ],
+    "von neumann": [
+      "person:john_von_neumann"
+    ],
+    "von neumann architecture": [
+      "product:von_neumann_architecture"
     ],
     "warner bros": [
       "organization:warner_bros"
@@ -1681,6 +2192,34 @@
         "mention_source": "entity_ruler",
         "resolved_to": "organization:aether_analytics",
         "resolved_label": "Aether Analytics",
+        "conflict": false
+      }
+    ],
+    "organization:association_for_computing_machinery": [
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 0,
+        "text": "Association for Computing Machinery",
+        "start_char": 44,
+        "end_char": 79,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:association_for_computing_machinery",
+        "resolved_label": "Association for Computing Machinery",
+        "conflict": false
+      }
+    ],
+    "organization:bletchley_park": [
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 1,
+        "text": "Bletchley Park",
+        "start_char": 64,
+        "end_char": 78,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:bletchley_park",
+        "resolved_label": "Bletchley Park",
         "conflict": false
       }
     ],
@@ -1963,6 +2502,44 @@
         "mention_source": "entity_ruler",
         "resolved_to": "organization:helios_bank",
         "resolved_label": "Helios Bank",
+        "conflict": false
+      }
+    ],
+    "organization:institute_for_advanced_study": [
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 1,
+        "text": "Institute for Advanced Study",
+        "start_char": 86,
+        "end_char": 114,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:institute_for_advanced_study",
+        "resolved_label": "Institute for Advanced Study",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 5,
+        "text": "Institute for Advanced Study",
+        "start_char": 304,
+        "end_char": 332,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:institute_for_advanced_study",
+        "resolved_label": "Institute for Advanced Study",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 1,
+        "text": "Institute for Advanced Study",
+        "start_char": 75,
+        "end_char": 103,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:institute_for_advanced_study",
+        "resolved_label": "Institute for Advanced Study",
         "conflict": false
       }
     ],
@@ -2262,6 +2839,20 @@
         "conflict": false
       }
     ],
+    "organization:princeton_university": [
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 1,
+        "text": "Princeton University",
+        "start_char": 69,
+        "end_char": 89,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:princeton_university",
+        "resolved_label": "Princeton University",
+        "conflict": false
+      }
+    ],
     "organization:python_software_foundation": [
       {
         "document_id": "doc_14_python",
@@ -2340,6 +2931,20 @@
         "conflict": false
       }
     ],
+    "organization:stanford_computer_science_department": [
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 3,
+        "text": "Stanford Computer Science department",
+        "start_char": 206,
+        "end_char": 242,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "organization:stanford_computer_science_department",
+        "resolved_label": "Stanford Computer Science Department",
+        "conflict": false
+      }
+    ],
     "organization:studio_ghibli": [
       {
         "document_id": "doc_18_ghibli",
@@ -2403,6 +3008,132 @@
         "mention_source": "entity_ruler",
         "resolved_to": "organization:warner_bros",
         "resolved_label": "Warner Bros",
+        "conflict": false
+      }
+    ],
+    "person:alan_perlis": [
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 2,
+        "text": "Alan Perlis",
+        "start_char": 134,
+        "end_char": 145,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_perlis",
+        "resolved_label": "Alan Perlis",
+        "conflict": false
+      }
+    ],
+    "person:alan_turing": [
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 0,
+        "text": "Alan Turing",
+        "start_char": 0,
+        "end_char": 11,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_turing",
+        "resolved_label": "Alan Turing",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 1,
+        "text": "Alan Turing",
+        "start_char": 42,
+        "end_char": 53,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_turing",
+        "resolved_label": "Alan Turing",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 3,
+        "text": "Alan Turing",
+        "start_char": 132,
+        "end_char": 143,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_turing",
+        "resolved_label": "Alan Turing",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 3,
+        "text": "Alan Turing",
+        "start_char": 146,
+        "end_char": 157,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_turing",
+        "resolved_label": "Alan Turing",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 4,
+        "text": "Turing",
+        "start_char": 242,
+        "end_char": 248,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_turing",
+        "resolved_label": "Alan Turing",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 4,
+        "text": "Alan Turing",
+        "start_char": 227,
+        "end_char": 238,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alan_turing",
+        "resolved_label": "Alan Turing",
+        "conflict": false
+      }
+    ],
+    "person:alonzo_church": [
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 0,
+        "text": "Alonzo Church",
+        "start_char": 0,
+        "end_char": 13,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alonzo_church",
+        "resolved_label": "Alonzo Church",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 1,
+        "text": "Alonzo Church",
+        "start_char": 45,
+        "end_char": 58,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alonzo_church",
+        "resolved_label": "Alonzo Church",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 3,
+        "text": "Alonzo Church",
+        "start_char": 170,
+        "end_char": 183,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:alonzo_church",
+        "resolved_label": "Alonzo Church",
         "conflict": false
       }
     ],
@@ -2586,6 +3317,82 @@
         "conflict": false
       }
     ],
+    "person:donald_knuth": [
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 4,
+        "text": "Donald Knuth",
+        "start_char": 222,
+        "end_char": 234,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:donald_knuth",
+        "resolved_label": "Donald Knuth",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 0,
+        "text": "Donald Knuth",
+        "start_char": 0,
+        "end_char": 12,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:donald_knuth",
+        "resolved_label": "Donald Knuth",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 0,
+        "text": "Donald Knuth",
+        "start_char": 28,
+        "end_char": 40,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:donald_knuth",
+        "resolved_label": "Donald Knuth",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 2,
+        "text": "Donald Knuth",
+        "start_char": 143,
+        "end_char": 155,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:donald_knuth",
+        "resolved_label": "Donald Knuth",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 3,
+        "text": "Donald Knuth",
+        "start_char": 183,
+        "end_char": 195,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:donald_knuth",
+        "resolved_label": "Donald Knuth",
+        "conflict": false
+      }
+    ],
+    "person:edsger_dijkstra": [
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 3,
+        "text": "Edsger Dijkstra",
+        "start_char": 179,
+        "end_char": 194,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:edsger_dijkstra",
+        "resolved_label": "Edsger Dijkstra",
+        "conflict": false
+      }
+    ],
     "person:elon_musk": [
       {
         "document_id": "doc_20_space",
@@ -2689,6 +3496,142 @@
         "mention_source": "entity_ruler",
         "resolved_to": "person:jens_stoltenberg",
         "resolved_label": "Jens Stoltenberg",
+        "conflict": false
+      }
+    ],
+    "person:john_von_neumann": [
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 0,
+        "text": "John von Neumann",
+        "start_char": 0,
+        "end_char": 16,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:john_von_neumann",
+        "resolved_label": "John von Neumann",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 1,
+        "text": "John von Neumann",
+        "start_char": 57,
+        "end_char": 73,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:john_von_neumann",
+        "resolved_label": "John von Neumann",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 3,
+        "text": "John von Neumann",
+        "start_char": 182,
+        "end_char": 198,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:john_von_neumann",
+        "resolved_label": "John von Neumann",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 4,
+        "text": "John von Neumann",
+        "start_char": 229,
+        "end_char": 245,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:john_von_neumann",
+        "resolved_label": "John von Neumann",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 3,
+        "text": "John von Neumann",
+        "start_char": 187,
+        "end_char": 203,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:john_von_neumann",
+        "resolved_label": "John von Neumann",
+        "conflict": false
+      }
+    ],
+    "person:kurt_godel": [
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 3,
+        "text": "Kurt Godel",
+        "start_char": 217,
+        "end_char": 227,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:kurt_godel",
+        "resolved_label": "Kurt Godel",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 5,
+        "text": "Kurt Godel",
+        "start_char": 279,
+        "end_char": 289,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:kurt_godel",
+        "resolved_label": "Kurt Godel",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 0,
+        "text": "Kurt Godel",
+        "start_char": 0,
+        "end_char": 10,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:kurt_godel",
+        "resolved_label": "Kurt Godel",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 1,
+        "text": "Kurt Godel",
+        "start_char": 50,
+        "end_char": 60,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:kurt_godel",
+        "resolved_label": "Kurt Godel",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 3,
+        "text": "Kurt Godel",
+        "start_char": 158,
+        "end_char": 168,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:kurt_godel",
+        "resolved_label": "Kurt Godel",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 4,
+        "text": "Kurt Godel",
+        "start_char": 205,
+        "end_char": 215,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "person:kurt_godel",
+        "resolved_label": "Kurt Godel",
         "conflict": false
       }
     ],
@@ -2986,6 +3929,80 @@
         "conflict": false
       }
     ],
+    "product:acm_turing_award": [
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 0,
+        "text": "ACM Turing Award",
+        "start_char": 4,
+        "end_char": 20,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:acm_turing_award",
+        "resolved_label": "ACM Turing Award",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 1,
+        "text": "Turing Award",
+        "start_char": 85,
+        "end_char": 97,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:acm_turing_award",
+        "resolved_label": "ACM Turing Award",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 2,
+        "text": "Turing Award",
+        "start_char": 165,
+        "end_char": 177,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:acm_turing_award",
+        "resolved_label": "ACM Turing Award",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 3,
+        "text": "Turing Award",
+        "start_char": 208,
+        "end_char": 220,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:acm_turing_award",
+        "resolved_label": "ACM Turing Award",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_26_turing_award",
+        "sentence_index": 4,
+        "text": "Turing Award",
+        "start_char": 248,
+        "end_char": 260,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:acm_turing_award",
+        "resolved_label": "ACM Turing Award",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 2,
+        "text": "Turing Award",
+        "start_char": 169,
+        "end_char": 181,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:acm_turing_award",
+        "resolved_label": "ACM Turing Award",
+        "conflict": false
+      }
+    ],
     "product:alphafold": [
       {
         "document_id": "doc_11_deepmind",
@@ -3050,6 +4067,32 @@
         "conflict": false
       }
     ],
+    "product:bombe": [
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 3,
+        "text": "Bombe",
+        "start_char": 157,
+        "end_char": 162,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:bombe",
+        "resolved_label": "Bombe",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 4,
+        "text": "Bombe",
+        "start_char": 168,
+        "end_char": 173,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:bombe",
+        "resolved_label": "Bombe",
+        "conflict": false
+      }
+    ],
     "product:chatgpt": [
       {
         "document_id": "doc_10_openai",
@@ -3097,6 +4140,20 @@
         "mention_source": "entity_ruler",
         "resolved_to": "product:chatgpt",
         "resolved_label": "ChatGPT",
+        "conflict": false
+      }
+    ],
+    "product:church_turing_thesis": [
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 4,
+        "text": "Church-Turing thesis",
+        "start_char": 189,
+        "end_char": 209,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:church_turing_thesis",
+        "resolved_label": "Church-Turing thesis",
         "conflict": false
       }
     ],
@@ -3273,6 +4330,70 @@
         "mention_source": "entity_ruler",
         "resolved_to": "product:inception",
         "resolved_label": "Inception",
+        "conflict": false
+      }
+    ],
+    "product:incompleteness_theorems": [
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 0,
+        "text": "incompleteness theorems",
+        "start_char": 25,
+        "end_char": 48,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:incompleteness_theorems",
+        "resolved_label": "incompleteness theorems",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_30_godel",
+        "sentence_index": 2,
+        "text": "incompleteness theorems",
+        "start_char": 109,
+        "end_char": 132,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:incompleteness_theorems",
+        "resolved_label": "incompleteness theorems",
+        "conflict": false
+      }
+    ],
+    "product:lambda_calculus": [
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 0,
+        "text": "lambda calculus",
+        "start_char": 28,
+        "end_char": 43,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:lambda_calculus",
+        "resolved_label": "lambda calculus",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 2,
+        "text": "lambda calculus",
+        "start_char": 95,
+        "end_char": 110,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:lambda_calculus",
+        "resolved_label": "lambda calculus",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_29_lambda_calculus",
+        "sentence_index": 4,
+        "text": "lambda calculus",
+        "start_char": 222,
+        "end_char": 237,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:lambda_calculus",
+        "resolved_label": "lambda calculus",
         "conflict": false
       }
     ],
@@ -3676,6 +4797,84 @@
         "conflict": false
       }
     ],
+    "product:the_art_of_computer_programming": [
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 0,
+        "text": "The Art of Computer Programming",
+        "start_char": 47,
+        "end_char": 78,
+        "source": "alias",
+        "mention_source": "spacy_ner",
+        "resolved_to": "product:the_art_of_computer_programming",
+        "resolved_label": "The Art of Computer Programming",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_28_knuth",
+        "sentence_index": 1,
+        "text": "The Art of Computer Programming",
+        "start_char": 80,
+        "end_char": 111,
+        "source": "alias",
+        "mention_source": "spacy_ner",
+        "resolved_to": "product:the_art_of_computer_programming",
+        "resolved_label": "The Art of Computer Programming",
+        "conflict": false
+      }
+    ],
+    "product:turing_machine": [
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 0,
+        "text": "Turing machine",
+        "start_char": 26,
+        "end_char": 40,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:turing_machine",
+        "resolved_label": "Turing machine",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_25_turing",
+        "sentence_index": 2,
+        "text": "Turing machine",
+        "start_char": 84,
+        "end_char": 98,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:turing_machine",
+        "resolved_label": "Turing machine",
+        "conflict": false
+      }
+    ],
+    "product:von_neumann_architecture": [
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 0,
+        "text": "von Neumann architecture",
+        "start_char": 31,
+        "end_char": 55,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:von_neumann_architecture",
+        "resolved_label": "von Neumann architecture",
+        "conflict": false
+      },
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 2,
+        "text": "von Neumann architecture",
+        "start_char": 120,
+        "end_char": 144,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "product:von_neumann_architecture",
+        "resolved_label": "von Neumann architecture",
+        "conflict": false
+      }
+    ],
     "product:your_name": [
       {
         "document_id": "doc_19_shinkai",
@@ -3764,6 +4963,20 @@
         "conflict": false
       }
     ],
+    "project:manhattan_project": [
+      {
+        "document_id": "doc_27_von_neumann",
+        "sentence_index": 4,
+        "text": "Manhattan Project",
+        "start_char": 260,
+        "end_char": 277,
+        "source": "alias",
+        "mention_source": "entity_ruler",
+        "resolved_to": "project:manhattan_project",
+        "resolved_label": "Manhattan Project",
+        "conflict": false
+      }
+    ],
     "project:project_aurora": [
       {
         "document_id": "doc_01_company",
@@ -3783,7 +4996,7 @@
         "text": "The project",
         "start_char": 155,
         "end_char": 166,
-        "source": "alias",
+        "source": "fastcoref",
         "mention_source": "common_noun_noun_chunk",
         "resolved_to": "project:project_aurora",
         "resolved_label": "Project Aurora",
@@ -3807,7 +5020,7 @@
         "text": "the project",
         "start_char": 222,
         "end_char": 233,
-        "source": "alias",
+        "source": "fastcoref",
         "mention_source": "common_noun_noun_chunk",
         "resolved_to": "project:project_aurora",
         "resolved_label": "Project Aurora",
@@ -3946,6 +5159,18 @@
       "text": "AI",
       "start_char": 118,
       "end_char": 120,
+      "source": "unresolved",
+      "mention_source": "spacy_ner",
+      "resolved_to": null,
+      "resolved_label": null,
+      "conflict": false
+    },
+    {
+      "document_id": "doc_25_turing",
+      "sentence_index": 4,
+      "text": "Enigma",
+      "start_char": 184,
+      "end_char": 190,
       "source": "unresolved",
       "mention_source": "spacy_ner",
       "resolved_to": null,
