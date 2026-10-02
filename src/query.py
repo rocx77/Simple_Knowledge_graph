@@ -1186,6 +1186,9 @@ _NOUN_TYPES: dict[str, str] = {
     "team": "PROJECT",
     "group": "PROJECT",
     "working group": "PROJECT",
+    "anime": "PRODUCT",
+    "film": "PRODUCT",
+    "movie": "PRODUCT",
 }
 
 
